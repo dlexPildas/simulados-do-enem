@@ -4,7 +4,7 @@
 /*Aqui começa a formatação do cabeçalho.*/
 header#cabecalho h1{	
 	margin-top: 50px;
-	marker-end: -10px;
+	
 	background-color: #FAFAFA;	
 }
 
@@ -12,10 +12,10 @@ header#cabecalho h1{
 .login-rede ul{
 list-style: none;
 font-family: Helvetica;
-	font-size: 25px;
+	font-size: 20px;
 	margin-left: 900px;
 	margin-top: 70px;
-	margin-right: 100px;
+	margin-right: 135px;
 }
 .login-rede ul li{
 	display: block;
@@ -30,7 +30,7 @@ font-family: Helvetica;
 	margin-top: 170px;
 	
 	font-family: Helvetica, sans-serif;
-	font-size: 25px;
+	font-size: 20px;
 	margin-left: 900px;
 	margin-right: 50px;
 }
@@ -85,7 +85,7 @@ li#go:hover{
 nav#menu{
 	display: block;	
 	display: absolute;
-	margin-top: 20px;	
+	margin-top: 0px;	
 }
 
 nav#menu ol{	
@@ -133,7 +133,8 @@ header#cabecalho{
 
 body{
 	margin-top: -20px;
-	background-image: url(12056999_527586047417155_1427094715_n.jpg);
+	background-image: url(1511614929708aed32fdbbb2edc2f40025aa8d4f61.jpg);
+
 }
 div#left{
 	margin-left: 200px;
