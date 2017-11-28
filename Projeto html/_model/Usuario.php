@@ -8,6 +8,7 @@
 
 class Usuario{
     private $nome;
+    private $sobrenome;
     private $sexo;
     private $dataNascimento;
     private $cpf;
@@ -15,17 +16,20 @@ class Usuario{
     /**
      * Usuario constructor.
      * @param $nome
-     * @param $Sobrenome
+     * @param $sobrenome
      * @param $sexo
      * @param $dataNascimento
      * @param $cpf
      */
-    public function __construct($nome, $sexo, $dataNascimento, $cpf){
+    public function __construct($nome, $sobrenome, $sexo, $dataNascimento, $cpf)
+    {
         $this->nome = $nome;
+        $this->sobrenome = $sobrenome;
         $this->sexo = $sexo;
         $this->dataNascimento = $dataNascimento;
         $this->cpf = $cpf;
     }
+
 
     /**
      * @return mixed
