@@ -122,10 +122,10 @@ body{
 	margin-left: 40%;
 }
 #botao{
-	margin-left: 74%;
+	margin-left: 78.5%;
 }
 #botaoCad{
-	margin-left: 70%;
+	margin-left: 75%;
 	
 }
 #botaoCad button{
@@ -154,14 +154,14 @@ body{
 #dados-para-email input{
 	border-radius: 5px;
 	margin-top: 5px;
-	width: 73%;
+	width: 81%;
 	font-size: 1.2vw;
 	font-family: Helvetica, sans-serif;
 }
 .login-rede ul li{	
 	display: block;	
 	padding: 3% 5%;
-	margin-right: 0%;
+	margin-left: 0%;
 	transition: 0.4s;
 	border: 1px solid;
 	border-radius: 5px;
@@ -170,8 +170,8 @@ body{
 
 .btn-comum ul li{
 	display: inline-block;
-	padding: 3% 5%;
-	margin-right: 4%;
+	padding: 3% 7.5%;
+	margin-left: 0%;
 	transition: 0.4s;
 	background-color: #FAFAFA;
 	border: 1px solid;
@@ -211,10 +211,3 @@ li#fa:hover{
 li#go:hover{
 	background-color: #B10902;
 }
-
-
-
-
-
-/*TESte*/
-
