@@ -121,12 +121,13 @@ body{
 #dados{
 	margin-left: 40%;
 }
-#botao{
-	margin-left: 78.5%;
-	margin-bottom: 1.7%;
+.hidden{
+	display:none;
 }
+
 #botaoCad{
-	margin-left: 75%;
+	margin-left: 53.5%;
+	margin-top: 5px;
 	
 }
 #botaoCad button{
@@ -140,10 +141,11 @@ body{
 #areatexto ul, #cadastro ul{
 	list-style: none;
 }
-.hidden{
-	display:none;
-}
 
+#botao{
+		margin-left: 60.5%;
+		margin-top: 5px;
+}
 #botao button{
 	border-radius: 5px;
 	font-size: 1.8vw;
@@ -166,7 +168,6 @@ body{
 	transition: 0.4s;
 	border: 1px solid;
 	border-radius: 5px;
-
 }
 
 .btn-comum ul li{
@@ -178,7 +179,6 @@ body{
 	border: 1px solid;
 	border-radius: 5px;
 	
-
 }
 .btn-comum ul li a{
 	text-decoration: none;
@@ -188,8 +188,6 @@ body{
 #ca:hover, #en:hover{
 	background-color: #8FFFBD;
 }
-
-
 
 li#fa{
 	background-color: #3b5998;
