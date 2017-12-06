@@ -1,21 +1,15 @@
-function  mostrar(ID){
+function mostraOculta(ID) {
 	if (document.getElementById(ID).style.display == "block") {
-	document.getElementById(ID).style.display = "none";
-
+		mostra(ID);		
 	}
-	else{
-		document.getElementById(ID).style.display = "block";
+	else {
+		esconde(ID);
 	}
 
 }
-
-function  mostrarCad(ID){
-	if (document.getElementById(ID).style.display == "block") {
+function mostra(ID) {
 	document.getElementById(ID).style.display = "none";
-	
-	}
-	else{
-		document.getElementById(ID).style.display = "block";
-	}
-
+}
+function esconde(ID) {
+	document.getElementById(ID).style.display = "block";
 }
