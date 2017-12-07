@@ -33,13 +33,14 @@ class Bd {
 		if($verificador == false){
 			if($banco){
 			 echo "++Conexão com o PostgreSQL realizada com sucesso!!<br /><br />";
+				return $banco;
 		 }else{
 			echo "++Erro ao abrir conexão!<br /><br />";
 			}
 		}
     }
 	
-	function fechaconexao(){
+	function fecharconexao(){
 		if($verificador == true){
 			pg_close( $banco );
 		}else{

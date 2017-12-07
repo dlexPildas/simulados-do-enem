@@ -72,48 +72,48 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getid()
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getfoto(){
+    public function getFoto(){
 		return $this->foto;
 	}
 	
-	public function setfoto($foto){
+	public function setFoto($foto){
 		$this->foto = $foto;
 	}
 	
-	public function getemail(){
+	public function getEmail(){
 		return $this->email;
 	}
 	
-	public function setemail($email){
+	public function setEmail($email){
 		$this->email = $email;
 	}
 	
-	public function getdataplano(){
+	public function getDataplano(){
 		return $this->dataplano;
 	}
 	
-	public function setdataplano($dataplano){
+	public function setDataplano($dataplano){
 		$this->dataplano = $dataplano;
 	}
 	
-	public function getprivilegio(){
+	public function getPrivilegio(){
 		return $this->privilegio;
 	}
 	
-	public function setprivilegio($privilegio){
+	public function setPrivilegio($privilegio){
 		$this->privilegio = $privilegio;
 	}
 	
-	public function getsenha(){
+	public function getSenha(){
 		return $this->senha;
 	}
 	
-	public function setsenha($senha){
+	public function setSenha($senha){
 		$this->senha = $senha;
 	}
 
