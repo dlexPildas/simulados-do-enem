@@ -8,7 +8,7 @@ class UserDao {
 
 	private $banc;
 	public function __construct() {
-		$banc = Bd->getInstance();
+		$banc = Bd::getInstance();
 	}
 
 	//CREATE
@@ -27,11 +27,10 @@ class UserDao {
         $SQL = "INSERT INTO usuario (nome, email, senha, privilegio) VALUES ('$nome', '$email', '$senha', '$privilegio')";
 
         echo 'aqui';
-        echo get_class($banc);
-        $banc->abrirconexao();
+        $xablau = $banc->abrirconexao();
         $obanco = $banc->getBanco();
         
-		if ( pg_query( $obanco->abrirconexao(), $SQL ) ) {
+		if ( pg_query( $obanco, $SQL ) ) {
 			echo "<script type='javascript'>alert('Cadastrado com sucesso!');";
 			$banc->fecharconexao();
 			return true;
