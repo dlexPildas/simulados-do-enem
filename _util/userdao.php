@@ -18,7 +18,7 @@ class UserDao {
 		$Resultado = pg_query($this -> conectar(), $SQL); 
 		pg_close($this -> conectar()); */
 
-		$SQL = "INSERT INTO usuario (nome, email, senha, privilegio) VALUES ('$user->getNome()', '$user->getEmail()', '$user->senha', 'N')";
+		$SQL = "INSERT INTO usuario (nome, email, senha, privilegio) VALUES ('$user->getNome()', '$user->getEmail()', '$user->senha', '$user->privilegio')";
 
 		
 		if ( pg_query( $banc->abrirconexao(), $SQL ) ) {
