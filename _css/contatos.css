@@ -2,13 +2,15 @@
 
 #navbarSupportedContent{
 	margin-left: 25%;
-
 }
 #principal{
 	/*background-color: rgb(192, 224, 226);*/
    /* background-color:#563d7c;*/
     background-color: rgba(99,99,99,.4);
 	font-style: none;
+}
+#teste{
+    margin-top: 10px;
 }
 
 #botoes-nav{	
@@ -34,16 +36,18 @@
 #tour{
     margin-top: 10%;
     padding-top: 14px;
-    background-color: rgba(99,99,99,.2); 
+
+   /*background-color: rgba(99,99,99,.2); */ 
 
 }
 #coluna1,#coluna2, #coluna3{
-    border-right: 1px solid; 
+    border-right: 1px solid;    
     border-color: #FFFFFF;
+    
   
 }
-#coluna2, #coluna3{
-    
+#coluna2, #coluna3{    
+    border-top: 1px solid;
     border-bottom: 1px solid;
     border-color: #ffffff;
 }
