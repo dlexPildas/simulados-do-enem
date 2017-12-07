@@ -23,11 +23,10 @@ class Usuario{
      * @param $dataNascimento
      * @param $cpf
      */
-    public function __construct($nome, $sobrenome, $id, $foto, $email, $dataplano, $privilegio, $senha)
+    public function __construct($nome, $sobrenome, $foto, $email, $dataplano, $privilegio, $senha)
     {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
-        $this->id = $id;
 		$this->foto = $foto;
 		$this->email = $email;
 		$this->dataplano = $dataplano;

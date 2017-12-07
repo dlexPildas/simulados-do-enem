@@ -5,7 +5,11 @@ session_start();
 include_once( "bd.php" );
 
 class UserDao {
-
+	
+	private $banc;
+	public function __construct(){
+		$banc = Bd::getInstance();
+	}
 
     //CREATE
     function criar($SQL) {
