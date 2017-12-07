@@ -6,20 +6,22 @@ session_start();
 $login = $_POST[ 'login' ];
 $senha = $_POST[ 'senha' ];
 
-$senha_correta = "allan123";
-$email_correto = "allan@gmail.com";
 
 if ($senha == $senha_correta and $email_correto == $email_correto){
-    $_SESSION['login'] = $login;
-    $_SESSION['senha'] = $senha;
-    header('location:nossos-planos.html');
+    //$_SESSION['login'] = $login;
+    //$_SESSION['senha'] = $senha;
+	$usuario = new Usuario();
+	$_SESSION['user'] = serialize($usuario);
+	if($usuario->privilegio == 'N'){
+		header('location:nossos-planos.html');
+	}else if($usuario->privilegio == 'M'){
+		header('location:nossos-planos.html');
+	}else if($usuario->privilegio == 'A'){
+		header('location:nossos-planos.html');
+	}
+    header('location:errologin.html');
 }else{
     unset ($_SESSION['login']);
     unset ($_SESSION['senha']);
     header('location:contato.html');
 }
-
-
-
-
-

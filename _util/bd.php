@@ -7,7 +7,7 @@ class Bd {
 	private $pass = "sosenemadmin";
 	public $banco;
 	public $verificador;
-	public static $instance;
+	public static $instance = null;
 	
 	 private function __construct() {
         $banco = pg_connect( "host=$this->host port=5432 dbname=$this->db user=$this->user password=$this->pass" )  or die ("Erro na conexão");
@@ -15,12 +15,12 @@ class Bd {
     }
 	
 	public static function getInstance() {
-        if (!isset(self::$instance)) {
-			self::$instance = new Bd();
+        if (null == $instanc) {
+			$this->instance = new Bd();
 			echo "aqui nova instancia";
         }
 		echo "ja tem instancia";
-        return self::$instance;
+        return $this->instance;
     }
 	
 	public static function zeraSingleton(){
