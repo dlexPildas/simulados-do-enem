@@ -28,7 +28,8 @@
     padding: 2px 4px;
 }
 .nav-item a:hover{
-	background-color: #8FFFBD;
+    background-color: #8FFFBD;
+    color: #404040;
 }
 #tour{
     margin-top: 10%;
