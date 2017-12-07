@@ -7,18 +7,6 @@ include_once( "bd.php" );
 class UserDao {
 
 
-    function abrirconexao() {
-         if($banco){
-			 echo "++Conexão com o PostgreSQL realizada com sucesso!!<br /><br />";
-		 }else{
-			echo "++Erro ao abrir conexão!<br /><br />";
-		 }
-    }
-	
-	function fechaconexao(){
-		pg_close( $banco );
-	}
-
     //CREATE
     function criar($SQL) {
         $banco = $this -> conectar(); 
