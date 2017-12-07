@@ -10,15 +10,16 @@ class Bd {
 	public static $instance;
 	
 	 private function __construct() {
-        $banco = pg_connect( "host=$host port=5432 dbname=$db user=$user password=$pass" )  or die ("Erro na conexão");
+        $banco = pg_connect( "host=$this->host port=5432 dbname=$this->db user=$this->user password=$this->pass" )  or die ("Erro na conexão");
 		 $verificador = false;
     }
 	
 	public static function getInstance() {
         if (!isset(self::$instance)) {
-            self::$instance = new Bd();
+			self::$instance = new Bd();
+			echo "aqui nova instancia";
         }
-
+		echo "ja tem instancia";
         return self::$instance;
     }
 	
@@ -47,6 +48,11 @@ class Bd {
 			return false;
 		}
 	}
+
+	public function getBanco()
+    {
+        return $this->banco;
+    }
 	
 	
 }

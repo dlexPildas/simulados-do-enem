@@ -7,21 +7,31 @@ require_once( "bd.php" );
 class UserDao {
 
 	private $banc;
-	public
-	function __construct() {
-		$banc = Bd::getInstance();
+	public function __construct() {
+		$banc = Bd->getInstance();
 	}
 
 	//CREATE
 	function inserir( $user ) {
 		/*$banco = $this -> conectar(); 
 		$Resultado = pg_query($this -> conectar(), $SQL); 
-		pg_close($this -> conectar()); */
+        pg_close($this -> conectar()); */
+        
+        echo get_class($user);
+        echo $user->getNome();
+        $nome = $user->getNome();
+        $email= $user->getEmail();
+        $senha= $user->getSenha();
+        $privilegio = $user->getPrivilegio();
 
-		$SQL = "INSERT INTO usuario (nome, email, senha, privilegio) VALUES ('$user->getNome()', '$user->getEmail()', '$user->senha', '$user->privilegio')";
+        $SQL = "INSERT INTO usuario (nome, email, senha, privilegio) VALUES ('$nome', '$email', '$senha', '$privilegio')";
 
-		
-		if ( pg_query( $banc->abrirconexao(), $SQL ) ) {
+        echo 'aqui';
+        echo get_class($banc);
+        $banc->abrirconexao();
+        $obanco = $banc->getBanco();
+        
+		if ( pg_query( $obanco->abrirconexao(), $SQL ) ) {
 			echo "<script type='javascript'>alert('Cadastrado com sucesso!');";
 			$banc->fecharconexao();
 			return true;
