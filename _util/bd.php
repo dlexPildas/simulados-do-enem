@@ -6,21 +6,21 @@ class Bd {
 	private $user = "administrador";
 	private $pass = "sosenemadmin";
 	public $banco;
-	public $verificador;
+	public $verificador = false;
 	public static $instance = null;
 	
 	 private function __construct() {
-        $banco = pg_connect( "host=$this->host port=5432 dbname=$this->db user=$this->user password=$this->pass" )  or die ("Erro na conexão");
+        $this->banco = pg_connect( "host=$this->host port=5432 dbname=$this->db user=$this->user password=$this->pass" )  or die ("Erro na conexão");
 		 $verificador = false;
     }
 	
 	public static function getInstance() {
-        if (null == $instanc) {
-			$this->instance = new Bd();
+        if (self::$instance == NULL) {
+			self::$instance = new Bd();
 			echo "aqui nova instancia";
         }
 		echo "ja tem instancia";
-        return $this->instance;
+        return self::$instance;
     }
 	
 	public static function zeraSingleton(){
@@ -31,10 +31,10 @@ class Bd {
 	}
 	
 	function abrirconexao() {
-		if($verificador == false){
-			if($banco){
+		if($this->verificador == false){
+			if($this->banco){
 			 echo "++Conexão com o PostgreSQL realizada com sucesso!!<br /><br />";
-				return $banco;
+				return $this->banco;
 		 }else{
 			echo "++Erro ao abrir conexão!<br /><br />";
 			}
@@ -42,8 +42,8 @@ class Bd {
     }
 	
 	function fecharconexao(){
-		if($verificador == true){
-			pg_close( $banco );
+		if($this->verificador == true){
+			pg_close( $this->banco );
 		}else{
 			return false;
 		}
