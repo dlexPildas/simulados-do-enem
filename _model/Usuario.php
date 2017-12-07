@@ -1,17 +1,19 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Daniel
- * Date: 27/11/2017
- * Time: 23:23
+ * User: Alyson
+ * Date: 07/12/2017
+ * Time: 14:57
  */
 
 class Usuario{
+	private $id;
     private $nome;
     private $sobrenome;
-    private $sexo;
-    private $dataNascimento;
-    private $cpf;
+    private $foto;
+	private $email;
+    private $dataplano;
+	private $privilegio;
+    private $senha;
 
     /**
      * Usuario constructor.
@@ -21,16 +23,21 @@ class Usuario{
      * @param $dataNascimento
      * @param $cpf
      */
-    public function __construct($nome, $sobrenome, $sexo, $dataNascimento, $cpf)
+    public function __construct($nome, $sobrenome, $id, $foto, $email, $dataplano, $privilegio, $senha)
     {
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
-        $this->sexo = $sexo;
-        $this->dataNascimento = $dataNascimento;
-        $this->cpf = $cpf;
+        $this->id = $id;
+		$this->foto = $foto;
+		$this->email = $email;
+		$this->dataplano = $dataplano;
+		$this->privilegio = $privilegio;
+		$this->senha = $senha;
     }
 
-
+	
+	
+	
     /**
      * @return mixed
      */
@@ -66,52 +73,50 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getSexo()
+    public function getid()
     {
-        return $this->sexo;
+        return $this->id;
     }
 
-    /**
-     * @param mixed $sexo
-     */
-    public function setSexo($sexo)
-    {
-        $this->sexo = $sexo;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDataNascimento()
-    {
-        return $this->dataNascimento;
-    }
-
-    /**
-     * @param mixed $dataNascimento
-     */
-    public function setDataNascimento($dataNascimento)
-    {
-        $this->dataNascimento = $dataNascimento;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCpf()
-    {
-        return $this->cpf;
-    }
-
-    /**
-     * @param mixed $cpf
-     */
-    public function setCpf($cpf)
-    {
-        $this->cpf = $cpf;
-    }
-
-
+    public function getfoto(){
+		return $this->foto;
+	}
+	
+	public function setfoto($foto){
+		$this->foto = $foto;
+	}
+	
+	public function getemail(){
+		return $this->email;
+	}
+	
+	public function setemail($email){
+		$this->email = $email;
+	}
+	
+	public function getdataplano(){
+		return $this->dataplano;
+	}
+	
+	public function setdataplano($dataplano){
+		$this->dataplano = $dataplano;
+	}
+	
+	public function getprivilegio(){
+		return $this->privilegio;
+	}
+	
+	public function setprivilegio($privilegio){
+		$this->privilegio = $privilegio;
+	}
+	
+	public function getsenha(){
+		return $this->senha;
+	}
+	
+	public function setsenha($senha){
+		$this->senha = $senha;
+	}
 
 
 }

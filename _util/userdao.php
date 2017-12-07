@@ -1,17 +1,23 @@
 <?php
 
+session_start();
+//include_once( "seguranca.php" );
+include_once( "bd.php" );
+
 class UserDao {
 
-    var $banco; 
 
-    function conectar() {
-        $host = "localhost"; 
-        $db = "nomedb"; 
-        $user = "admindb"; 
-        $pass = "senhadb"; 
-        $banco = pg_connect("host=$host port=5432 dbname=$db user=$user password=$pass")or die ("Erro na conexão"); 
-        return $banco; 
+    function abrirconexao() {
+         if($banco){
+			 echo "++Conexão com o PostgreSQL realizada com sucesso!!<br /><br />";
+		 }else{
+			echo "++Erro ao abrir conexão!<br /><br />";
+		 }
     }
+	
+	function fechaconexao(){
+		pg_close( $banco );
+	}
 
     //CREATE
     function criar($SQL) {
