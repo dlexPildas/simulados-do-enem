@@ -2,7 +2,7 @@
 
 session_start();
 //include_once( "seguranca.php" );
-include_once( "bd.php" );
+require_once( "bd.php" );
 
 class UserDao {
 
