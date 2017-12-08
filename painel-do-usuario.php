@@ -1,3 +1,8 @@
+<?php
+include_once( "_model/seguranca.php" );
+
+
+?>
 <!DOCTYPE html>
 	<html lang="pt-br">
 		<head>
@@ -12,7 +17,9 @@
 			<div class="navbar" style="max-height:200px">
 				<span class="texto"> <font size="6"> S.O.S ENEM </font> </span>
 				<div>
-					<span>  <font size="5"> Bem-vindo Usuário </font> </span>
+					<span>  <font size="5"> Bem-vindo <?php
+						echo $logado;
+						?></font> </span>
 					<img src="_images\avatar.jpg" alt="Seu Avatar" title="Avatar" style="max-height: 65px; max-width: 65px" class="img-responsive">
 				</div>
 			</div>
@@ -27,7 +34,7 @@
 									<div class="col-md-2"> <a href="feedback.html">&nbsp;Feedback&nbsp;</a> </div>
 									<div class="col-md-2"> <a href="minha-conta.html">&nbsp;Minha Conta&nbsp;</a> </div>
 									<div class="col-md-2"> <a href="ajuda.html">&nbsp;Ajuda&nbsp;</a> </div>
-									<div class="col-md-2"> <a href="sair-da-conta.html">&nbsp;Sair da Conta&nbsp;</a> </div>
+									<div class="col-md-2"> <a href="_controller/logout.php">&nbsp;Sair da Conta&nbsp;</a> </div>
 								</div>
 							</ol>
 						</div>

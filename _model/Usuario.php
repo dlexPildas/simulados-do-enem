@@ -23,8 +23,7 @@ class Usuario{
      * @param $dataNascimento
      * @param $cpf
      */
-    public function __construct($nome, $sobrenome, $foto, $email, $dataplano, $privilegio, $senha)
-    {
+    public function __construct($nome, $sobrenome, $foto, $email, $dataplano, $privilegio, $senha){
         $this->nome = $nome;
         $this->sobrenome = $sobrenome;
 		$this->foto = $foto;
@@ -40,42 +39,41 @@ class Usuario{
     /**
      * @return mixed
      */
-    public function getNome()
-    {
+    public function getNome(){
         return $this->nome;
     }
 
     /**
      * @param mixed $nome
      */
-    public function setNome($nome)
-    {
+    public function setNome($nome){
         $this->nome = $nome;
     }
 
     /**
      * @return mixed
      */
-    public function getSobrenome()
-    {
+    public function getSobrenome(){
         return $this->Sobrenome;
     }
 
     /**
      * @param mixed $Sobrenome
      */
-    public function setSobrenome($Sobrenome)
-    {
+    public function setSobrenome($Sobrenome){
         $this->Sobrenome = $Sobrenome;
     }
 
     /**
      * @return mixed
      */
-    public function getId()
-    {
+    public function getId(){
         return $this->id;
     }
+	
+	public function setId($id){
+		$this->id = $id;
+	}
 
     public function getFoto(){
 		return $this->foto;
