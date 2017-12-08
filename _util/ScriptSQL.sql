@@ -20,7 +20,7 @@ CREATE TABLE  usuarios (
   sobrenome VARCHAR(100),
   foto VARCHAR(100),
   email VARCHAR(100) NOT NULL UNIQUE,
-  senha VARCHAR(32),
+  senha VARCHAR(120),
   privilegio VARCHAR(1) NOT NULL,
   dataplano DATE,
   PRIMARY KEY(idusuario)
@@ -59,7 +59,7 @@ CREATE TABLE questao (
   idusuario INTEGER,
   idprova INTEGER NOT NULL,
   idareaconhecimento INTEGER,
-  enunciado VARCHAR(100) NOT NULL,
+  enunciado TEXT NOT NULL,
   questaooficial VARCHAR(1) NOT NULL,
   respostaa VARCHAR(30),
   respostab VARCHAR(30),
