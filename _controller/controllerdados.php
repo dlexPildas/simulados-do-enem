@@ -74,5 +74,10 @@ class Controllerdados {
 		$usuario = $_SESSION[ 'user' ];
 	}
 
+	public 
+	function gerarProva($tipo_prova){
+
+	}
+
 }
 ?>

@@ -9,7 +9,7 @@ function inicio() {
 
 function cronometro() {
     segundos++;
-    document.getElementById("segundos").innerHTML = ":" + segundos;
+    document.getElementById("segundos").innerHTML = ":" + ajustarInput(segundos);
     document.getElementById("minutos").innerHTML = ":" + minutos;
     document.getElementById("horas").innerHTML = horas;
     if(segundos === 59){
@@ -23,7 +23,12 @@ function cronometro() {
 }
 
 function ajustarInput(str) {
-  var adicionar = 6 - str.length;
-  for (var i = 0; i < adicionar; i++) str = '0' + str;
-  return str.slice(0, 5) + '-' + str.slice(-1);
+    var resul;
+    resul += "";
+    console.log(str)
+    while (str.length <= 1) {
+        resul.append("0");
+    }
+    resul+=str;
+    return resul;
 }
