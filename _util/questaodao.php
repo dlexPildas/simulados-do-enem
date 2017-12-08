@@ -44,21 +44,14 @@
 			$banc = Bd::getInstance();
 			$banc->abrirconexao();
 
-		//$sql = pg_query( $obanco, "SELECT * FROM usuarios WHERE email = '{$email}' AND senha = '{$senha}' LIMIT 1 ;" );
-
-			$sql = "SELECT * FROM questao WHERE email = '{$email}' AND senha = '{$senha}' LIMIT 1 ;";
+			$questoes = new ArrayObject();
 			$resultado = pg_query($sql);
-			$login_check = pg_num_rows( $resultado );
-			if($login_check == 0 ){
-				$banc->fecharconexao();
-				return null;
-			}else{
-			//$resultado = pg_query($sql2);
-				$banc->fecharconexao();
-				return $resultado;
+			while($linha = pg_fetch_array($resultado)) {
+				$obj = new Questao($linha['idusuario'], $linha['idprova'], $linha['idareaconhecimento'], $linha['enunciado'], $linha['questaooficial'], $linha['respostaa'], $linha['respostab'], $linha['respostac'], $linha['respostad'], $linha['respostae'], $linha['respostacorreta']);
+				$questoes->append($obj);
 			}
 			$banc->fecharconexao();
-			return null;
+			return questoes;
 		}
 
 
