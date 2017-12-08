@@ -1,16 +1,25 @@
---drop role administrador;
+--Dropa o usuário administrador
+--DROP ROLE administrador;
 
---create role administrador with login password 'sosenemadmin' superuser createdb;
+--Cria o usuário administrador
+--CREATE ROLE administrador WITH LOGIN PASSWORD 'sosenemadmin' SUPERUSER CREATEDB;
 
---create database mi with owner = administrador encoding = 'utf8' connection limit = -1;
+--Cria o database
+--CREATE DATABASE mi WITH OWNER = administrador ENCODING = 'UTF8' CONNECTION LIMIT = -1;
 
+--Dropa as tabelas
+--DROP schema public CASCADE;
+
+--Cria as tabelas
+/*
+CREATE schema public;
 
 CREATE TABLE  usuarios (
   idusuario SERIAL NOT NULL,
   nome VARCHAR(100) NOT NULL,
   sobrenome VARCHAR(100),
   foto VARCHAR(100),
-  email VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
   senha VARCHAR(32),
   privilegio VARCHAR(1) NOT NULL,
   dataplano DATE,
@@ -139,4 +148,4 @@ CREATE TABLE  usuariorelatorio (
     ON UPDATE NO ACTION
     NOT DEFERRABLE
 );
-
+*/
