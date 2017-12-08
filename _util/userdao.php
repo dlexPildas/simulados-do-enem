@@ -54,14 +54,22 @@ class UserDao {
 	}
 
 	//READ
-	function ler( $SQL ) {
-		$banco = $this->conectar();
-		$Resultado = pg_query( $this->conectar(), $SQL );
-		$row = pg_fetch_assoc( $Resultado );
-		$teste = implode( ",", $row );
-		$num_row = pg_num_rows( $Resultado );
-		pg_close( $this->conectar() );
-		echo $teste;
+	function ler( $email, $senha ) {
+		$banc = Bd::getInstance();
+		$obanco = $banc->abrirconexao();
+		
+		$sql = pg_query( $obanco, "SELECT * FROM usuarios WHERE email = '{$email}' AND senha = '{$senha}' LIMIT 1 ;" );
+		$login_check = pg_num_rows( $sql );
+		if($login_check == 0 ){
+			$banc->fecharconexao();
+			return null;
+		}else{
+			$resultado = pg_query($sql);
+			$banc->fecharconexao();
+			return $resultado;
+		}
+		$banc->fecharconexao();
+		return null;
 	}
 
 	//DELETE
