@@ -4,18 +4,16 @@
 session_start();
 require_once( "Controllerdados.php" );
 // as variáveis login e senha recebem os dados digitados na página inicial
-$login = $_POST[ 'login' ];
+$login = $_POST[ 'email' ];
 $senha = $_POST[ 'senha' ];
 
 
 
 if ($senha != "" || $senha != null || $login != null || $login != ""){
 	
-	$controller = Bd::Controllerdados();
+	$controller = Controllerdados::getInstance();
 	$controller->realizalogin($login, $senha);
 	
-    //$_SESSION['login'] = $login;
-    //$_SESSION['senha'] = $senha;
 	
 }else{
 	echo "erro de login";

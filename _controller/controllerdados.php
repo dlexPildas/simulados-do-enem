@@ -1,5 +1,8 @@
 <?php
 
+require_once( "../_util/userdao.php" );
+require_once( "../_model/Usuario.php" );
+
 class Controllerdados {
 	public static $instance = null;
 	
@@ -20,12 +23,11 @@ class Controllerdados {
 		self::$instance = new Controllerdados();
 	}
 	
-	public
-	function realizalogin( $email, $senha ) {
+	public function realizalogin( $email, $senha ) {
 		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
-
+		echo " a senha é " . $senhaCrip;
 		$userdao = new UserDao();
-		$resultado = $userdao->ler($email, $senha);
+		$resultado = $userdao->ler($email, $senhaCrip);
 
 		if ( $resultado != null ) {
 			echo "existe resultado";
@@ -40,7 +42,7 @@ class Controllerdados {
 			$_SESSION[ 'user' ] = serialize( $usuario );
 			if ( $linha['privilegio'] == 'N' ) {
 				echo "usuario comum";
-				//header( 'location:nossos-planos.html' );
+				header( 'location:../painel-do-usuario.html' );
 			} else if ( $linha['privilegio'] == 'M' ) {
 				echo "usuario moderador";
 				//header( 'location:nossos-planos.html' );
@@ -51,9 +53,12 @@ class Controllerdados {
 		}else{
 			echo "erro de senha ou email";
 		}
-		echo "erro";
-
+		//echo "erro";
 		//header( 'location:errologin.html' );
+	}
+	
+	public function realizalogout(){
+		
 	}
 
 }

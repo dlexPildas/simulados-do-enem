@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 //include_once( "seguranca.php" );
 require_once( "bd.php" );
 
@@ -56,15 +56,18 @@ class UserDao {
 	//READ
 	function ler( $email, $senha ) {
 		$banc = Bd::getInstance();
-		$obanco = $banc->abrirconexao();
+		$banc->abrirconexao();
 		
-		$sql = pg_query( $obanco, "SELECT * FROM usuarios WHERE email = '{$email}' AND senha = '{$senha}' LIMIT 1 ;" );
-		$login_check = pg_num_rows( $sql );
+		//$sql = pg_query( $obanco, "SELECT * FROM usuarios WHERE email = '{$email}' AND senha = '{$senha}' LIMIT 1 ;" );
+		
+		$sql = "SELECT * FROM usuarios WHERE email = '{$email}' AND senha = '{$senha}' LIMIT 1 ;";
+		$resultado = pg_query($sql);
+		$login_check = pg_num_rows( $resultado );
 		if($login_check == 0 ){
 			$banc->fecharconexao();
 			return null;
 		}else{
-			$resultado = pg_query($sql);
+			//$resultado = pg_query($sql2);
 			$banc->fecharconexao();
 			return $resultado;
 		}
