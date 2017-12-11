@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.navbar{
+    margin-top: -22px;
+}
+.navbar :first-child{    
+    width: 100%;
+}
