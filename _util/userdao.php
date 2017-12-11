@@ -46,11 +46,16 @@ class UserDao {
 	}
 
 	//UPDATE
-	function atualizar( $SQL ) {
-		$banco = $this->conectar();
+	function atualizar($atributo,$acao,$id) {
+        $banc = Bd::getInstance();
+        $banc->abrirconexao();
+        $SQL = "UPDATE FROM usuarios SET '{$atributo}' = '{$acao}' WHERE idusuario = '{$id}'";
+        $resultado = pg_query($SQL);
+        $banc->fecharconexao();
+		/*$banco = $this->conectar();
 		$Resultado = pg_query( $this->conectar(), $SQL );
-		pg_close( $this->conectar() );
-		return $Resultado;
+		pg_close( $this->conectar() );*/
+		return $resultado;
 	}
 
 	//READ
