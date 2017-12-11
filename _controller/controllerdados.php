@@ -98,5 +98,31 @@ class Controllerdados {
 
 	}
 
+    public
+    function gerenciarModerador($acao,$id){
+	    if($acao!=null){
+            $userdao = new UserDao();
+	        switch ($acao){
+                case 'M':
+                    //dá privilegio de moderador
+                    $result = $userdao->atualizar('privilegio', 'M', $id);
+                    break;
+                case 'N':
+                    //retira privilegio de moderador
+                    $result = $userdao->atualizar('privilegio', 'N', $id);
+                    break;
+                default:
+                    echo "ERRO";
+                    break;
+            }
+        }
+    }
+
+    public
+    function addProva(){
+
+    }
+
+
 }
 ?>
