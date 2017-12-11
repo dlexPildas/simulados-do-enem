@@ -5,7 +5,7 @@
 	*/
 	class QuestoesDAO {
 		
-		function __construct(argument){
+		function __construct($argument){
 			# code...
 		}
 
@@ -23,7 +23,7 @@
 			$respostae = $this->respostae;
 			$respostacorreta = $this->respostacorreta;
 			
-			$SQL = "INSERT INTO questao (idusuario,idprova,idareaconhecimento,enunciado,questaooficial,respostaa,respostab,respostac,respostad,respostae,respostacorreta) VALUES ('$idusuario', '$idprova', '$idareaconhecimento', '$enunciado', '$questaooficial', '$respostaa', '$respostab', '$respostac', '$respostad', '$respostae', '$respostacorreta')"
+			$SQL = "INSERT INTO questao (idusuario,idprova,idareaconhecimento,enunciado,questaooficial,respostaa,respostab,respostac,respostad,respostae,respostacorreta) VALUES ('$idusuario', '$idprova', '$idareaconhecimento', '$enunciado', '$questaooficial', '$respostaa', '$respostab', '$respostac', '$respostad', '$respostae', '$respostacorreta')";
 			
 			$banc = Bd::getInstance();
 			$obanco = $banc->abrirconexao();
