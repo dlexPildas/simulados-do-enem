@@ -27,13 +27,13 @@ class UserDao {
 
         $SQL = "INSERT INTO usuarios (nome, email, senha, privilegio) VALUES ('$nome', '$email', '$senha', '$privilegio')";
 
-        echo 'aqui';
+        //echo 'aqui';
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
         
         $result = pg_query( $obanco, $SQL );
 		if ($result != false  ) {
-			echo "<script type='javascript'>alert('Cadastrado com sucesso!');";
+			echo "Cadastrado com sucesso!";
 			$banc->fecharconexao();
 			return true;
 		} else {

@@ -17,9 +17,7 @@ class Bd {
 	public static function getInstance() {
         if (self::$instance == NULL) {
 			self::$instance = new Bd();
-			echo "aqui nova instancia";
         }
-		echo "ja tem instancia";
         return self::$instance;
     }
 	

@@ -3,7 +3,7 @@
 require_once( "../_util/userdao.php" );
 require_once( "../_util/logdao.php" );
 require_once( "../_model/Usuario.php" );
-include_once( "_model/seguranca.php" );
+//include_once( "_model/seguranca.php" );
 //session_start();
 class Controllerdados {
 	public static $instance = null;
@@ -16,9 +16,7 @@ class Controllerdados {
 	public static function getInstance() {
 		if ( self::$instance == NULL ) {
 			self::$instance = new Controllerdados();
-			echo "aqui nova instancia";
 		}
-		echo "ja tem instancia";
 		return self::$instance;
 	}
 
@@ -39,14 +37,23 @@ class Controllerdados {
             $user = new Usuario( $nome, '', '', $email, '', 'N', $senhaCrip );
     
             $dao = new UserDao();
-            $dao->inserir( $user );
-			$this->insereLog(1, 'Novo cadastro realizado com sucesso.');
-    
-            header("Location:../painel-do-usuario.html");
+            $verifica = $dao->inserir( $user );
+			if($verifica == true){
+				echo "deu certo";
+			}else{
+				echo "deu errado";
+			}
+			$this->realizalogin( $email, $senha , 1 );
+    		
         }
     }
 
-	public function realizalogin( $email, $senha ) {
+	/**
+	Protocolo de aplicação
+	1 - primeiro login
+	null ou 0 - login comum
+	*/
+	public function realizalogin( $email, $senha , $protocolo) {
 		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
 		echo " a senha é " . $senhaCrip;
 		$userdao = new UserDao();
@@ -58,6 +65,10 @@ class Controllerdados {
 			$linha = pg_fetch_array( $resultado );
 
 			echo "Os dados'" . $linha[ 'idusuario' ] . " | " . $linha[ 'nome' ] . " | " . $linha[ 'email' ] . " | " . $linha[ 'senha' ] . " | " . $linha[ 'privilegio' ] . "\n ";
+			
+			if($protocolo == 1){
+				$this->insereLog(1 ,$linha[ 'idusuario' ], 'Novo cadastro realizado com sucesso.');
+			}
 
 			$usuario = new Usuario( $linha[ 'nome' ], '', '', $linha[ 'email' ], '', $linha[ 'privilegio' ], $linha[ 'senha' ] );
 			$usuario->setId( $linha[ 'idusuario' ] );
@@ -132,14 +143,15 @@ class Controllerdados {
 	6 - realização de simulado
 	7 - 
 	*/
-	public function insereLog($tipo, $descricao){
+	public function insereLog($tipo, $idusuario, $descricao){
+		echo "---nova inserção de log os dados são: " . $tipo . " | " . $idusuario ." | " . $descricao;
 		if($tipo > 0 && $tipo < 8 || $descricao != "" || $descricao != NULL){
 			$dao = new LogDao();
-        	$dao->inserir( $idlogado, $tipo, $descricao );
+        	$dao->inserir( $idusuario, $tipo, $descricao );
 			echo "\n log inserido \n";
 			return true;
 		}
-		
+		echo "chegou até aqui em inserir log";
 		return false;
 		
 	}

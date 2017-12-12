@@ -12,7 +12,7 @@ $senha = $_POST[ 'senha' ];
 if ($senha != "" || $senha != null || $login != null || $login != ""){
 	
 	$controller = Controllerdados::getInstance();
-	$controller->realizalogin($login, $senha);
+	$controller->realizalogin($login, $senha , 0);
 	
 	
 }else{

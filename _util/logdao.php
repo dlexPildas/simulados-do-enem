@@ -1,19 +1,17 @@
 <?php
-session_start();
+//session_start();
 //include_once( "seguranca.php" );
 require_once( "bd.php" );
 
 class LogDao {
 	private $banc;
-	public
-
-	function __construct() {
+	public function __construct() {
 
 
 	}
 
 	//CREATE
-	function inserir( $iduser, $idcao, $descricao ) {
+	function inserir( $iduser, $idacao, $descricao ) {
 		/*$banco = $this -> conectar(); 
 		$Resultado = pg_query($this -> conectar(), $SQL); 
         pg_close($this -> conectar()); */
@@ -27,7 +25,7 @@ class LogDao {
 
 		$result = pg_query( $obanco, $SQL );
 		if ( $result != false ) {
-			echo "<script type='javascript'>alert('Cadastrado com sucesso!');";
+			echo " log cadastrado com sucesso!";
 			$banc->fecharconexao();
 			return true;
 		} else {
