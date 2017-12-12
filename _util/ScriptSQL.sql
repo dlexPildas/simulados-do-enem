@@ -154,7 +154,7 @@ CREATE TABLE  usuariorelatorio (
     NOT DEFERRABLE
 );
 
-CREATE TABLE public.tipodelog (
+CREATE TABLE tipodelog (
   idacao INTEGER DEFAULT nextval('acao_idacao_seq'::regclass) NOT NULL,
   nome VARCHAR(30) NOT NULL,
   CONSTRAINT acao_pkey PRIMARY KEY(idacao)
