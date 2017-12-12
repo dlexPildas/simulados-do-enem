@@ -1,3 +1,7 @@
+<?php
+include_once( "_model/seguranca.php" );
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

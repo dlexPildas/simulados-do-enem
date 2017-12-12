@@ -104,6 +104,12 @@ class Controllerdados {
 
 	public 
 	function gerarProva($tipo_prova){
+		$dao = new QuestaoDAO();
+		if($tipo_prova === '1'){
+			$prova = $dao->ler("select * from prova");
+		}
+		header('location:../_view/simulado.php' );
+	}
 
 	}
 	

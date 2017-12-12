@@ -3,7 +3,7 @@
 	/**
 	* 
 	*/
-	class QuestoesDAO {
+	class QuestaoDAO {
 		
 		function __construct($argument){
 			# code...

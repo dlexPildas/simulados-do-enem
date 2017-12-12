@@ -1,7 +1,8 @@
 <?php
 
-function gerarProva($valor) {
+function gerarProva($tipo_prova) {
 	$controller = Controllerdados::getInstance();
-	controller->gerarProva();	
+	controller->gerarProva($tipo_prova);
+	header( 'location:../_view/simulado.php' );	
 }
 ?>
