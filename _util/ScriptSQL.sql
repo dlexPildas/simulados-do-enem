@@ -120,19 +120,24 @@ CREATE TABLE  relatorio (
   CONSTRAINT relatorio_pkey PRIMARY KEY(idrelatorio)
 );
  
-CREATE TABLE  logSistema (
+CREATE TABLE logsistema (
   idhistorico SERIAL,
   idusuario INTEGER NOT NULL,
   descricao VARCHAR(400) NOT NULL,
-  tipoacao VARCHAR(30) NOT NULL,
   data DATE DEFAULT 'now'::text::date NOT NULL,
+  idacao INTEGER NOT NULL,
   CONSTRAINT historico_pkey PRIMARY KEY(idhistorico),
   CONSTRAINT historico_fk FOREIGN KEY (idusuario)
-    REFERENCES  usuarios(idusuario)
+    REFERENCES public.usuarios(idusuario)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+    NOT DEFERRABLE,
+  CONSTRAINT logsistema_fk FOREIGN KEY (idacao)
+    REFERENCES public.tipodelog(idacao)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
     NOT DEFERRABLE
-) ;
+) 
 
 CREATE TABLE  usuariorelatorio (
   idusuario INTEGER NOT NULL,
@@ -148,4 +153,10 @@ CREATE TABLE  usuariorelatorio (
     ON UPDATE NO ACTION
     NOT DEFERRABLE
 );
+
+CREATE TABLE public.tipodelog (
+  idacao INTEGER DEFAULT nextval('acao_idacao_seq'::regclass) NOT NULL,
+  nome VARCHAR(30) NOT NULL,
+  CONSTRAINT acao_pkey PRIMARY KEY(idacao)
+) 
 */
