@@ -1,19 +1,19 @@
 <?php
 
 require_once( "../_util/userdao.php" );
+require_once( "../_util/logdao.php" );
 require_once( "../_model/Usuario.php" );
+include_once( "_model/seguranca.php" );
 //session_start();
 class Controllerdados {
 	public static $instance = null;
 	private $user;
 
-	private
-	function __construct() {
+	private function __construct() {
 
 	}
 
-	public static
-	function getInstance() {
+	public static function getInstance() {
 		if ( self::$instance == NULL ) {
 			self::$instance = new Controllerdados();
 			echo "aqui nova instancia";
@@ -22,8 +22,7 @@ class Controllerdados {
 		return self::$instance;
 	}
 
-	public static
-	function zeraSingleton() {
+	public static function zeraSingleton() {
 		self::$instance = new Controllerdados();
     }
     
@@ -41,13 +40,13 @@ class Controllerdados {
     
             $dao = new UserDao();
             $dao->inserir( $user );
+			$this->insereLog(1, 'Novo cadastro realizado com sucesso.');
     
             header("Location:../painel-do-usuario.html");
         }
     }
 
-	public
-	function realizalogin( $email, $senha ) {
+	public function realizalogin( $email, $senha ) {
 		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
 		echo " a senha é " . $senhaCrip;
 		$userdao = new UserDao();
@@ -82,8 +81,7 @@ class Controllerdados {
 		//header( 'location:errologin.html' );
 	}
 
-	public
-	function realizalogout() {
+	public function realizalogout() {
 		session_start();
 		if ( ( isset( $_SESSION[ 'user' ] ) == true ) || ( $_SESSION[ 'user' ] != "" )){
 			unset( $_SESSION[ 'user' ] );
@@ -97,7 +95,8 @@ class Controllerdados {
 	function gerarProva($tipo_prova){
 
 	}
-
+	
+	//Qual o motivo para quebrar linha aqui?
     public
     function gerenciarModerador($acao,$id){
 	    if($acao!=null){
@@ -118,10 +117,32 @@ class Controllerdados {
         }
     }
 
+	//Qual o motivo para quebrar linha aqui?
     public
     function addProva(){
 
     }
+	
+	/**
+	1 - cadastro de usuário
+	2 - promoção de usuário
+	3 - exclusão de usuário
+	4 - banimento de usuário
+	5 - submissão de questão
+	6 - realização de simulado
+	7 - 
+	*/
+	public function insereLog($tipo, $descricao){
+		if($tipo > 0 && $tipo < 8 || $descricao != "" || $descricao != NULL){
+			$dao = new LogDao();
+        	$dao->inserir( $idlogado, $tipo, $descricao );
+			echo "\n log inserido \n";
+			return true;
+		}
+		
+		return false;
+		
+	}
 
 
 }
