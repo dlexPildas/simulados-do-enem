@@ -119,17 +119,17 @@ class Controllerdados {
 	
 	//Qual o motivo para quebrar linha aqui?
     public
-    function gerenciarModerador($acao,$id){
+    function gerenciarModerador($acao,$email){
 	    if($acao!=null){
             $userdao = new UserDao();
 	        switch ($acao){
                 case 'M':
                     //dá privilegio de moderador
-                    $result = $userdao->atualizar('privilegio', 'M', $id);
+                    $result = $userdao->atualizar('privilegio', 'M', $email);
                     break;
                 case 'N':
                     //retira privilegio de moderador
-                    $result = $userdao->atualizar('privilegio', 'N', $id);
+                    $result = $userdao->atualizar('privilegio', 'N', $email);
                     break;
                 default:
                     echo "ERRO";
