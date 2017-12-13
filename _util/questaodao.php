@@ -53,7 +53,7 @@ require_once( "../_model/Questao.php" );
 				return $obj; //<- REMOVER DEPOIS, APENAS TESTE
 			}
 			$banc->fecharconexao();*/
-			return new Questao("1", "1", "1", "Bla bla bla bla bla", "S", "A resposta é A", "A resposta é B", "A resposta é C", "A resposta é D", "A resposta é E", "E");;
+			return new Questao("1", "1", "1", "Sentimos que toda satisfação de nossos desejos advinda do mundo assemelha-se à esmola que mantém hoje o mendigo vivo, porém prolonga amanhã a sua fome. A resignação, ao contrário, assemelha-se à fortuna herdada: livra o herdeiro para sempre de todas as preocupações.SCHOPENHAUER, A. Aforismo para a sabedoria da vida. São Paulo: Martins Fontes, 2005.O  trecho  destaca  uma  ideia  remanescente  de  umaWUDGLomR ORVyFD RFLGHQWDO  VHJXQGR D TXDO D IHOLFLGDGH  se mostra indissociavelmente ligada", "S", "A consagração de relacionamentos afetivos.", "B administração da independência interior. ", "C fugacidade do conhecimento emperico.", "D liberdade de expressão religiosa.", "E busca de prazeres efomeros.", "|B");;
 		}
 
 
