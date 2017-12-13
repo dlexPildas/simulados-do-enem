@@ -9,12 +9,18 @@
     <link rel="stylesheet" type="text/css" href="_css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="_css/index.css">
     <script type="text/javascript" src="_js/script.js"></script>
+    <style type="text/css">
+        .msg-erro {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
     <nav id="principal" class="navbar navbar-expand-lg navbar-expand-md  justify-content-center">
         <a class="navbar-brand" href="#">S.O.S ENEM</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -90,24 +96,35 @@
 
                             </div>
                             <div id="cadastro" class="hidden">
-                                <form id="formulario-login" method="POST" action="_util\cadastro.php">
+                                <form id="formulario-cadastro" method="POST" action="">
                                     <div id="dados">
                                         <ul id="dados-para-email">
-                                            <li>
-                                                <input type="text" name="nome" placeholder="Digite seu nome">
-                                            </li>
-                                            <li>
-                                                <input type="text" name="email" placeholder="Digite seu email">
-                                            </li>
-                                            <li>
-                                                <input type="password" name="senha" placeholder="Digite sua senha">
-                                            </li>
-                                            <li>
-                                                <input type="password" name="confirmSenha" placeholder="Confirme sua senha">
-                                            </li>
-                                            <li id="botaoCad">
+                                            <div class="form-group">
+                                                <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+                                                <span class='msg-erro msg-nome'></span>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <input type="text" id="email" name="email" placeholder="Digite seu email">
+                                                <span class='msg-erro msg-email'></span>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+                                                <span class='msg-erro msg-senha'></span>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha">
+                                                <span class='msg-erro msg-senha2'></span>
+                                            </div>
+
+                                            <div id="botaoCad">
                                                 <button type="submmit">Cadastrar</button>
-                                            </li>
+                                            </div>
                                         </ul>
                                     </div>
                                 </form>
@@ -131,11 +148,12 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="_js/validaCadastro.js"></script>
 </body>
 
 </html>
