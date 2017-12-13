@@ -11,7 +11,7 @@
 --DROP schema public CASCADE;
 
 --Cria as tabelas
-/*
+
 CREATE schema public;
 
 CREATE TABLE  usuarios (
@@ -50,7 +50,7 @@ CREATE TABLE prova (
 
 CREATE TABLE areadeconhecimento (
   idarea SERIAL,
-  nome VARCHAR(30) NOT NULL,
+  nome VARCHAR(50) NOT NULL,
   CONSTRAINT areadeconhecimento_pkey PRIMARY KEY(idarea)
 ) ;
 
@@ -61,11 +61,11 @@ CREATE TABLE questao (
   idareaconhecimento INTEGER,
   enunciado TEXT NOT NULL,
   questaooficial VARCHAR(1) NOT NULL,
-  respostaa VARCHAR(30),
-  respostab VARCHAR(30),
-  respostac VARCHAR(30),
-  respostad VARCHAR(30),
-  respostae VARCHAR(30),
+  respostaa TEXT,
+  respostab TEXT,
+  respostac TEXT,
+  respostad TEXT,
+  respostae TEXT,
   respostacorreta VARCHAR(1),
   CONSTRAINT questao_pkey PRIMARY KEY(idquestao),
   CONSTRAINT questao_fk FOREIGN KEY (idusuario)
@@ -119,6 +119,13 @@ CREATE TABLE  relatorio (
   quantidadeplanosnovos INTEGER,
   CONSTRAINT relatorio_pkey PRIMARY KEY(idrelatorio)
 );
+
+CREATE TABLE tipodelog (
+  idacao SERIAL NOT NULL,
+  nome VARCHAR(30) NOT NULL,
+  CONSTRAINT acao_pkey PRIMARY KEY(idacao)
+);
+
  
 CREATE TABLE logsistema (
   idhistorico SERIAL,
@@ -137,7 +144,7 @@ CREATE TABLE logsistema (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
     NOT DEFERRABLE
-) 
+);
 
 CREATE TABLE  usuariorelatorio (
   idusuario INTEGER NOT NULL,
@@ -154,9 +161,4 @@ CREATE TABLE  usuariorelatorio (
     NOT DEFERRABLE
 );
 
-CREATE TABLE tipodelog (
-  idacao INTEGER DEFAULT nextval('acao_idacao_seq'::regclass) NOT NULL,
-  nome VARCHAR(30) NOT NULL,
-  CONSTRAINT acao_pkey PRIMARY KEY(idacao)
-) 
-*/
+

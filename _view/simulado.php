@@ -1,18 +1,20 @@
-<?php
-include_once( "_model/seguranca.php" );
-
+<?php header("Content-type: text/html; charset=utf-8");
+require_once( "../_model/Questao.php" );
+include_once( "../_model/seguranca.php" );
+include_once( "../_controller/controllerdados.php" );
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 	<title>Simulado</title>
-	<link rel="stylesheet" type="text/css" href="../_css/estilo_simulado.css">
-	<link rel="stylesheet" type="text/css" href="_css/canal-enem.css">
-	<link rel="stylesheet" type="text/css" href="_css/ig-canais.css">
-	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap-grid.css">
 	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap-reboot.css">
 	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="../_css/estilo_simulado.css">
+	<link rel="stylesheet" type="text/css" href="../_css/canal-enem.css">
+	<link rel="stylesheet" type="text/css" href="../_css/ig-canais.css">
 	<link rel="stylesheet" href="../_css/font-awesome.min.css">
 
 	<script src="../_css/bootstrap/js/bootstrap.js"></script>
@@ -33,6 +35,7 @@ include_once( "_model/seguranca.php" );
 			}
 
 		}
+
 	</script>
 </head>
 <body>
@@ -43,9 +46,9 @@ include_once( "_model/seguranca.php" );
 				      <a class="navbar-brand" href="../index.html">SOS ENEM</a>
 			    </div>
 			    <ul class="nav navbar-nav navbar-right">
-				<li><a style="font-size: 16px" href="#">Minha conta</a></li>
+				<li><a style="font-size: 16px" href="../painel-do-usuario.php">Minha conta</a></li>
 				<li><a style="font-size: 16px" href="#">Ajuda</a></li>
-				<li><a style="font-size: 16px" href="#">Sair</a></li>
+				<li><a style="font-size: 16px" href="../_controller/logout.php">Sair</a></li>
 			</ul>
 
 		  </div>
@@ -55,7 +58,7 @@ include_once( "_model/seguranca.php" );
 
 
 		<div class="panel panel-info" style="font-size: 16px">
-			<div class="panel-body tituloQuestao"> 1 - Questão sobre nada</div>
+			<div class="panel-body tituloQuestao"> <?php echo $enunciado?></div>
 
 			<div style="height: 100px">
 

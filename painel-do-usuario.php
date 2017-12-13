@@ -30,7 +30,7 @@ include_once( "_model/seguranca.php" );
 						<div class="col-md-12">
 							<ol>	
 								<div class="row">
-									<div class="col-md-2"> <a href="realizar-simulado.html">&nbsp;Realizar Simulado&nbsp;</a> </div>
+									<div class="col-md-2"> <a href="_view/escolher-tipo-simulado.html">&nbsp;Realizar Simulado&nbsp;</a> </div>
 									<div class="col-md-2"> <a href="feedback.html">&nbsp;Feedback&nbsp;</a> </div>
 									<div class="col-md-2"> <a href="minha-conta.html">&nbsp;Minha Conta&nbsp;</a> </div>
 									<div class="col-md-2"> <a href="ajuda.html">&nbsp;Ajuda&nbsp;</a> </div>

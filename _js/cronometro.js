@@ -9,7 +9,7 @@ function inicio() {
 
 function cronometro() {
     segundos++;
-    document.getElementById("segundos").innerHTML = ":" + ajustarInput(segundos);
+    document.getElementById("segundos").innerHTML = ":" + segundos;
     document.getElementById("minutos").innerHTML = ":" + minutos;
     document.getElementById("horas").innerHTML = horas;
     if(segundos === 59){

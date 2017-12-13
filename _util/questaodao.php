@@ -49,6 +49,7 @@
 			while($linha = pg_fetch_array($resultado)) {
 				$obj = new Questao($linha['idusuario'], $linha['idprova'], $linha['idareaconhecimento'], $linha['enunciado'], $linha['questaooficial'], $linha['respostaa'], $linha['respostab'], $linha['respostac'], $linha['respostad'], $linha['respostae'], $linha['respostacorreta']);
 				$questoes->append($obj);
+				return $obj;
 			}
 			$banc->fecharconexao();
 			return questoes;
