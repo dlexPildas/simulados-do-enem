@@ -1,7 +1,8 @@
 <?php header("Content-type: text/html; charset=utf-8");
 require_once( "../_model/Questao.php" );
-include_once( "../_model/seguranca.php" );
-include_once( "../_controller/controllerdados.php" );
+require_once( "../_controller/solicitarProva.php" );
+//include_once( "../_model/seguranca.php" );
+//include_once( "../_controller/controllerdados.php" );
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -58,7 +59,7 @@ include_once( "../_controller/controllerdados.php" );
 
 
 		<div class="panel panel-info" style="font-size: 16px">
-			<div class="panel-body tituloQuestao"> <?php echo $enunciado?></div>
+			<div class="panel-body tituloQuestao"> <?php echo $questao->getEnunciado();?></div>
 
 			<div style="height: 100px">
 
@@ -66,19 +67,19 @@ include_once( "../_controller/controllerdados.php" );
 
 			<!-- Selecionar respostas-->
 			<div class="radio">
-				  <label><input type="radio" name="optradio">A</label>
+				  <label><input type="radio" name="optradio"><?php echo $questao->getRespostaA();?></label>
 			</div>
 			<div class="radio">
-				  <label><input type="radio" name="optradio">B</label>
+				  <label><input type="radio" name="optradio"> <?php echo $questao->getRespostaB();?></label>
 			</div>
 			<div class="radio">
-				  <label><input type="radio" name="optradio">C</label>
+				  <label><input type="radio" name="optradio"> <?php echo $questao->getRespostaC();?></label>
 			</div>
 			<div class="radio">
-				  <label><input type="radio" name="optradio">D</label>
+				  <label><input type="radio" name="optradio"> <?php echo $questao->getRespostaD();?></label>
 			</div>
 			<div class="radio">
-				  <label><input type="radio" name="optradio">E</label>
+				  <label><input type="radio" name="optradio"> <?php echo $questao->getRespostaE();?></label>
 			</div> 
 
 		</div>

@@ -4,6 +4,7 @@ require_once( "../_util/userdao.php" );
 require_once( "../_util/logdao.php" );
 require_once( "../_model/Usuario.php" );
 require_once( "../_model/Questao.php" );
+require_once( "../_util/questaodao.php" );
 //include_once( "_model/seguranca.php" );
 //session_start();
 class Controllerdados {
@@ -107,11 +108,12 @@ class Controllerdados {
 	function gerarProva($tipo_prova){
 		$dao = new QuestaoDAO();
 		echo "ta no gerar prova";
-		if($tipo_prova === '1'){
-			$prova = $dao->ler("select * from questao");
-			$enunciado =  $prova[0]->getEnunciado();
-		}
-		header('location:../_view/simulado.php' );
+		//if($tipo_prova === '1'){
+			$questoes = $dao->ler("select * from questao");
+			echo "Retornou a questão";			
+			return $questoes;
+		//}
+		
 	}
 
 	

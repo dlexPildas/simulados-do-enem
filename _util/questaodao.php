@@ -1,11 +1,11 @@
 <?php
-
+require_once( "../_model/Questao.php" );
 	/**
 	* 
 	*/
 	class QuestaoDAO {
 		
-		function __construct($argument){
+		function __construct(){
 			# code...
 		}
 
@@ -41,7 +41,7 @@
 		}
 
 		function ler($sql) {
-			$banc = Bd::getInstance();
+			/*$banc = Bd::getInstance();
 			$banc->abrirconexao();
 
 			$questoes = new ArrayObject();
@@ -49,10 +49,11 @@
 			while($linha = pg_fetch_array($resultado)) {
 				$obj = new Questao($linha['idusuario'], $linha['idprova'], $linha['idareaconhecimento'], $linha['enunciado'], $linha['questaooficial'], $linha['respostaa'], $linha['respostab'], $linha['respostac'], $linha['respostad'], $linha['respostae'], $linha['respostacorreta']);
 				$questoes->append($obj);
-				return $obj;
+				$banc->fecharconexao(); //<- REMOVER DEPOIS, APENAS TESTE
+				return $obj; //<- REMOVER DEPOIS, APENAS TESTE
 			}
-			$banc->fecharconexao();
-			return questoes;
+			$banc->fecharconexao();*/
+			return new Questao("1", "1", "1", "Bla bla bla bla bla", "S", "A resposta é A", "A resposta é B", "A resposta é C", "A resposta é D", "A resposta é E", "E");;
 		}
 
 

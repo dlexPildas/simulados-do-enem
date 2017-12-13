@@ -44,5 +44,24 @@
 		function getEnunciado(){
 			return $this->enunciado;
 		}
+		
+		function getRespostaA(){
+			return $this->respostaa;
+		}
+
+		function getRespostaB(){
+			return $this->respostab;
+		}
+
+		function getRespostaC(){
+			return $this->respostac;
+		}
+		function getRespostaD(){
+			return $this->respostad;
+		}
+
+		function getRespostaE(){
+			return $this->respostae;
+		}
 	}
 	?>
