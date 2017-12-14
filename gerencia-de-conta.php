@@ -5,22 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="_css/bootstrap/css/bootstrap.css">
+    <title>Gerencia de Conta ADM</title>
+    <link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
     <link rel="stylesheet" type="text/css" href="_css/gerencia-conta.css">
-   
+
 </head>
 
 <body>
-    <div class="container-fluid">
-
-   
-    <div class="navbar">
-         <?php include('navbar-adm.html') ?>
-    </div>
-           
- </div>
-
+    <div>  <?php 
+        include('navbar-adm.html');
+    ?></div>
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-5 col-lg-5 col-sm-12">
@@ -86,7 +81,6 @@
         </div>
 
     </div>
-
 
 </body>
 

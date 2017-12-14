@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <nav id="principal" class="navbar navbar-expand-lg navbar-expand-md  justify-content-center">
+     <nav id="principal" class="navbar navbar-expand-lg navbar-expand-md  justify-content-center">
         <a class="navbar-brand" href="#">S.O.S ENEM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul id="botoes-nav" class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Pagina Inicial
+                    <a class="nav-link" href="index.php">Pagina Inicial
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>

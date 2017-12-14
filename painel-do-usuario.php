@@ -8,8 +8,9 @@ include_once( "_model/seguranca.php" );
 		<head>
 			<meta charset="UTF-8"/>
 			<title>S.O.S ENEM</title>
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-			<link rel="stylesheet" type="text/css" href="_css\estilos.css">
+			
+			<link rel="stylesheet" type="text/css" href="_css/bootstrap/css/bootstrap4.css">
+			<link rel="stylesheet" type="text/css" href="_css/estilos.css">
 			<script type="text/javascript" src="_js\script.js"></script>
 		</head>
 		

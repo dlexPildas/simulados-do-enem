@@ -18,20 +18,19 @@
 	
 	<!-- Main Styles -->
     <link rel="stylesheet" href="_css/styles.css">
-	<link rel="stylesheet" href="_css/tela-inicial-adm.css">
-	<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css"
+	
+	<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
 		
 </head>
 
 <body>
-<div class="container-fluid">
 
    
     <div class="navbar">
          <?php include('navbar-adm.html') ?>
     </div>
            
- </div>
+
 	<div class="row">
 		<div id="sidebar" class="column">
 			<h5>Navigation</h5>

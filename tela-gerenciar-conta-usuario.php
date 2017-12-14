@@ -22,7 +22,10 @@
 <body>
 
     <div class="navbar">
-        <object data="navbar-adm.html"></object>
+        <?php
+
+            include('navbar-adm.html');
+        ?>
     </div>
     <div class="container-fluid">
 
