@@ -112,7 +112,7 @@ class Controllerdados {
 		//if($tipo_prova === '1'){
 			$questoes = $dao->ler("select * from questao");
 			echo "Retornou a questão";
-			$prova =  new Prova(1, 2017, "Aquele Tipo", sizeof($questoes), $questoes);			
+			$prova =  new Prova(1, 2017, "Aquele Tipo", sizeof($questoes, 0), $questoes);			
 			return $prova;
 		//}
 		

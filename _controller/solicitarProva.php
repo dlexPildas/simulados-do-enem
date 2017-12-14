@@ -8,6 +8,7 @@ $tipo_prova = $_POST['tipo_prova'];
 
 $controller = Controllerdados::getInstance();
 $prova = $controller->gerarProva(1);
+//$prova->proximaQuestao();
 
 //header('location:../_view/simulado.php' );
 ?>

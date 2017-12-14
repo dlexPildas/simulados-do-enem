@@ -128,8 +128,6 @@ class Prova
 
     public function anteriorQuestao() {
         $this->indexAtualQuest--;
+        
     }
-
-
-
 }

@@ -19,11 +19,35 @@ require_once( "../_controller/solicitarProva.php" );
 	<link rel="stylesheet" type="text/css" href="../_css/ig-canais.css">
 	<link rel="stylesheet" href="../_css/font-awesome.min.css">
 
+	<script type="text/javascript" src="../_js/jquery.min.js"></script>
 	<script src="../_css/bootstrap/js/bootstrap.js"></script>
 	<link href="../_css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-	<script src="../_js/cronometro.js"></script>
+	<script type="text/javascript" src="../_js/cronometro.js"></script>
 	<script>
 		window.onload = inicio;
+	</script>
+	<script type="text/javascript">
+		function anteriorQuestao(){
+			<?php $prova->anteriorQuestao();?>
+			atualiza();
+		}
+		function atualiza(){
+			/*
+			document.getElementById("enunciado").innerHTML = <?php echo $prova->getQuestaoAtual()->getEnunciado();?>;
+			document.getElementById("respa").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaA();?>;
+			document.getElementById("respb").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaB();?>;
+			document.getElementById("respc").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaC();?>;
+			document.getElementById("respd").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaD();?>;
+			document.getElementById("respe").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaE();?>;
+			*/
+		}
+		function proximaQuestao(){
+			<?php $prova->proximaQuestao();?>
+			atualiza();
+		}
+	</script>
+
+	<script type="text/javascript">
 		function selectIndex(str) {
 			document.getElementById(str).className = "item active";
 			for (var i = 1; i <= 90; i++) {
@@ -35,17 +59,9 @@ require_once( "../_controller/solicitarProva.php" );
 					}
 				}
 			}
-
 		}
-
-		function proximaQuestao(){
-			<?php $prova->proximaQuestao()?>
-		}
-		function anteriorQuestao(){
-			<?php $prova->anteriorQuestao()?>
-		}
-
 	</script>
+
 </head>
 <body>
 
@@ -66,8 +82,8 @@ require_once( "../_controller/solicitarProva.php" );
 	<div role="main" class="col-md-9" style="height: 100px; margin-left: 35px">
 
 
-		<div class="panel panel-info" style="font-size: 16px">
-			<div class="panel-body tituloQuestao"> <?php echo $prova->getQuestaoAtual()->getEnunciado();?></div>
+		<div class="panel panel-info"  style="font-size: 16px">
+			<div class="panel-body tituloQuestao"> <div id="enunciado"><?php echo $prova->getQuestaoAtual()->getEnunciado();?></div></div>
 
 			<div style="height: 100px">
 
@@ -75,19 +91,19 @@ require_once( "../_controller/solicitarProva.php" );
 
 			<!-- Selecionar respostas-->
 			<div class="radio">
-				<label><input type="radio" name="optradio"><?php echo $prova->getQuestaoAtual()->getRespostaA();?></label>
+				<label><input type="radio" name="optradio" id="respa"><?php echo $prova->getQuestaoAtual()->getRespostaA();?></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio"> <?php echo $prova->getQuestaoAtual()->getRespostaB();?></label>
+				<label><input type="radio" name="optradio" id="respb"> <?php echo $prova->getQuestaoAtual()->getRespostaB();?></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio"> <?php echo $prova->getQuestaoAtual()->getRespostaC();?></label>
+				<label><input type="radio" name="optradio" id="respc"> <?php echo $prova->getQuestaoAtual()->getRespostaC();?></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio"> <?php echo $prova->getQuestaoAtual()->getRespostaD();?></label>
+				<label><input type="radio" name="optradio" id="respd"> <?php echo $prova->getQuestaoAtual()->getRespostaD();?></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio"> <?php echo $prova->getQuestaoAtual()->getRespostaE();?></label>
+				<label><input type="radio" name="optradio" id="respe"> <?php echo $prova->getQuestaoAtual()->getRespostaE();?></label>
 			</div> 
 
 		</div>
@@ -100,8 +116,8 @@ require_once( "../_controller/solicitarProva.php" );
 
 		<nav aria-label="..." class="previous">
 			<ul class="pager">
-			<li><a href="#" style="font-size: 14px" onclick="proximaQuestao()">Anterior</a></li>
-				<li><a href="#" style="font-size: 14px" onclick="anteriorQuestao()">Próximo</a></li>
+			<li><a href="#" style="font-size: 14px" onclick="anteriorQuestao()">Anterior</a></li>
+				<li><a href="#" style="font-size: 14px" onclick="proximaQuestao()">Próximo</a></li>
 			</ul>
 		</nav>
 
@@ -109,6 +125,7 @@ require_once( "../_controller/solicitarProva.php" );
 			<nav>
 				<ol class="indice">
 					<li class="item active" id="index1" onclick="selectIndex(this.id)">01</li>
+					
 					<li class="item" id="index2" onclick="selectIndex(this.id)">02</li>
 					<li class="item" id="index3" onclick="selectIndex(this.id)">03</li>
 					<li class="item" id="index4" onclick="selectIndex(this.id)">04</li>
