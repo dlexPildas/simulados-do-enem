@@ -1,5 +1,6 @@
 <?php header("Content-type: text/html; charset=utf-8");
 require_once( "../_model/Questao.php" );
+require_once( "../_model/Prova.php" );
 require_once( "../_controller/solicitarProva.php" );
 //include_once( "../_model/seguranca.php" );
 //include_once( "../_controller/controllerdados.php" );
@@ -37,29 +38,36 @@ require_once( "../_controller/solicitarProva.php" );
 
 		}
 
+		function proximaQuestao(){
+			<?php $prova->proximaQuestao()?>
+		}
+		function anteriorQuestao(){
+			<?php $prova->anteriorQuestao()?>
+		}
+
 	</script>
 </head>
 <body>
 
 	<nav class="navbar navbar-default">
-		† <div class="container-fluid">
-			††† <div class="navbar-header">
-				††††† <a class="navbar-brand" href="../index.html">SOS ENEM</a>
-			††† </div>
-			††††<ul class="nav navbar-nav navbar-right">
+		 <div class="container-fluid">
+			 <div class="navbar-header">
+				 <a class="navbar-brand" href="../index.html">SOS ENEM</a>
+			 </div>
+			<ul class="nav navbar-nav navbar-right">
 				<li><a style="font-size: 16px" href="../painel-do-usuario.php">Minha conta</a></li>
 				<li><a style="font-size: 16px" href="#">Ajuda</a></li>
 				<li><a style="font-size: 16px" href="../_controller/logout.php">Sair</a></li>
 			</ul>
 
-		† </div>
+		 </div>
 	</nav>
 
 	<div role="main" class="col-md-9" style="height: 100px; margin-left: 35px">
 
 
 		<div class="panel panel-info" style="font-size: 16px">
-			<div class="panel-body tituloQuestao"> <?php echo $questao->getEnunciado();?></div>
+			<div class="panel-body tituloQuestao"> <?php echo $prova->getQuestaoAtual()->getEnunciado();?></div>
 
 			<div style="height: 100px">
 
@@ -67,33 +75,33 @@ require_once( "../_controller/solicitarProva.php" );
 
 			<!-- Selecionar respostas-->
 			<div class="radio">
-				† <label><input type="radio" name="optradio"><?php echo $questao->getRespostaA();?></label>
+				<label><input type="radio" name="optradio"><?php echo $prova->getQuestaoAtual()->getRespostaA();?></label>
 			</div>
 			<div class="radio">
-				† <label><input type="radio" name="optradio"> <?php echo $questao->getRespostaB();?></label>
+				<label><input type="radio" name="optradio"> <?php echo $prova->getQuestaoAtual()->getRespostaB();?></label>
 			</div>
 			<div class="radio">
-				† <label><input type="radio" name="optradio"> <?php echo $questao->getRespostaC();?></label>
+				<label><input type="radio" name="optradio"> <?php echo $prova->getQuestaoAtual()->getRespostaC();?></label>
 			</div>
 			<div class="radio">
-				† <label><input type="radio" name="optradio"> <?php echo $questao->getRespostaD();?></label>
+				<label><input type="radio" name="optradio"> <?php echo $prova->getQuestaoAtual()->getRespostaD();?></label>
 			</div>
 			<div class="radio">
-				† <label><input type="radio" name="optradio"> <?php echo $questao->getRespostaE();?></label>
+				<label><input type="radio" name="optradio"> <?php echo $prova->getQuestaoAtual()->getRespostaE();?></label>
 			</div> 
 
 		</div>
 
-		<!-- Botıes proximo e anterior 
+		<!-- Bot√µes proximo e anterior 
 		<div class="pull-right">
 			<a role="button" class="btn btn-info"><- Anterior</a>
-			<a role="button" class="btn btn-info">PrÛxima -></a>
+			<a role="button" class="btn btn-info">PrÔøΩxima -></a>
 		</div> -->
 
 		<nav aria-label="..." class="previous">
 			<ul class="pager">
-			<li><a href="#" style="font-size: 14px">Anterior</a></li>
-				<li><a href="#" style="font-size: 14px">PrÛximo</a></li>
+			<li><a href="#" style="font-size: 14px" onclick="proximaQuestao()">Anterior</a></li>
+				<li><a href="#" style="font-size: 14px" onclick="anteriorQuestao()">Pr√≥ximo</a></li>
 			</ul>
 		</nav>
 
@@ -197,7 +205,7 @@ require_once( "../_controller/solicitarProva.php" );
 
 	<aside role="complementary" class="col-md-2">
 		<div class="panel panel-primary">
-			<div class="panel-heading" style="font-size: 16px">CronÙmetro</div>
+			<div class="panel-heading" style="font-size: 16px">Cron√¥metro</div>
 			<div class="panel-body">
 				<div id="contenedor">
 					<div class="reloj" id="horas" >00</div>
@@ -214,7 +222,7 @@ require_once( "../_controller/solicitarProva.php" );
 		</div>
 
 		<div class="panel panel-default">
-			<div class="panel-heading" style="font-size: 16px">Avalie essa quest„o</div>
+			<div class="panel-heading" style="font-size: 16px">Avalie essa quest√£o</div>
 			<div class="panel-body">
 				<div class="estrelas ">
 					<input type="radio" id="cm_star-empty" name="fb" value="" checked/>

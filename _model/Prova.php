@@ -13,6 +13,7 @@ class Prova
     private $tipo;
     private $qtdquestoes;
     private $questoes;
+    private $indexAtualQuest;
 
     /**
      * Prova constructor.
@@ -29,6 +30,7 @@ class Prova
         $this->tipo = $tipo;
         $this->qtdquestoes = $qtdquestoes;
         $this->questoes = $questoes;
+        $this->indexAtualQuest = 0;
     }
 
     /**
@@ -109,6 +111,23 @@ class Prova
     public function setQuestoes($questoes)
     {
         $this->questoes = $questoes;
+    }
+
+    public function getQuestao($index) {
+        $this->indexAtualQuest = $index-1;
+        return $this->questoes[$this->indexAtualQuest];
+    }
+
+    public function getQuestaoAtual() {
+        return $this->questoes[$this->indexAtualQuest];
+    }
+
+    public function proximaQuestao() {
+        $this->indexAtualQuest++;
+    }
+
+    public function anteriorQuestao() {
+        $this->indexAtualQuest--;
     }
 
 
