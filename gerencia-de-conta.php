@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="_css/gerencia-conta.css">
-    <link rel="stylesheet" type="text/css" href="_css/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="javascript/js" href="_js/bootstrap.js">
+   
 </head>
 
 <body>
     <div class="navbar">
-        <object data="navbar-adm.html"></object>
+            <?php include('navbar-adm.html') ?>
     </div>
 
     <div class="container-fluid">
