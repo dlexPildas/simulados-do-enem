@@ -13,6 +13,9 @@
     float: left;
     margin-left: 15px;
 }
+#nav1{
+    background-color: #F2F2F2;
+}
 
 .navbar-toggle-label {
     display: inline-block;
