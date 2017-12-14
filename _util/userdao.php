@@ -46,10 +46,10 @@ class UserDao {
 	}
 
 	//UPDATE
-	function atualizar($atributo,$acao,$email) {
+	function atualizar($atributo,$acao,$id) {
         $banc = Bd::getInstance();
         $banc->abrirconexao();
-        $SQL = "UPDATE FROM usuarios SET '{$atributo}' = '{$acao}' WHERE idusuario = '{$email}'";
+        $SQL = "UPDATE FROM usuarios SET '{$atributo}' = '{$acao}' WHERE idusuario = '{$id}'";
         $resultado = pg_query($SQL);
         $banc->fecharconexao();
 		/*$banco = $this->conectar();
