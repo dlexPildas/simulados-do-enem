@@ -26,7 +26,7 @@
 
     <div class="navbar">
         <?php
-            include('navbar-adm.html');
+            include('navbar-adm.php');
         ?>
     </div>
     <div class="container-fluid">

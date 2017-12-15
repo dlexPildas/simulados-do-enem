@@ -89,7 +89,7 @@
 
 	<body style="background-color:#E4E4E4">	
 		<div class="navbar">
-         <?php include('navbar-adm.html') ?>
+         <?php include('navbar-adm.php') ?>
     	</div>
     	<div  class="row">
 			<div class="col-md-3;"  style="background-color:white; width:385px; height:50px; margin-top:20px;margin-right:10px;margin-left: 40px; " > 
