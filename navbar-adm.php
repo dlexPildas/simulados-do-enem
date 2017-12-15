@@ -35,7 +35,7 @@
                     </li>
                     <li>
                         <div class="username">
-                            <h4>Emanuel Santana</h4>
+                            <h4><?php echo $logado ?></h4>
                             <p>Administrator</p>
                         </div>
                     </li>

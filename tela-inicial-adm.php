@@ -28,7 +28,7 @@
 
 <body>
     <div class="navbar">
-         <?php include('navbar-adm.html') ?>
+         <?php include('navbar-adm.php') ?>
     </div>
            
 	<div class="row">
