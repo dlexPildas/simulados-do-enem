@@ -81,7 +81,11 @@
 	<body style="background-color:#E4E4E4">	
 
 		<div class="navbar">
+<<<<<<< HEAD
         	<?php include('navbar-usuario.php') ?>
+=======
+         <?php include('navbar-adm.php') ?>
+>>>>>>> 8a4e7fc01575e095c7fa468a31ef44072b6a60dc
     	</div>
 
     	<div  class="row">
