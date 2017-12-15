@@ -36,18 +36,19 @@
 
                 <!--Navbar com dados à direita-->
                 <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <div class="username">
+                            <div>
+                                <span class="rounded float-right" style="margin-top: 25px">  <font class="font-weight-bold" size="5"> 
+                                <p> Bem-vindo <?php echo $logado; ?> </p> </font> </span>
+                            </div>
+                        </div>
+                    </li>
                     <li>
                         <a href="#">
                             <img src="http://via.placeholder.com/50x50" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
                         </a>
-                    </li>
-                    <li>
-                        <div class="username">
-                            <div>
-                                <span class="rounded float-right">  <font class="font-weight-bold" size="5"> 
-                                <p> Bem-vindo <?php echo $logado; ?> </p> </font> </span>
-                            </div>
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -61,7 +62,7 @@
             <div id="dados-da-barra">
                 <ul class="nav navbar-nav">
                     
-                     <li class="active">
+                     <li>
                         <a href="paineldeusuario.php">Pagina inicial <span class="sr-only">(current)</span> </a>
                     </li>
                     <li>

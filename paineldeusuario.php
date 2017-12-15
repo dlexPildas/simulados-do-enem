@@ -37,13 +37,31 @@
         	<?php include('navbar-usuario.php') ?>
 		</div>
 
-    	<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-6 col-lg-6 col-sm-12">
-					<a class="anchor" name="charts"></a>	
-					<div class="card">
+		<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-3 col-lg-3 col-sm-12">
+						<div class="table-responsive">
+							<table class="table table-striped table-bordered table-hover table-condensed">
+							  <thead>
+							    <tr>
+							      <th>...</th>
+							      <th>...</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <th>...</th>
+							      <td>...</td>
+							    </tr>
+							  </tbody>
+							</table>
+						</div>
+
+					</div>
+					<div class="col-md-6 col-lg-6 col-sm-12">
+						<div class="card">
 						<div class="card-title">
-							<h2>Acertos e Erros por Área de Conhecimento</h2>
+							<h3>Seus Acertos e Erros por Área de Conhecimento</h3>
 						</div>
 						<div class="card-block">
 							<div class="canvas-wrapper">
@@ -51,12 +69,35 @@
 							</div>
 						</div>
 					</div>
+							
+					</div>
+					<div class="col-md-3 col-lg-3 col-sm-12">
+						<input name="botão" type="button" onClick="tela-cadastrar-questao-nao-oficial.php" value="Submeter Uma Questão" style="margin-top: 300px; margin-left: 50px">
+					</div>	
 				</div>
+			</div>	
+
+    	<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 col-lg-6 col-sm-12">
+					<a class="anchor" name="charts"></a>	
 					
-				<div class="col-md-6 col-lg-6 col-sm-12">		
+					<div class="card">
+							<div class="card-title">
+								<h3>Sua Taxa  Geral de Erros e Acertos</h3>
+							</div>
+							<div class="card-block">
+								<div class="canvas-wrapper">
+									<canvas class="chart" id="pie-chart" height="auto" width="auto"></canvas>
+								</div>
+							</div>
+						</div>	
+					</div>
+					
+					<div class="col-md-6 col-lg-6 col-sm-12">		
 					<div class="card">
 						<div class="card-title">
-							<h2>Quantidade de Provas Realizadas</h2>
+							<h3>Sua Quantidade de Provas Realizadas</h3>
 						</div>
 						<div class="card-block">
 							<div class="canvas-wrapper">
@@ -67,24 +108,7 @@
 				</div>				
 			</div>	
 
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-3 col-lg-3 col-sm-12"></div>
-					<div class="col-md-6 col-lg-6 col-sm-12">
-						<div class="card">
-							<div class="card-title">
-								<h2>Taxa de Erros e Acertos</h2>
-							</div>
-							<div class="card-block">
-								<div class="canvas-wrapper">
-									<canvas class="chart" id="pie-chart" height="auto" width="auto"></canvas>
-								</div>
-							</div>
-						</div>		
-					</div>
-					<div class="col-md-3 col-lg-3 col-sm-12"></div>	
-				</div>
-			</div>	
+			
 
 			<div class="container-fluid">
 				<div class="row" style="height: 230px; padding: 0px">
