@@ -5,15 +5,18 @@ if(!isset($_SESSION)){
     session_start();
 }
 require_once( "Usuario.php" );
-if ( ( isset( $_SESSION[ 'user' ] ) != true )and( $_SESSION[ 'user' ] == "" ) ) {
-	unset( $_SESSION[ 'user' ] );
+if ( ( isset( $_SESSION[ 'id' ] ) != true )and( $_SESSION[ 'id' ] == "" ) || ( isset( $_SESSION[ 'nome' ] ) != true )and( $_SESSION[ 'nome' ] == "" ) || ( isset( $_SESSION[ 'privilegio' ] ) != true )and( $_SESSION[ 'privilegio' ] == "" ) ) {
+	unset( $_SESSION[ 'id' ] );
+	unset( $_SESSION[ 'nome' ] );
+	unset( $_SESSION[ 'privilegio' ] );
 	session_destroy();
 	echo "removendo usuario";
 	header( 'location:index.html' );
 } else {
-	$usuario = unserialize( $_SESSION[ 'user' ] );
-	$logado = $usuario->getNome();
-	$idlogado = $usuario->getId();
+	//$usuario = unserialize( $_SESSION[ 'user' ] );
+	$logado = $_SESSION[ 'nome' ];
+	$idlogado = $_SESSION[ 'id' ];
+	$privilegio = $_SESSION[ 'privilegio' ];
 }
 
 ?>

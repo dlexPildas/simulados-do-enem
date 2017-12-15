@@ -76,8 +76,12 @@ class Controllerdados {
 			$usuario = new Usuario( $linha[ 'nome' ], '', '', $linha[ 'email' ], '', $linha[ 'privilegio' ], $linha[ 'senha' ] );
 			$usuario->setId( $linha[ 'idusuario' ] );
 
-			$_SESSION[ 'user' ] = serialize( $usuario );
-			$this->user = unserialize($_SESSION['user']);
+			//$_SESSION[ 'user' ] = serialize( $usuario );
+			$_SESSION[ 'id' ] = $linha[ 'idusuario' ];
+			$_SESSION[ 'nome' ] = $linha[ 'nome' ];
+			$_SESSION[ 'privilegio' ] = $linha[ 'privilegio' ];
+			
+			$this->user = $usuario;
 			if ( $linha[ 'privilegio' ] == 'N' ) {
 				echo "usuario comum";
 				header( 'location:../paineldeusuario.php' );
@@ -96,14 +100,18 @@ class Controllerdados {
 	}
 
 	public function realizalogout() {
-		session_start();
-		if ( ( isset( $_SESSION[ 'user' ] ) == true ) || ( $_SESSION[ 'user' ] != "" )){
-			unset( $_SESSION[ 'user' ] );
+		if(!isset($_SESSION)){
+    		session_start();
+		}
+		if ( ( isset( $_SESSION[ 'id' ] ) == true )and( $_SESSION[ 'id' ] != "" ) || ( isset( $_SESSION[ 'nome' ] ) == true )and( $_SESSION[ 'nome' ] != "" ) || ( isset( $_SESSION[ 'privilegio' ] ) == true )and( $_SESSION[ 'privilegio' ] != "" ) ) {
+			unset( $_SESSION[ 'id' ] );
+			unset( $_SESSION[ 'nome' ] );
+			unset( $_SESSION[ 'privilegio' ] );
 			session_destroy();
 			header( 'location:../index.html' );
+		}else{
+			session_destroy();
 		}
-
-		$usuario = $_SESSION[ 'user' ];
 	}
 
 	public 

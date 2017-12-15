@@ -4,16 +4,22 @@ ob_start();
 if(!isset($_SESSION)){
     session_start();
 }
-if(($_SESSION['user'] == "") and (isset( $_SESSION[ 'user' ] ) != true )) {
-	unset($_SESSION['user']);
-	header('location:acesso.html');
+require_once( "Usuario.php" );
+if ( ( isset( $_SESSION[ 'id' ] ) != true )and( $_SESSION[ 'id' ] == "" ) || ( isset( $_SESSION[ 'nome' ] ) != true )and( $_SESSION[ 'nome' ] == "" ) || ( isset( $_SESSION[ 'privilegio' ] ) != true )and( $_SESSION[ 'privilegio' ] == "" ) ) {
+	unset( $_SESSION[ 'id' ] );
+	unset( $_SESSION[ 'nome' ] );
+	unset( $_SESSION[ 'privilegio' ] );
+	session_destroy();
+	header('location:../index.html');
 	}else {
-		$usuario = unserialize($_SESSION['user']);
-		if($usuario->privilegio == 'M' || $usuario->privilegio == 'A'){
-			$logado = $usuario->nome;
-			$idlogado = $usuario->id;
+		if($_SESSION[ 'privilegio' ] == 'M' || $_SESSION[ 'privilegio' ] == 'A' ){
+			$logado = $_SESSION[ 'nome' ];
+			$idlogado = $_SESSION[ 'id' ];
+			$privilegio = $_SESSION[ 'privilegio' ];
 		}else{
-			unset($_SESSION['user']);
+			unset( $_SESSION[ 'id' ] );
+			unset( $_SESSION[ 'nome' ] );
+			unset( $_SESSION[ 'privilegio' ] );
 			session_destroy();
 			header('location:errodeprivilegio.html');
 		}
