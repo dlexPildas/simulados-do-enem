@@ -58,16 +58,16 @@
             <div id="dados-da-barra">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="tela-cadastrar-questao-oficial.php">Página Inicial</a>
+                        <a href="tela-inicial-adm.php">Página Inicial</a>
                     </li>
                     <li>
                         <a href="tela-cadastrar-questao-oficial.php">Submeter Questões</a>
                     </li>
                     <li>
-                        <a href="#">Ver Feedbacks</a>
+                        <a href="tela-de-feedback.php">Ver Feedbacks</a>
                     </li>
                     <li>
-                        <a href="logs-do-sistema.php">Logs do Sistema</a>
+                        <a href="tela-de-logs.php">Logs do Sistema</a>
                     </li>
                     <li>
                         <a href="tela-de-ajuda.php">Ajuda</a>
@@ -82,14 +82,14 @@
                         </a>
                         <ul class="dropdown-menu">
                              <li>
-                                <a href="#">Gerenciar Contas de Usuário</a>
+                                <a href="tela-gerenciar-conta-usuario.php">Gerenciar Contas de Usuário</a>
                             </li>
                             <li>
-                                <a href="#">Minha Conta</a>
+                                <a href="gerencia-de-conta.php">Minha Conta</a>
                             </li>
                            
                             <li>
-                                <a href="#">Banir Usuário</a>
+                                <a href="tela-de-banimento.php">Banir Usuário</a>
                             </li>
 
                             <li>
