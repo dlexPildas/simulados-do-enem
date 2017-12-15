@@ -43,7 +43,7 @@
 					<a class="anchor" name="charts"></a>	
 					<div class="card">
 						<div class="card-title">
-							<h2>Taxa de Acertos e Erros</h2>
+							<h2>Acertos e Erros por Área de Conhecimento</h2>
 						</div>
 						<div class="card-block">
 							<div class="canvas-wrapper">
@@ -73,7 +73,7 @@
 					<div class="col-md-6 col-lg-6 col-sm-12">
 						<div class="card">
 							<div class="card-title">
-								<h2>Tempo Gasto nas Provas</h2>
+								<h2>Taxa de Erros e Acertos</h2>
 							</div>
 							<div class="card-block">
 								<div class="canvas-wrapper">
@@ -84,11 +84,16 @@
 					</div>
 					<div class="col-md-3 col-lg-3 col-sm-12"></div>	
 				</div>
-			</div>			
-		</div>	
+			</div>	
 
-
-	
+			<div class="container-fluid">
+				<div class="row" style="height: 230px; padding: 0px">
+					<div class="col-md-12 col-lg-12 col-sm-12" style="margin-bottom: 0px; padding: 5px">
+						<img src="_images/banner.jpg" style="width: 100%; height: 100%">
+					</div>					
+				</div>		
+			</div>	
+		</div>
 		<script src="_js/chart.min.js"></script>
 		<script src="_js/chart-data.js"></script>
 		<script>

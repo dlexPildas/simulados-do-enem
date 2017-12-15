@@ -5,8 +5,8 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 		datasets : [
 			{
 				label: "My First dataset",
-				fillColor : "rgba(220,220,220,0.2)",
-				strokeColor : "rgba(220,220,220,1)",
+				fillColor : "rgba(178,55,47,0.2)",
+				strokeColor : "rgba(255,127,118,1)",
 				pointColor : "rgba(220,220,220,1)",
 				pointStrokeColor : "#fff",
 				pointHighlightFill : "#fff",
@@ -16,8 +16,8 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 
 			{
 				label: "My Second dataset",
-				fillColor : "rgba(37, 190, 174, 0.2)",
-				strokeColor : "rgba(37, 190, 174, 1)",
+				fillColor : "rgba(143,255,189,0.2)",
+				strokeColor : "rgba(65,178,111,1)",
 				pointColor : "rgba(37, 190, 174, 1)",
 				pointStrokeColor : "#fff",
 				pointHighlightFill : "#fff",
@@ -45,28 +45,16 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 
 	var pieData = [
 			{
-				value: 300,
-				color: "#35cebe",
-				highlight: "#25beae",
-				label: "Value 1"
-			},
-			{
 				value: 50,
-				color: "#a0a0a0",
-				highlight: "#999999",
-				label: "Value 2"
-			},
-			{
-				value: 100,
-				color:"#dfdfdf",
-				highlight: "#cccccc",
-				label: "Value 3"
+				color: "#FF7F76",
+				highlight: "#B2372F",
+				label: "Questões Incorretas"
 			},
 			{
 				value: 120,
-				color: "#f7f7f7",
-				highlight: "#eeeeee",
-				label: "Value 4"
+				color: "#8FFFBD",
+				highlight: "#41B26F",
+				label: "Questões Corretas"
 			}
 
 		];
