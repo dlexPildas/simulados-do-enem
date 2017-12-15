@@ -1,3 +1,6 @@
+<?php
+	include_once( "_model/segurancaA.php" );
+?>
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
