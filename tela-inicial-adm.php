@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="_css/styles.css">
 	
 	<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
+	
 		
 </head>
 
@@ -85,44 +86,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row grid-responsive">
-				<div class="column column-33">
-					<div class="card">
-						<div class="card-title">
-							<h2>Pie Chart</h2>
-						</div>
-						<div class="card-block">
-							<div class="canvas-wrapper">
-								<canvas class="chart" id="pie-chart" height="auto" width="auto"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column column-33">
-					<div class="card">
-						<div class="card-title">
-							<h2>Radar Chart</h2>
-						</div>
-						<div class="card-block">
-							<div class="canvas-wrapper">
-								<canvas class="chart" id="radar-chart" height="auto" width="auto"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column column-33">
-					<div class="card">
-						<div class="card-title">
-							<h2>Polar Chart</h2>
-						</div>
-						<div class="card-block">
-							<div class="canvas-wrapper">
-								<canvas class="chart" id="polar-area-chart" height="auto" width="auto"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 			
 			<!--Widgets-->
 			<h5 class="mt-2">Widgets</h5><a class="anchor" name="widgets"></a>
