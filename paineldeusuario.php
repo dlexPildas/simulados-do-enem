@@ -1,3 +1,8 @@
+<?php
+	include_once( "_model/seguranca.php" );
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -11,7 +16,9 @@
 	    	
 	    	<div>
 	        	<span class="rounded float-right" style="margin-top:50">  <font class="font-weight-bold" style="margin-top:50px;" size="5"> 
-	        		<p style="margin-top:80px; color:white"> Bem-vindo Usuário</p> </font> </span>
+	        		<p style="margin-top:80px; color:white"> Bem-vindo <?php
+						echo $logado;
+						?></p> </font> </span>
 	        </div>
 	        <img src="_images\avatar.jpg" alt="Seu Avatar" title="Avatar" style="max-height: 100px; max-width: 100px" class="img-responsive rounded float-right">
 	       

@@ -80,7 +80,7 @@ class Controllerdados {
 			$this->user = unserialize($_SESSION['user']);
 			if ( $linha[ 'privilegio' ] == 'N' ) {
 				echo "usuario comum";
-				header( 'location:../painel-do-usuario.php' );
+				header( 'location:../paineldeusuario.php' );
 			} else if ( $linha[ 'privilegio' ] == 'M' ) {
 				echo "usuario moderador";
 				//header( 'location:nossos-planos.html' );
