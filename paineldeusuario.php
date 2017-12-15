@@ -81,12 +81,8 @@
 	<body style="background-color:#E4E4E4">	
 
 		<div class="navbar">
-<<<<<<< HEAD
         	<?php include('navbar-usuario.php') ?>
-=======
-         <?php include('navbar-adm.php') ?>
->>>>>>> 8a4e7fc01575e095c7fa468a31ef44072b6a60dc
-    	</div>
+		</div>
 
     	<div  class="row">
 			<div class="col-md-3;" style="background-color:white; width:385px; height:50px; margin-top:20px;margin-right:10px;margin-left: 40px; " > 
