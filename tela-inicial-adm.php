@@ -24,13 +24,10 @@
 </head>
 
 <body>
-
-   
     <div class="navbar">
          <?php include('navbar-adm.html') ?>
     </div>
            
-
 	<div class="row">
 		<div id="sidebar" class="column">
 			<h5>Navigation</h5>
