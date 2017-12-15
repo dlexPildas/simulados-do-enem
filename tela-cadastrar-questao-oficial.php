@@ -9,7 +9,7 @@
 </head>
 <body>
 	<?php 
-	include('navbar-adm.html');
+	include('navbar-adm.php');
 	?>	
 </body>
 </html>
