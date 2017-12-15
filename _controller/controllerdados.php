@@ -124,8 +124,21 @@ class Controllerdados {
         $result = $userdao->atualizar('privilegio', 'M', $id);
         return $result;
 	}
+	
 	public function removerModerador($id){
         $userdao = new UserDao();
+        $result = $userdao->atualizar('privilegio', 'N', $id);
+        return $result;
+	}
+	
+	public function promoverAdministridador($id){
+		$userdao = new UserDao();
+        $result = $userdao->atualizar('privilegio', 'A', $id);
+        return $result;
+	}
+	
+	public function removerAdministridador($id){
+		$userdao = new UserDao();
         $result = $userdao->atualizar('privilegio', 'N', $id);
         return $result;
 	}
