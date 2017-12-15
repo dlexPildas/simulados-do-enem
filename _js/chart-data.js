@@ -1,7 +1,7 @@
 var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 	
 	var lineChartData = {
-		labels : ["January","February","March","April","May","June","July"],
+		labels : ["Ciências Humanas","Ciências da Natureza","Linguagens","Matemática"],
 		datasets : [
 			{
 				label: "My First dataset",
@@ -13,6 +13,7 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 				pointHighlightStroke : "rgba(220,220,220,1)",
 				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
 			},
+
 			{
 				label: "My Second dataset",
 				fillColor : "rgba(37, 190, 174, 0.2)",
@@ -28,21 +29,15 @@ var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
 	}
 		
 	var barChartData = {
-		labels : ["January","February","March","April","May","June","July"],
+		labels : ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro", "Outubro","Novembro", "Dezembro"],
 		datasets : [
-			{
-				fillColor : "rgba(220,220,220,0.5)",
-				strokeColor : "rgba(220,220,220,0.8)",
-				highlightFill: "rgba(220,220,220,0.75)",
-				highlightStroke: "rgba(220,220,220,1)",
-				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-			},
+
 			{
 				fillColor : "rgba(37, 190, 174, 0.2)",
 				strokeColor : "rgba(37, 190, 174, 0.8)",
 				highlightFill : "rgba(37, 190, 174, 0.75)",
 				highlightStroke : "rgba(37, 190, 174, 1)",
-				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
 			}
 		]
 

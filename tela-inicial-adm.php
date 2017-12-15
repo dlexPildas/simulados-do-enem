@@ -102,10 +102,27 @@
 							<div class="card-title">
 								<h2>Quantidade de Usuários cadastrados</h2>
 							</div>
+<<<<<<< HEAD
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row grid-responsive">
+				<div class="column column-33">
+					<div class="card">
+						<div class="card-title">
+							<h2>Pie Chart</h2>
+						</div>
+						<div class="card-block">
+							<div class="canvas-wrapper">
+								<canvas class="chart" id="pie-chart" height="auto" width="auto"></canvas>
+=======
 							<div class="card-block">
 								<div class="canvas-wrapper">
 									<canvas class="chart" id="line-chart" height="auto" width="auto"></canvas>
 								</div>
+>>>>>>> c60b096108d508e44f26e22ea10327a56e738bc9
 							</div>
 						</div>
 					</div>
