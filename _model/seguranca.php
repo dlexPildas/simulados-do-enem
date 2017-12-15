@@ -5,6 +5,7 @@ session_start();
 require_once( "Usuario.php" );
 if ( ( isset( $_SESSION[ 'user' ] ) != true )and( $_SESSION[ 'user' ] == "" ) ) {
 	unset( $_SESSION[ 'user' ] );
+	session_destroy();
 	echo "removendo usuario";
 	header( 'location:index.html' );
 } else {

@@ -13,6 +13,7 @@ if(($_SESSION['user'] == "") and (isset( $_SESSION[ 'user' ] ) != true )) {
 			$idlogado = $usuario->getId();
 		}else{
 			unset($_SESSION['user']);
+			session_destroy();
 			header('location:errodeprivilegio.html');
 		}
 		
