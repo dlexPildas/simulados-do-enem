@@ -4,7 +4,9 @@ if (form.addEventListener) {
    form.addEventListener("submit", validaCadastro);
 } else if (form.attachEvent) {                  
    form.attachEvent("onsubmit", validaCadastro);
-}
+}else if (form.addEventListener) {                   
+    form.addEventListener("onchange", validaCadastro);
+ }
 
 function validaCadastro(evt){
    var nome = document.getElementById('nome');
