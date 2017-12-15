@@ -21,35 +21,22 @@
             <div class="col-md-5 col-lg-5 col-sm-12">
 
                 <div class="col-md-6 col-lg-6">
-                    <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Overview
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Reports</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Analytics</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Export</a>
-                        </li>
-                    </ul>
-
-
-                    <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nav item again</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">One more nav</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Another nav item</a>
-                        </li>
-                    </ul>
+                    <div id="list-example" class="list-group">
+                        <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-2">Item2</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+                    </div>
+                    <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                        <h4 id="list-item-1">Item 1</h4>
+                        <p>...</p>
+                        <h4 id="list-item-2">Item 2</h4>
+                        <p>...</p>
+                        <h4 id="list-item-3">Item 3</h4>
+                        <p>...</p>
+                        <h4 id="list-item-4">Item 4</h4>
+                        <p>...</p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-lg-4 col-sm-12">
