@@ -85,6 +85,7 @@
 					</div>
 				</div>
 			</div>
+			
 			<div class="row grid-responsive">
 				<div class="column column-33">
 					<div class="card">

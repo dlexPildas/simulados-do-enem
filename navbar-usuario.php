@@ -22,7 +22,14 @@
         <div id="nav1" class="container-fluid">
             <!-- Toggle que faz com que apareçam as opções em celualar e telas menores. -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">SOS ENEM</a>
+                <a class="navbar-brand" href="#"><h2>SOS ENEM</h2></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
             </div>
             <!-- Objetos que estarão no toogle quando ele abrir. -->
             <div class="collapse navbar-collapse">
@@ -38,7 +45,7 @@
                         <div class="username">
                             <div>
                                 <span class="rounded float-right">  <font class="font-weight-bold" size="5"> 
-                                <p style="color:white"> Bem-vindo <?php echo $logado; ?> </p> </font> </span>
+                                <p> Bem-vindo <?php echo $logado; ?> </p> </font> </span>
                             </div>
                         </div>
                     </li>
@@ -50,13 +57,7 @@
         <!-- barra da parte de baixo com os dados dos links-->
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+                            </div>
             <div id="dados-da-barra">
                 <ul class="nav navbar-nav">
                     
@@ -64,10 +65,10 @@
                         <a href="paineldeusuario.php">Pagina inicial <span class="sr-only">(current)</span> </a>
                     </li>
                     <li>
-                        <a href="tela-cadastrar-questao-oficial.php">Submeter Questões </a>
+                        <a href="_view/escolher-tipo-simulado.php">Realizar simulado </a>
                     </li>
                     <li>
-                        <a href="tela-feedbacks">Dar feedbacks</a>
+                        <a href="tela-feedbacks.html">Dar feedbacks</a>
                     </li>
                     <li>
                         <a href="minha-conta.php">Minha conta</a>
