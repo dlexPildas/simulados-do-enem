@@ -32,14 +32,14 @@ require_once( "../_controller/solicitarProva.php" );
 			atualiza();
 		}
 		function atualiza(){
-			/*
-			document.getElementById("enunciado").innerHTML = <?php echo $prova->getQuestaoAtual()->getEnunciado();?>;
-			document.getElementById("respa").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaA();?>;
-			document.getElementById("respb").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaB();?>;
-			document.getElementById("respc").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaC();?>;
-			document.getElementById("respd").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaD();?>;
-			document.getElementById("respe").innerHTML = <?php echo $prova->getQuestaoAtual()->getRespostaE();?>;
-			*/
+			
+			document.getElementById("enunciado").innerHTML = ;
+			document.getElementById("respa").innerHTML = ;
+			document.getElementById("respb").innerHTML = ;
+			document.getElementById("respc").innerHTML = ;
+			document.getElementById("respd").innerHTML = ;
+			document.getElementById("respe").innerHTML = ;
+			
 		}
 		function proximaQuestao(){
 			<?php $prova->proximaQuestao();?>
