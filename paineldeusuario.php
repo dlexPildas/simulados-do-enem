@@ -40,18 +40,53 @@
 		<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-3 col-lg-3 col-sm-12">
-						<div class="table-responsive">
+					<div style="background-color:white; width:305px; height:50px">
+						<p class="h1 font-weight-bold" style="text-align:center;  margin-top:0px">Ranking</p>
+					</div>
+						<div class="table-responsive" style="margin-top: 15px">
 							<table class="table table-striped table-bordered table-hover table-condensed">
 							  <thead>
-							    <tr>
-							      <th>...</th>
-							      <th>...</th>
+							    <tr class="active">
+							      <th>Nome</th>
+							      <th>Pontuação</th>
 							    </tr>
 							  </thead>
 							  <tbody>
 							    <tr>
-							      <th>...</th>
-							      <td>...</td>
+							      <th>Indio</th>
+							      <td>2579</td>
+							    </tr>
+							     <tr>
+							      <th>Afogado</th>
+							      <td>2347</td>
+							    </tr>
+							     <tr>
+							      <th>Chará</th>
+							      <td>2230</td>
+							    </tr>
+							     <tr>
+							      <th>Marcondes</th>
+							      <td>2185</td>
+							    </tr>
+							     <tr>
+							      <th>Rodrigo</th>
+							      <td>2179</td>
+							    </tr>
+							     <tr>
+							      <th>Allan</th>
+							      <td>2079</td>
+							    </tr>
+							     <tr>
+							      <th>Alisson</th>
+							      <td>1996</td>
+							    </tr>
+							     <tr>
+							      <th>Igor</th>
+							      <td>1899</td>
+							    </tr>
+							     <tr>
+							      <th>Ex Gerente</th>
+							      <td>1856</td>
 							    </tr>
 							  </tbody>
 							</table>
