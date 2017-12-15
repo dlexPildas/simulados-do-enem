@@ -8,23 +8,14 @@
 	<head>
 		<title>S.O.S ENEM</title>
 		<meta charset = "UTF-8">
-		<link rel="stylesheet" type="text/css" href="_css/estiloPainelUsuario.css">
+		<link rel="stylesheet" type="text/css" href="_css/estilo.css">
 			
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 		<link href="_css/ig-canais.css" rel="stylesheet" type="text/css">
-		<header id="cabecalho"> 
+		<header> 
+			<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
 	    	
-	    	<div>
-	        	<span class="rounded float-right" style="margin-top:50">  <font class="font-weight-bold" style="margin-top:50px;" size="5"> 
-	        		<p style="margin-top:80px; color:white"> Bem-vindo <?php
-						echo $logado;
-						?></p> </font> </span>
-	        </div>
-	        <img src="_images\avatar.jpg" alt="Seu Avatar" title="Avatar" style="max-height: 100px; max-width: 100px" class="img-responsive rounded float-right">
-	       
-	  		<h1><img src="logo2.png"></h1>
 	  
-			<!-- 
+			
 			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"> </script>
 	   		<script type="text/javascript">
 	     		google.charts.load('current', {'packages':['corechart']});
@@ -82,27 +73,29 @@
 		   			var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
 		    		chart.draw(view, options);
 				}
-			</script>	-->	
+			</script>
 		</header>
 
 	</head>
 
 	<body style="background-color:#E4E4E4">	
+
 		<div class="navbar">
-         <?php include('navbar-adm.html') ?>
+        	<?php include('navbar-usuario.php') ?>
     	</div>
+
     	<div  class="row">
-			<div class="col-md-3;"  style="background-color:white; width:385px; height:50px; margin-top:20px;margin-right:10px;margin-left: 40px; " > 
+			<div class="col-md-3;" style="background-color:white; width:385px; height:50px; margin-top:20px;margin-right:10px;margin-left: 40px; " > 
     
-        		<p class="h1 font-weight-bold" style="text-align:center;  margin-top:9px">Ranking dos usuários</p>
+        		<p class="h3 font-weight-bold" style="text-align:center;  margin-top:9px">Ranking dos usuários</p>
 			</div>
 
-	  		<div class="col-md-6;"  style="background-color:white;width:485px; height:50px; margin-top:20px;margin-right:10px;margin-left: 10px; ">
-        		<p class="h1 font-weight-bold" style="text-align:center;  margin-top:9px">Acertos por área de conhecimento</p>
+	  		<div class="col-md-3;"  style="background-color:white;width:485px; height:50px; margin-top:20px;margin-right:10px;margin-left: 10px; ">
+        		<p class="h3 font-weight-bold" style="text-align:center;  margin-top:9px">Acertos por área de conhecimento</p>
 			</div>
 
 			<div class="col-md-3;" style="width:385px; height:50px;margin-top:20px;margin-right:20px;margin-left: 10px; margin-bottom:0;">
-            	<button type="button"style="height:40px; width:370px" class="btn btn-outline-success h1 font-weight-bold"><font  class="font-weight-bold" style="margin-top:5px;" size="5">Submeter questão<font></button>
+            	<button type="button"style="height:40px; width:370px" <font style="margin-top:5px;" size="5">Submeter questão<font></button>
             </div>  
     
 			<div  class="row">		
@@ -110,7 +103,7 @@
 		 			 <div id="columnchart_values"></div>
 				</div>
 
-	  			<div class="col-md-6;" id="piechart" style="background-color:white;width:485px; height:500px; margin-top:5px;margin-right:10px;margin-left: 10px;"> </div>
+	  			<div class="col-md-3;" id="piechart" style="background-color:white;width:485px; height:500px; margin-top:5px;margin-right:10px;margin-left: 10px;"> </div>
 
 				<div clas="col-md-3;" style="background-color:white;width:385px; height:500px;margin-top:5px;margin-right:20px;margin-left: 10px;">
 					<img   src="image/propaganda.jpg">
