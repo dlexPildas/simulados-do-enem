@@ -75,6 +75,7 @@
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <button type="submit">Cancelar</button>
                 <button type="submit">Submeter</button>
+                
             </div>
 
         </div>
