@@ -86,7 +86,7 @@
                                 <a href="#">Banir Usuário</a>
                             </li>
                             <li>
-                                <a href="#">Sair</a>
+                                <a href="_controller/logout.php">Sair</a>
                             </li>
                         </ul>
                     </li>
