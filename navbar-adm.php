@@ -1,3 +1,6 @@
+<?php
+	include_once( "_model/segurancaA.php" );
+?>
 <!DOCTYPE html>
 <html lang="PT-BR">
 
@@ -32,7 +35,7 @@
                     </li>
                     <li>
                         <div class="username">
-                            <h4>Emanuel Santana</h4>
+                            <h4><?php echo $logado ?></h4>
                             <p>Administrator</p>
                         </div>
                     </li>
@@ -83,7 +86,7 @@
                                 <a href="#">Banir Usuário</a>
                             </li>
                             <li>
-                                <a href="#">Sair</a>
+                                <a href="_controller/logout.php">Sair</a>
                             </li>
                         </ul>
                     </li>

@@ -1,3 +1,6 @@
+<?php
+	include_once( "_model/segurancaA.php" );
+?>
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
@@ -25,7 +28,7 @@
 
 <body>
     <div class="navbar">
-         <?php include('navbar-adm.html') ?>
+         <?php include('navbar-adm.php') ?>
     </div>
            
 	<div class="row">
