@@ -16,7 +16,13 @@
      <?php 
      /*Então, aqui deve aparecer um if para saber qual usuário está uzando a página
      dependendo de quem seja deve ser alterada a navbar de usuário, adm e moderador. */
-       include('navbar-adm.php');
+		if($privilegio == 'A'){
+       		include('navbar-adm.php');
+		}else if($privilegio == 'M'){
+			include('navbar-adm.php');
+		}else if($privilegio == 'N'){
+			include('navbar-usuario.php');
+		}
     ?>
     </div>
 
