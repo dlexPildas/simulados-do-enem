@@ -44,7 +44,7 @@
 				</div>                   
         	</div>
             
-            <div class="col-md-8 col-lg-8 col-sm-12">
+            <div class="col-md-9 col-lg-9 col-sm-12">
 				<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
 
 					<div id="item1" class="column page-heading">
@@ -211,6 +211,7 @@
 	
 	<script src="_js/chart.min.js"></script>
 	<script src="_js/chart-data.js"></script>
+
 	<script>
 	window.onload = function () {
 		var chart1 = document.getElementById("line-chart").getContext("2d");
