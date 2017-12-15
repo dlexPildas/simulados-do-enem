@@ -1,3 +1,7 @@
+<?php
+	include_once( "_model/seguranca.php" );
+?>
+
 <!DOCTYPE html>
 <html lang="PT-BR">
 
@@ -72,7 +76,7 @@
                         <a href="tela-de-ajuda.php">Ajuda</a>
                     </li>
                     <li>
-                        <a href="tela-sair-da-conta">Sair da conta</a>
+                        <a href="_controller/logout.php">Sair da conta</a>
                     </li>
 
                 </ul>
