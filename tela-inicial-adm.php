@@ -28,29 +28,26 @@
 </head>
 
 <body>
-    <div class="n">
+    <div class="navbar">
          <?php include('navbar-adm.php') ?>
 	</div>
-	
-	<div class="container-fluid">           
-		<div class="row">
-			<div class="col-md-3 col-lg-3 col-sm-12">
-				<div id="sidebar" class="column">
-					<h5>Navigation</h5>
-					<ul>
-						<li><a href="#">Início</a></li>
-						<li><a href="#graficos">Gráficos de uso do Sistema</a></li>
-						<li><a href="#widgets"> Widgets</a></li>
-						<li><a href="#forms"> Forms</a></li>
-						<li><a href="#alerts"> Alerts</a></li>
-						<li><a href="#buttons"> Buttons</a></li>
-						<li><a href="#tables"> Tables</a></li>
-						<li><a href="#grid"> Grid</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-9 col-lg-9 col-sm-12">
-					<div class="column page-heading">
+
+	<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12">
+				<h3>Opções de navegação</h3>
+				<div id="list-example" class="list-group">
+					<a class="list-group-item list-group-item-action" href="#item1">Início</a>
+					<a class="list-group-item list-group-item-action" href="#item2">Gráficos de usuários cadastrados</a>
+					<a class="list-group-item list-group-item-action" href="#item3">Gráficos de questões respondidas</a>
+					<a class="list-group-item list-group-item-action" href="#item4">Notificações de usuários</a>
+				</div>                   
+        	</div>
+            
+            <div class="col-md-8 col-lg-8 col-sm-12">
+				<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+
+					<div id="item1" class="column page-heading">
 						<div class="large-card">
 							<h1>Hey there!</h1>
 							<p class="text-large">This is a big 'ole hero unit, you can use this for calling extra attention to featured content or information.</p>
@@ -58,77 +55,23 @@
 							<a class="button">Call to action</a>
 						</div>
 					</div>
-					<!--Gráficos-->
-					<h5>Gráficos de uso do Sistema</h5><a class="anchor" name="graficos"></a>
-					<div class="card">
-							<div class="card-title">
-								<h2>Quantidade de Usuários cadastrados</h2>
-							</div>
-							<div class="card-block">
-								<div class="canvas-wrapper">
-									<canvas class="chart" id="line-chart" height="auto" width="auto"></canvas>
-								</div>
-							</div>
-					</div>
-					<div class="card">
-							<div class="card-title">
-								<h2>Quantidade de questões resolvidas</h2>
-							</div>
-							<div class="card-block">
-								<div class="canvas-wrapper">
-									<canvas class="chart" id="bar-chart" height="auto" width="auto"></canvas>
-								</div>
-							</div>
-					</div>
-
-
-
-
-			</div>
-
-		</div>
-	</div>
-			
-			<section id="main-content" class="column column-offset-20">
-				<div class="row grid-responsive">
 					
-				</div>
-				
-				<!--Gráficos-->
-				<h5>Gráficos de uso do Sistema</h5><a class="anchor" name="graficos"></a>
-				<div class="row grid-responsive">
-					<div class="column column-50">
-						<div class="card">
+					
+					<h5>Gráficos de uso do Sistema</h5><a class="anchor" name="graficos"></a>
+					<div id="item2" class="card">
 							<div class="card-title">
 								<h2>Quantidade de Usuários cadastrados</h2>
 							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="row grid-responsive">
-				<div class="column column-33">
-					<div class="card">
-						<div class="card-title">
-							<h2>Pie Chart</h2>
-						</div>
-						<div class="card-block">
-							<div class="canvas-wrapper">
-								<canvas class="chart" id="pie-chart" height="auto" width="auto"></canvas>
-
 							<div class="card-block">
 								<div class="canvas-wrapper">
 									<canvas class="chart" id="line-chart" height="auto" width="auto"></canvas>
 								</div>
-				</div>
+							</div>
 						</div>
-					</div>
-					<div class="column column-50">
-						<div class="card">
+					
+					<div id="item3" class="card">
 							<div class="card-title">
-								<h2>Quantidade de questões resolvidas</h2>
+								<h2>Quantidade de questões respondidas</h2>
 							</div>
 							<div class="card-block">
 								<div class="canvas-wrapper">
@@ -136,17 +79,12 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 				
-				
-				<!--Widgets-->
-				<h5 class="mt-2">Widgets</h5><a class="anchor" name="widgets"></a>
-				<div class="row grid-responsive mt-1">
-					<div class="column">
-						<div class="card">
+
+
+					<div id="item4" class="card">
 							<div class="card-title">
-								<h2 class="float-left">Notifications</h2>
+								<h2 class="float-left">Notificações</h2>
 								<div class="badge background-primary float-right">36</div>
 								<div class="clearfix"></div>
 							</div>
@@ -179,49 +117,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="column">
-						<div class="card">
-							<div class="card-title">
-								<h2 class="float-left">Projects</h2>
-								<div class="badge float-right">3 In Progress</div>
-								<!--<div class="badge background-success float-right mr-1">5 Complete</div>-->
-								<div class="clearfix"></div>
-							</div>
-							<div class="card-block progress-bars">
-								<h5 class="float-left mt-1">Project Title</h5>
-								<p class="float-right text-small text-muted mt-1">25%</p>
-								<div class="clearfix"></div>
-								<div class="progress-bar">
-									<div class="progress background-primary" style="width: 25%;"></div>
-								</div>
-								<h5 class="float-left mt-1">Project Title</h5>
-								<p class="float-right text-small text-muted mt-1">50%</p>
-								<div class="clearfix"></div>
-								<div class="progress-bar">
-									<div class="progress background-primary" style="width: 50%;"></div>
-								</div>
-								<h5 class="float-left mt-1">Project Title</h5>
-								<p class="float-right text-small text-muted mt-1">75%</p>
-								<div class="clearfix"></div>
-								<div class="progress-bar">
-									<div class="progress background-primary" style="width: 75%;"></div>
-								</div>
-								<h5 class="float-left mt-1">Project Title</h5>
-								<p class="float-right text-small text-muted mt-1">100%</p>
-								<div class="clearfix"></div>
-								<div class="progress-bar">
-									<div class="progress background-primary" style="width: 100%;"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			
-				<!--Forms-->
-				<h5 class="mt-2">Forms</h5><a class="anchor" name="forms"></a>
-				<div class="row grid-responsive">
-					<div class="column ">
 						<div class="card">
 							<div class="card-title">
 								<h3>Sample Form</h3>
@@ -249,13 +144,9 @@
 								</form>
 							</div>
 						</div>
-					</div>
-				</div>			
-		
-				<!--Buttons-->
-				<h5 class="mt-2">Buttons</h5><a class="anchor" name="buttons"></a>
-				<div class="row grid-responsive">
-					<div class="column">
+
+
+
 						<!-- Default Button -->
 						<a class="button" href="#">Default Button</a>
 						
@@ -264,13 +155,7 @@
 						
 						<!-- Clear Button -->
 						<input class="button button-clear" type="submit" value="Clear Button">
-					</div>
-				</div>
-			
-				<!--Tables-->
-				<h5 class="mt-2">Tables</h5><a class="anchor" name="tables"></a>
-				<div class="row grid-responsive">
-					<div class="column ">
+
 						<div class="card">
 							<div class="card-title">
 								<h3>Current Members</h3>
@@ -314,10 +199,14 @@
 								</table>
 							</div>
 						</div>
-					</div>
-				</div>
-									
-			</section>
+
+	<!--aqui termina a div da class row do bootstrap-->
+                      
+            	</div>
+     		</div>
+
+		</div>
+	</div>
 	
 	
 	<script src="_js/chart.min.js"></script>
