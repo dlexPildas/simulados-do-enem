@@ -14,6 +14,8 @@
 <body>
     <div>
      <?php 
+     /*Então, aqui deve aparecer um if para saber qual usuário está uzando a página
+     dependendo de quem seja deve ser alterada a navbar de usuário, adm e moderador. */
        include('navbar-adm.php');
     ?>
     </div>
