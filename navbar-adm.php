@@ -58,7 +58,7 @@
             <div id="dados-da-barra">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="tela-inicial-adm.php">Página Inicial</a>
+                        <a href="tela-inicial-adm.php">Painel Adm</a>
                     </li>
                     <li>
                         <a href="tela-cadastrar-questao-oficial.php">Submeter Questões</a>
