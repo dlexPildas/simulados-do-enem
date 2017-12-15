@@ -42,9 +42,21 @@
 				<div class="col-sm-3 col-md-8 col-lg-8">
 				<form>
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Escolha uma prova para submeter</label>
+						<label for="exampleFormControlFile1">Escolha uma prova para submeter</label>
+						<br><br><br><br>
 						<input type="file" class="form-control-file" id="exampleFormControlFile1">
-						<input type="number" name="points" min="1995" max="2017" step="1" value="2017">
+						<br><br><br><br><br>
+						<h4>Escolha o ano da prova que deseja cadastrar</h4>
+						<div class="col-sm-3 col-md-4 col-lg-4">
+					
+						</div>
+						<div class="col-sm-3 col-md-4 col-lg-4">
+							<input type="number" name="points" min="1995" max="2017" step="1" value="2017">
+						</div>
+						<div class="col-sm-3 col-md-4 col-lg-4">
+					
+						</div>
+						
                     </div>
 				</form>
 				</div>
@@ -55,7 +67,8 @@
 				
                 
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-4">			
+            <div class="col-sm-4 col-md-4 col-lg-4">
+			<br><br><br><br><br><br><br><br><br><br><br><br><br>			
 				<button class="button">Submeter Questão</button>
 				<button class="button">Cancelar</button>				
                
