@@ -1,8 +1,8 @@
 --Cadastro de usuários
-insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Marcos Vinicius', 'Cruz Lima', 'null', 'marcosvinicius@outlook.com', '12345678', '1', '11/12/2017');
-insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Itamar', 'Oliveira Maximo', 'null', 'itamar@gmail.com', '12345678', '1', '07/11/2017');
-insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Giovana', 'Forninho da Silva', 'null', 'giovana@outlook.com', '12345678', '1', '10/12/2017');
-insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Lucas', 'Fada Cardoso', 'null', 'lucas@yahoo.com', '12345678', '1', '11/07/2017');
+insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Marcos Vinicius', 'Cruz Lima', 'null', 'marcosvinicius@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', '1', '11/12/2017');
+insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Itamar', 'Oliveira Maximo', 'null', 'itamar@gmail.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', '1', '07/11/2017');
+insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Giovana', 'Forninho da Silva', 'null', 'giovana@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', '1', '10/12/2017');
+insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Lucas', 'Fada Cardoso', 'null', 'lucas@yahoo.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', '1', '11/07/2017');
 
 --Cadastro de simulado
 insert into simulado (idsimulado, idusuario, data, tempo, pontuacao, tipo) values ('1','4', '12/11/2017', '03:14:38', '734', '');
