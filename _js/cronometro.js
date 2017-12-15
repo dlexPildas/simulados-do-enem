@@ -2,8 +2,8 @@ var centesimas = 0;
 var segundos = 0;
 var minutos = 0;
 var horas = 0;
-function inicio() {
-    control = setInterval(cronometro, 1000);
+function inicio() {	
+	control = setInterval(cronometro, 1000);
 }
 
 
@@ -22,8 +22,9 @@ function cronometro() {
     if(minutos === 59){
         minutos = 0;
         horas++;
-    }
-}
+	}
+    
+} 
 
 function ajustarInput(str) {
     var resul;

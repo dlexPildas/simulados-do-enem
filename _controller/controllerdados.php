@@ -6,17 +6,17 @@ require_once( "../_model/Usuario.php" );
 require_once( "../_model/Questao.php" );
 require_once( "../_model/Prova.php" );
 require_once( "../_util/questaodao.php" );
-//include_once( "_model/seguranca.php" );
-//session_start();
+
 class Controllerdados {
 	public static $instance = null;
 	private $user;
 
-	private function __construct() {
+	private	function __construct() {
 
 	}
 
-	public static function getInstance() {
+	public static
+	function getInstance() {
 		if ( self::$instance == NULL ) {
 			self::$instance = new Controllerdados();
 		}
@@ -25,38 +25,38 @@ class Controllerdados {
 
 	public static function zeraSingleton() {
 		self::$instance = new Controllerdados();
-    }
-    
-    public function cadastraUsuario($nome, $email, $senha, $confirmSenha){
+	}
 
-        if ( $senha != $confirmSenha ) {
-            echo "Saia daqui";
-        } else {
-    
-            //echo crypt($senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$');
-    
-            $senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
-    
-            $user = new Usuario( $nome, '', '', $email, '', 'N', $senhaCrip );
-    
-            $dao = new UserDao();
-            $verifica = $dao->inserir( $user );
-			if($verifica == true){
+	public function cadastraUsuario( $nome, $email, $senha, $confirmSenha ) {
+
+		if ( $senha != $confirmSenha ) {
+			echo "Saia daqui";
+		} else {
+
+			//echo crypt($senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$');
+
+			$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
+
+			$user = new Usuario( $nome, '', '', $email, '', 'N', $senhaCrip );
+
+			$dao = new UserDao();
+			$verifica = $dao->inserir( $user );
+			if ( $verifica == true ) {
 				echo "deu certo";
-			}else{
+			} else {
 				echo "deu errado";
 			}
-			$this->realizalogin( $email, $senha , 1 );
-    		
-        }
-    }
+			$this->realizalogin( $email, $senha, 1 );
+
+		}
+	}
 
 	/**
 	Protocolo de aplicação
 	1 - primeiro login
 	null ou 0 - login comum
 	*/
-	public function realizalogin( $email, $senha , $protocolo) {
+	public function realizalogin( $email, $senha, $protocolo ) {
 		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
 		echo " a senha é " . $senhaCrip;
 		$userdao = new UserDao();
@@ -68,16 +68,20 @@ class Controllerdados {
 			$linha = pg_fetch_array( $resultado );
 
 			echo "Os dados'" . $linha[ 'idusuario' ] . " | " . $linha[ 'nome' ] . " | " . $linha[ 'email' ] . " | " . $linha[ 'senha' ] . " | " . $linha[ 'privilegio' ] . "\n ";
-			
-			if($protocolo == 1){
-				$this->insereLog(1 ,$linha[ 'idusuario' ], 'Novo cadastro realizado com sucesso.');
+
+			if ( $protocolo == 1 ) {
+				$this->insereLog( 1, $linha[ 'idusuario' ], 'Novo cadastro realizado com sucesso.' );
 			}
 
 			$usuario = new Usuario( $linha[ 'nome' ], '', '', $linha[ 'email' ], '', $linha[ 'privilegio' ], $linha[ 'senha' ] );
 			$usuario->setId( $linha[ 'idusuario' ] );
 
-			$_SESSION[ 'user' ] = serialize( $usuario );
-			$this->user = unserialize($_SESSION['user']);
+			//$_SESSION[ 'user' ] = serialize( $usuario );
+			$_SESSION[ 'id' ] = $linha[ 'idusuario' ];
+			$_SESSION[ 'nome' ] = $linha[ 'nome' ];
+			$_SESSION[ 'privilegio' ] = $linha[ 'privilegio' ];
+
+			$this->user = $usuario;
 			if ( $linha[ 'privilegio' ] == 'N' ) {
 				echo "usuario comum";
 				header( 'location:../paineldeusuario.php' );
@@ -96,45 +100,61 @@ class Controllerdados {
 	}
 
 	public function realizalogout() {
-		session_start();
-		if ( ( isset( $_SESSION[ 'user' ] ) == true ) || ( $_SESSION[ 'user' ] != "" )){
-			unset( $_SESSION[ 'user' ] );
-			header( 'location:../index.html' );
+		if ( !isset( $_SESSION ) ) {
+			session_start();
 		}
-
-		$usuario = $_SESSION[ 'user' ];
+		if ( ( isset( $_SESSION[ 'id' ] ) == true )and( $_SESSION[ 'id' ] != "" ) || ( isset( $_SESSION[ 'nome' ] ) == true )and( $_SESSION[ 'nome' ] != "" ) || ( isset( $_SESSION[ 'privilegio' ] ) == true )and( $_SESSION[ 'privilegio' ] != "" ) ) {
+			unset( $_SESSION[ 'id' ] );
+			unset( $_SESSION[ 'nome' ] );
+			unset( $_SESSION[ 'privilegio' ] );
+			session_destroy();
+			header( 'location:../index.html' );
+		} else {
+			session_destroy();
+		}
 	}
 
-	public 
-	function gerarProva($tipo_prova){
+	public function gerarProva( $tipo_prova ) {
 		$dao = new QuestaoDAO();
 		echo "ta no gerar prova";
 		//if($tipo_prova === '1'){
-			$questoes = $dao->ler("select * from questao");
-			echo "Retornou a questão";
-			$prova =  new Prova(1, 2017, "Aquele Tipo", sizeof($questoes, 0), $questoes);			
-			return $prova;
+		$questoes = $dao->ler( "select * from questao" );
+		echo "Retornou a questão";
+		$prova = new Prova( 1, 2017, "Aquele Tipo", sizeof( $questoes, 0 ), $questoes );
+		return $prova;
 		//}
-		
+
 	}
 
 
-    public function promoverModerador($id){
-        $userdao = new UserDao();
-        $result = $userdao->atualizar('privilegio', 'M', $id);
-        return $result;
-	}
-	public function removerModerador($id){
-        $userdao = new UserDao();
-        $result = $userdao->atualizar('privilegio', 'N', $id);
-        return $result;
+	public function promoverModerador( $id ) {
+		$userdao = new UserDao();
+		$result = $userdao->atualizar( 'privilegio', 'M', $id );
+		return $result;
 	}
 
-	//Qual o motivo para quebrar linha aqui?
-    public function addProva(){
+	public function removerModerador( $id ) {
+		$userdao = new UserDao();
+		$result = $userdao->atualizar( 'privilegio', 'N', $id );
+		return $result;
+	}
+
+	public function promoverAdministridador( $id ) {
+		$userdao = new UserDao();
+		$result = $userdao->atualizar( 'privilegio', 'A', $id );
+		return $result;
+	}
+
+	public function removerAdministridador( $id ) {
+		$userdao = new UserDao();
+		$result = $userdao->atualizar( 'privilegio', 'N', $id );
+		return $result;
+	}
+
+	public function addProva() {
 		//Não sei o que fazer aqui por enquanto zZzZz... (Allan)
-    }
-	
+	}
+
 	/**
 	1 - cadastro de usuário
 	2 - promoção de usuário
@@ -144,17 +164,16 @@ class Controllerdados {
 	6 - realização de simulado
 	7 - 
 	*/
-	public function insereLog($tipo, $idusuario, $descricao){
-		echo "---nova inserção de log os dados são: " . $tipo . " | " . $idusuario ." | " . $descricao;
-		if($tipo > 0 && $tipo < 8 || $descricao != "" || $descricao != NULL){
+	public function insereLog( $tipo, $idusuario, $descricao ) {
+		echo "---nova inserção de log os dados são: " . $tipo . " | " . $idusuario . " | " . $descricao;
+		if ( $tipo > 0 && $tipo < 8 || $descricao != "" || $descricao != NULL ) {
 			$dao = new LogDao();
-        	$dao->inserir( $idusuario, $tipo, $descricao );
+			$dao->inserir( $idusuario, $tipo, $descricao );
 			echo "\n log inserido \n";
 			return true;
 		}
-		echo "chegou até aqui em inserir log";
 		return false;
-		
+
 	}
 
 

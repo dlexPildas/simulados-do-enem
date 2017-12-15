@@ -7,14 +7,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gerencia de Conta ADM</title>
+    <title>Tela de ajuda</title>
     <link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
     <link rel="stylesheet" type="text/css" href="_css/gerencia-conta.css">
 </head>
 <body>
     <div>
      <?php 
-        include('navbar-adm.html');
+     /*Então, aqui deve aparecer um if para saber qual usuário está uzando a página
+     dependendo de quem seja deve ser alterada a navbar de usuário, adm e moderador. */
+		if($privilegio == 'A'){
+       		include('navbar-adm.php');
+		}else if($privilegio == 'M'){
+			include('navbar-adm.php');
+		}else if($privilegio == 'N'){
+			include('navbar-usuario.php');
+		}
     ?>
     </div>
 
@@ -90,7 +98,7 @@
                         gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn</p>
 
                         <h4 id="list-item-4">O que acontece ao desistir da prova?</h4>
-                        
+
                         <p>gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn
                         gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn<br>
                         gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn
