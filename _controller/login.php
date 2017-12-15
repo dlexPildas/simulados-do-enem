@@ -1,7 +1,9 @@
 <?php
 //arquivo de login
 // session_start inicia a sessão
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 require_once( "Controllerdados.php" );
 // as variáveis login e senha recebem os dados digitados na página inicial
 $login = $_POST[ 'email' ];

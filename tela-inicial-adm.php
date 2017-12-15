@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="_css/styles.css">
 	
 	<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
+	
 		
 </head>
 
@@ -36,7 +37,7 @@
 			<h5>Navigation</h5>
 			<ul>
 				<li><a href="#"><em class="fa fa-home"></em>Início</a></li>
-				<li><a href="#charts"><em class="fa fa-bar-chart"></em> Gráficos</a></li>
+				<li><a href="#charts">Gráficos de uso do Sistema</a></li>
 				<li><a href="#widgets"><em class="fa fa fa-clone"></em> Widgets</a></li>
 				<li><a href="#forms"><em class="fa fa-pencil-square-o"></em> Forms</a></li>
 				<li><a href="#alerts"><em class="fa fa-warning"></em> Alerts</a></li>
@@ -57,13 +58,13 @@
 				</div>
 			</div>
 			
-			<!--Charts-->
-			<h5>Charts</h5><a class="anchor" name="charts"></a>
+			<!--Gráficos-->
+			<h5>Gráficos de uso do Sistema</h5><a class="anchor" name="charts"></a>
 			<div class="row grid-responsive">
 				<div class="column column-50">
 					<div class="card">
 						<div class="card-title">
-							<h2>Line Chart</h2>
+							<h2>Gráfico de Linha</h2>
 						</div>
 						<div class="card-block">
 							<div class="canvas-wrapper">
@@ -75,7 +76,7 @@
 				<div class="column column-50">
 					<div class="card">
 						<div class="card-title">
-							<h2>Bar Chart</h2>
+							<h2>Gráfico de Barras</h2>
 						</div>
 						<div class="card-block">
 							<div class="canvas-wrapper">
@@ -85,44 +86,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row grid-responsive">
-				<div class="column column-33">
-					<div class="card">
-						<div class="card-title">
-							<h2>Pie Chart</h2>
-						</div>
-						<div class="card-block">
-							<div class="canvas-wrapper">
-								<canvas class="chart" id="pie-chart" height="auto" width="auto"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column column-33">
-					<div class="card">
-						<div class="card-title">
-							<h2>Radar Chart</h2>
-						</div>
-						<div class="card-block">
-							<div class="canvas-wrapper">
-								<canvas class="chart" id="radar-chart" height="auto" width="auto"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="column column-33">
-					<div class="card">
-						<div class="card-title">
-							<h2>Polar Chart</h2>
-						</div>
-						<div class="card-block">
-							<div class="canvas-wrapper">
-								<canvas class="chart" id="polar-area-chart" height="auto" width="auto"></canvas>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 			
 			<!--Widgets-->
 			<h5 class="mt-2">Widgets</h5><a class="anchor" name="widgets"></a>
@@ -236,17 +200,7 @@
 				</div>
 			</div>
 			
-			<!--Alerts-->
-			<h5 class="mt-2">Alerts</h5><a class="anchor" name="alerts"></a>
-			<div class="row grid-responsive">
-				<div class="column">
-					<div class="alert background-success"><em class="fa fa-thumbs-up"></em> Yay! Everything looks good</div>
-					<div class="alert background-warning"><em class="fa fa-warning"></em> Are you sure you want to do that?</div>
-					<div class="alert background-danger"><em class="fa fa-times-circle"></em> Oops, something went really wrong</div>
-					<div class="alert"><em class="fa fa-bullhorn"></em> This is a generic alert without any defined background color</div>
-				</div>
-			</div>
-			
+		
 			<!--Buttons-->
 			<h5 class="mt-2">Buttons</h5><a class="anchor" name="buttons"></a>
 			<div class="row grid-responsive">
@@ -311,50 +265,7 @@
 					</div>
 				</div>
 			</div>
-			
-			<!--Grid-->
-			<h5 class="mt-2">Grid</h5><a class="anchor" name="grid"></a>
-			<div class="grid-example mt-2">
-				<div class="row">
-					<div class="column column-10">10%</div>
-				</div>
-				<div class="row">
-					<div class="column column-20">20%</div>
-				</div>
-				<div class="row">
-					<div class="column column-25">25%</div>
-				</div>
-				<div class="row">
-					<!-- .column-33 or .column-34 both work for 1/3 column width -->
-					<div class="column column-33">33%</div>
-				</div>
-				<div class="row">
-					<div class="column column-40">40%</div>
-				</div>
-				<div class="row">
-					<div class="column column-50">50%</div>
-				</div>
-				<div class="row">
-					<div class="column column-60">60%</div>
-				</div>
-				<div class="row">
-					<!-- .column-66 or .column-67 both work for 2/3 column width -->
-					<div class="column column-67">67%</div>
-				</div>
-				<div class="row">
-					<div class="column column-75">75%</div>
-				</div>
-				<div class="row">
-					<div class="column column-80">80%</div>
-				</div>
-				<div class="row">
-					<div class="column column-90">90%</div>
-				</div>
-				<div class="row">
-					<div class="column">100%</div>
-				</div>
-			</div>
-			<p class="credit">HTML5 Admin Template by <a href="https://www.medialoot.com">Medialoot</a></p>
+									
 		</section>
 	</div>
 	

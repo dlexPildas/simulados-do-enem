@@ -99,6 +99,7 @@ class Controllerdados {
 		session_start();
 		if ( ( isset( $_SESSION[ 'user' ] ) == true ) || ( $_SESSION[ 'user' ] != "" )){
 			unset( $_SESSION[ 'user' ] );
+			session_destroy();
 			header( 'location:../index.html' );
 		}
 
@@ -124,8 +125,21 @@ class Controllerdados {
         $result = $userdao->atualizar('privilegio', 'M', $id);
         return $result;
 	}
+	
 	public function removerModerador($id){
         $userdao = new UserDao();
+        $result = $userdao->atualizar('privilegio', 'N', $id);
+        return $result;
+	}
+	
+	public function promoverAdministridador($id){
+		$userdao = new UserDao();
+        $result = $userdao->atualizar('privilegio', 'A', $id);
+        return $result;
+	}
+	
+	public function removerAdministridador($id){
+		$userdao = new UserDao();
         $result = $userdao->atualizar('privilegio', 'N', $id);
         return $result;
 	}
