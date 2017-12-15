@@ -28,27 +28,28 @@
 </head>
 
 <body>
-    <div class="navbar">
+    <div class="n">
          <?php include('navbar-adm.php') ?>
 	</div>
 	
 	<div class="container-fluid">           
 		<div class="row">
-			<div id="sidebar" class="column">
-				<h5>Navigation</h5>
-				<ul>
-					<li><a href="#">Início</a></li>
-					<li><a href="#graficos">Gráficos de uso do Sistema</a></li>
-					<li><a href="#widgets"> Widgets</a></li>
-					<li><a href="#forms"> Forms</a></li>
-					<li><a href="#alerts"> Alerts</a></li>
-					<li><a href="#buttons"> Buttons</a></li>
-					<li><a href="#tables"> Tables</a></li>
-					<li><a href="#grid"> Grid</a></li>
-				</ul>
+			<div class="col-md-3 col-lg-3 col-sm-12">
+				<div id="sidebar" class="column">
+					<h5>Navigation</h5>
+					<ul>
+						<li><a href="#">Início</a></li>
+						<li><a href="#graficos">Gráficos de uso do Sistema</a></li>
+						<li><a href="#widgets"> Widgets</a></li>
+						<li><a href="#forms"> Forms</a></li>
+						<li><a href="#alerts"> Alerts</a></li>
+						<li><a href="#buttons"> Buttons</a></li>
+						<li><a href="#tables"> Tables</a></li>
+						<li><a href="#grid"> Grid</a></li>
+					</ul>
+				</div>
 			</div>
-			<section id="main-content" class="column column-offset-20">
-				<div class="row grid-responsive">
+			<div class="col-md-9 col-lg-9 col-sm-12">
 					<div class="column page-heading">
 						<div class="large-card">
 							<h1>Hey there!</h1>
@@ -57,6 +58,40 @@
 							<a class="button">Call to action</a>
 						</div>
 					</div>
+					<!--Gráficos-->
+					<h5>Gráficos de uso do Sistema</h5><a class="anchor" name="graficos"></a>
+					<div class="card">
+							<div class="card-title">
+								<h2>Quantidade de Usuários cadastrados</h2>
+							</div>
+							<div class="card-block">
+								<div class="canvas-wrapper">
+									<canvas class="chart" id="line-chart" height="auto" width="auto"></canvas>
+								</div>
+							</div>
+					</div>
+					<div class="card">
+							<div class="card-title">
+								<h2>Quantidade de questões resolvidas</h2>
+							</div>
+							<div class="card-block">
+								<div class="canvas-wrapper">
+									<canvas class="chart" id="bar-chart" height="auto" width="auto"></canvas>
+								</div>
+							</div>
+					</div>
+
+
+
+
+			</div>
+
+		</div>
+	</div>
+			
+			<section id="main-content" class="column column-offset-20">
+				<div class="row grid-responsive">
+					
 				</div>
 				
 				<!--Gráficos-->
@@ -65,7 +100,7 @@
 					<div class="column column-50">
 						<div class="card">
 							<div class="card-title">
-								<h2>Gráfico de Linha</h2>
+								<h2>Quantidade de Usuários cadastrados</h2>
 							</div>
 							<div class="card-block">
 								<div class="canvas-wrapper">
@@ -77,7 +112,7 @@
 					<div class="column column-50">
 						<div class="card">
 							<div class="card-title">
-								<h2>Gráfico de Barras</h2>
+								<h2>Quantidade de questões resolvidas</h2>
 							</div>
 							<div class="card-block">
 								<div class="canvas-wrapper">
@@ -165,111 +200,109 @@
 							</div>
 						</div>
 					</div>
-			</div>
+				</div>
 			
-			<!--Forms-->
-			<h5 class="mt-2">Forms</h5><a class="anchor" name="forms"></a>
-			<div class="row grid-responsive">
-				<div class="column ">
-					<div class="card">
-						<div class="card-title">
-							<h3>Sample Form</h3>
-						</div>
-						<div class="card-block">
-							<form>
-								<fieldset>
-									<label for="nameField">Name</label>
-									<input type="text" placeholder="Jane Donovan" id="nameField">
-									<label for="ageRangeField">Age Range</label>
-									<select id="ageRangeField">
-										<option value="0-13">0-13</option>
-										<option value="14-17">14-17</option>
-										<option value="18-23">18-23</option>
-										<option value="24+">24+</option>
-									</select>
-									<label for="commentField">Comment</label>
-									<textarea placeholder="Hi Jane…" id="commentField"></textarea>
-									<div class="float-right">
-										<input type="checkbox" id="confirmField">
-										<label class="label-inline" for="confirmField">Send a copy to yourself</label>
-									</div>
-									<input class="button-primary" type="submit" value="Send">
-								</fieldset>
-							</form>
+				<!--Forms-->
+				<h5 class="mt-2">Forms</h5><a class="anchor" name="forms"></a>
+				<div class="row grid-responsive">
+					<div class="column ">
+						<div class="card">
+							<div class="card-title">
+								<h3>Sample Form</h3>
+							</div>
+							<div class="card-block">
+								<form>
+									<fieldset>
+										<label for="nameField">Name</label>
+											<input type="text" placeholder="Jane Donovan" id="nameField">
+										<label for="ageRangeField">Age Range</label>
+										<select id="ageRangeField">
+											<option value="0-13">0-13</option>
+											<option value="14-17">14-17</option>
+											<option value="18-23">18-23</option>
+											<option value="24+">24+</option>
+										</select>
+										<label for="commentField">Comment</label>
+										<textarea placeholder="Hi Jane…" id="commentField"></textarea>
+										<div class="float-right">
+											<input type="checkbox" id="confirmField">
+											<label class="label-inline" for="confirmField">Send a copy to yourself</label>
+										</div>
+										<input class="button-primary" type="submit" value="Send">
+									</fieldset>
+								</form>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			
+				</div>			
 		
-			<!--Buttons-->
-			<h5 class="mt-2">Buttons</h5><a class="anchor" name="buttons"></a>
-			<div class="row grid-responsive">
-				<div class="column">
-					<!-- Default Button -->
-					<a class="button" href="#">Default Button</a>
-					
-					<!-- Outlined Button -->
-					<button class="button button-outline">Outlined Button</button>
-					
-					<!-- Clear Button -->
-					<input class="button button-clear" type="submit" value="Clear Button">
+				<!--Buttons-->
+				<h5 class="mt-2">Buttons</h5><a class="anchor" name="buttons"></a>
+				<div class="row grid-responsive">
+					<div class="column">
+						<!-- Default Button -->
+						<a class="button" href="#">Default Button</a>
+						
+						<!-- Outlined Button -->
+						<button class="button button-outline">Outlined Button</button>
+						
+						<!-- Clear Button -->
+						<input class="button button-clear" type="submit" value="Clear Button">
+					</div>
 				</div>
-			</div>
 			
-			<!--Tables-->
-			<h5 class="mt-2">Tables</h5><a class="anchor" name="tables"></a>
-			<div class="row grid-responsive">
-				<div class="column ">
-					<div class="card">
-						<div class="card-title">
-							<h3>Current Members</h3>
-						</div>
-						<div class="card-block">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Role</th>
-										<th>Age</th>
-										<th>Location</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Jane Donovan</td>
-										<td>UI Developer</td>
-										<td>23</td>
-										<td>Philadelphia, PA</td>
-									</tr>
-									<tr>
-										<td>Jonathan Smith</td>
-										<td>Designer</td>
-										<td>30</td>
-										<td>London, UK</td>
-									</tr>
-									<tr>
-										<td>Kelly Johnson</td>
-										<td>UX Developer</td>
-										<td>25</td>
-										<td>Los Angeles, CA</td>
-									</tr>
-									<tr>
-										<td>Sam Davidson</td>
-										<td>Programmer</td>
-										<td>28</td>
-										<td>Philadelphia, PA</td>
-									</tr>
-								</tbody>
-							</table>
+				<!--Tables-->
+				<h5 class="mt-2">Tables</h5><a class="anchor" name="tables"></a>
+				<div class="row grid-responsive">
+					<div class="column ">
+						<div class="card">
+							<div class="card-title">
+								<h3>Current Members</h3>
+							</div>
+							<div class="card-block">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Role</th>
+											<th>Age</th>
+											<th>Location</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Jane Donovan</td>
+											<td>UI Developer</td>
+											<td>23</td>
+											<td>Philadelphia, PA</td>
+										</tr>
+										<tr>
+											<td>Jonathan Smith</td>
+											<td>Designer</td>
+											<td>30</td>
+											<td>London, UK</td>
+										</tr>
+										<tr>
+											<td>Kelly Johnson</td>
+											<td>UX Developer</td>
+											<td>25</td>
+											<td>Los Angeles, CA</td>
+										</tr>
+										<tr>
+											<td>Sam Davidson</td>
+											<td>Programmer</td>
+											<td>28</td>
+											<td>Philadelphia, PA</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 									
-		</section>
-	</div>
-	</div>
+			</section>
+	
 	
 	<script src="_js/chart.min.js"></script>
 	<script src="_js/chart-data.js"></script>
