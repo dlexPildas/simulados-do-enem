@@ -28,9 +28,9 @@
 </head>
 
 <body>
-    <div class="navbar">
+
          <?php include('navbar-adm.php') ?>
-	</div>
+
 
 	<div class="container-fluid">
         <div class="row">

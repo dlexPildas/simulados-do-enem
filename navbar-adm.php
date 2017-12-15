@@ -57,16 +57,14 @@
            
             <div id="dados-da-barra">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="tela-cadastrar-questao-oficial.php">Página Inicial
-                            <span class="sr-only">(current)</span>
-                        </a>
+                    <li>
+                        <a href="tela-cadastrar-questao-oficial.php">Página Inicial</a>
                     </li>
                     <li>
                         <a href="tela-cadastrar-questao-oficial.php">Submeter Questões</a>
                     </li>
                     <li>
-                        <a href="#">Feedbacks</a>
+                        <a href="#">Ver Feedbacks</a>
                     </li>
                     <li>
                         <a href="logs-do-sistema.php">Logs do Sistema</a>
@@ -83,12 +81,17 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
+                             <li>
+                                <a href="#">Gerenciar Contas de Usuário</a>
+                            </li>
                             <li>
                                 <a href="#">Minha Conta</a>
                             </li>
+                           
                             <li>
                                 <a href="#">Banir Usuário</a>
                             </li>
+
                             <li>
                                 <a href="_controller/logout.php">Sair</a>
                             </li>
