@@ -12,7 +12,7 @@
 
 --Cria as tabelas
 
-CREATE schema public;
+--CREATE schema public;
 
 CREATE TABLE  usuarios (
   idusuario SERIAL NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE  usuarios (
 CREATE TABLE simulado (
   idsimulado SERIAL,
   idusuario INTEGER NOT NULL,
-  data DATE NOT NULL,
+  data_simulado DATE NOT NULL,
   tempo VARCHAR(8) NOT NULL,
   pontuacao INTEGER NOT NULL,
   tipo VARCHAR(1) NOT NULL,

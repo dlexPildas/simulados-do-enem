@@ -20,7 +20,7 @@ require_once ("../_controller/buscar_usuarios.php");
     <form class="form-inline" method="POST" action="buscar_gerenciar_usuarios.php">
         <div class="form-group">
             <label for="exampleInputName2">Nome</label>
-            <input type="text" class="form-control" id="exampleInputName2" placeholder="Nome do usuário">
+            <input type="text" class="form-control" id="nome" placeholder="Nome do usuário">
             <button type="submit" class="btn btn-default">Pesquisar </button>
         </div>
 
