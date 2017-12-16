@@ -155,6 +155,12 @@ class Controllerdados {
 		//Não sei o que fazer aqui por enquanto zZzZz... (Allan)
 	}
 
+	public function buscarUsuarios($nome){
+	    $userdao = new UserDao();
+	    $result = $userdao->buscar($nome);
+	    return $result;
+    }
+
 	/**
 	1 - cadastro de usuário
 	2 - promoção de usuário

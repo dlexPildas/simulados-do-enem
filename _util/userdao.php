@@ -87,5 +87,17 @@ class UserDao {
 		pg_close( $this->conectar() );
 		return $Resultado;
 	}
+	//SELECT
+    function buscar($nome){
+	    $banco = Bd::getInstance();
+	    $banco->abrirconexao();
+	    $SQL = "SELECT nome,email FROM usuarios WHERE nome = {'$nome'} ";
+	    $result = pg_query($SQL);
+	    if(pg_num_rows($result)===0){
+	        return false;
+        }else{
+	        return $result;
+        }
+    }
 }
 ?>
