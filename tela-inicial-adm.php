@@ -20,18 +20,16 @@
 	<link rel="stylesheet" href="_css/milligram.min.css">
 	
 	<!-- Main Styles -->
-    <link rel="stylesheet" href="_css/styles.css">
-	
-	<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
-	
-		
+    <link rel="stylesheet" href="_css/tela-inicial-adm.css">		
+	<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">	
 </head>
 
 <body>
-
-         <?php include('navbar-adm.php') ?>
-
-
+	
+	<div class="principa-adm">
+		<?php include('navbar-adm.php') ?>
+	</div>
+        
 	<div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-lg-3 col-sm-12">
@@ -228,23 +226,7 @@
 		scaleGridLineColor: "rgba(0,0,0,.05)",
 		scaleFontColor: "#c5c7cc"
 		});
-		var chart4 = document.getElementById("pie-chart").getContext("2d");
-		window.myPie = new Chart(chart4).Pie(pieData, {
-		responsive: true,
-		segmentShowStroke: false
-		});
-		var chart5 = document.getElementById("radar-chart").getContext("2d");
-		window.myRadarChart = new Chart(chart5).Radar(radarData, {
-		responsive: true,
-		scaleLineColor: "rgba(0,0,0,.05)",
-		angleLineColor: "rgba(0,0,0,.2)"
-		});
-		var chart6 = document.getElementById("polar-area-chart").getContext("2d");
-		window.myPolarAreaChart = new Chart(chart6).PolarArea(polarData, {
-		responsive: true,
-		scaleLineColor: "rgba(0,0,0,.2)",
-		segmentShowStroke: false
-		});
+		
 	};
 	</script>			
 
