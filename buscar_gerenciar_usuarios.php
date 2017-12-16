@@ -23,7 +23,6 @@ header("Content-type: text/html; charset=utf-8");
             <input type="text" id="nome" name="nome" placeholder="Nome do usuário">
             <button type="submit" class="btn btn-info">Pesquisar </button>
         </div>
-
     </form>
 </body>
 </html>
