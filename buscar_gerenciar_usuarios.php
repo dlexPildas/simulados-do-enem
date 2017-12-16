@@ -17,11 +17,11 @@ header("Content-type: text/html; charset=utf-8");
     <title>Gerenciar contas</title>
 </head>
 <body>
-    <form class="form-inline" id = "nome" method="POST" action="../_controller/buscar_usuarios.php">
+    <form class="form-inline" form method="POST" action="_controller/buscar_usuarios.php" id="formulario-busca">
         <div class="form-group">
             <label for="exampleInputName2">Nome</label>
-            <input type="text" class="form-control" id="nome" placeholder="Nome do usuário">
-            <button type="submit" class="btn btn-default">Pesquisar </button>
+            <input type="text" id="nome" name="nome" placeholder="Nome do usuário">
+            <button type="submit" class="btn btn-info">Pesquisar </button>
         </div>
 
     </form>
