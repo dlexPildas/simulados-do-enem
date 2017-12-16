@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="_css/milligram.min.css">
 	
 	<!-- Main Styles -->
-    <link rel="stylesheet" href="_css/styles.css">
+    <link rel="stylesheet" href="_css/tela-inicial-adm.css">
 	
 	<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
 </head>
