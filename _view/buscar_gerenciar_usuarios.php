@@ -6,8 +6,8 @@ header("Content-type: text/html; charset=utf-8");
  * Date: 16/12/2017
  * Time: 11:05
  */
-require_once ("../_controller/gerenciar_usuarios.php");
-require_once ("../_controller/buscar_usuarios.php");
+//require_once ("../_controller/gerenciar_usuarios.php");
+//require_once ("../_controller/buscar_usuarios.php");
 
 ?>
 
@@ -17,7 +17,7 @@ require_once ("../_controller/buscar_usuarios.php");
     <title>Gerenciar contas</title>
 </head>
 <body>
-    <form class="form-inline" method="POST" action="buscar_gerenciar_usuarios.php">
+    <form class="form-inline" id = "nome" method="POST" action="../_controller/buscar_usuarios.php">
         <div class="form-group">
             <label for="exampleInputName2">Nome</label>
             <input type="text" class="form-control" id="nome" placeholder="Nome do usuário">

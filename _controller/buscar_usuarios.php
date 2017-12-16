@@ -6,11 +6,13 @@
  * Time: 11:28
  */
     require_once ("controllerdados.php");
+    echo "Chegou aqui";
     $nome = $_POST['nome'];
     $controller = Controllerdados::getInstance();
-    if($controller->buscarUsuarios($nome)==false){
+    $result = $controller->buscarUsuarios($nome);
+    if($result==false){
         echo "Erro, usuários com o nome especificado não foram encontrados.";
     }else{
-        return $controller->buscarUsuarios($nome);
+        return $result;
     }
 ?>
