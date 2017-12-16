@@ -7,7 +7,7 @@ header("Content-type: text/html; charset=utf-8");
  * Time: 11:05
  */
 //require_once ("../_controller/gerenciar_usuarios.php");
-//require_once ("../_controller/buscar_usuarios.php");
+include_once ("../_controller/buscar_usuarios.php");
 
 ?>
 
