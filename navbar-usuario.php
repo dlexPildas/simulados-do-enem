@@ -22,7 +22,7 @@
         <div id="nav1" class="container-fluid">
             <!-- Toggle que faz com que apareçam as opções em celualar e telas menores. -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><h2>SOS ENEM</h2></a>
+                <a class="navbar-brand" href="_controller/logout.php"><h2>SOS ENEM</h2></a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>

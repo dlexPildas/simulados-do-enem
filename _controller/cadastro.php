@@ -6,8 +6,6 @@ require_once( '../_model/Usuario.php' );
 require_once( '../_controller/controllerdados.php' );
 
 if ( ( isset( $_POST[ 'nome' ] ) == false )and( isset( $_POST[ 'email' ] ) == false )and( isset( $_POST[ 'senha' ] ) == false )and( isset( $_POST[ 'password' ] ) == false ) ) {
-
-	//header("Location:index.php");
 	echo 'deu ruim';
 } else {
 
