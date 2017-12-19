@@ -144,3 +144,11 @@ CREATE TABLE  usuariorelatorio (
     ON UPDATE NO ACTION
     NOT DEFERRABLE
 );
+
+CREATE TABLE feedback (
+  idfeedback SERIAL,
+  idusuario INTEGER NOT NULL,
+  descricao VARCHAR(500) NOT NULL,
+  titulo VARCHAR(100),
+  CONSTRAINT feedback_pkey PRIMARY KEY(idfeedback)
+) 
