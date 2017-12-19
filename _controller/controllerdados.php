@@ -1,8 +1,10 @@
 <?php
 
 require_once( "../_util/userdao.php" );
+require_once( "../_util/feedbackDao.php" );
 require_once( "../_util/logdao.php" );
 require_once( "../_model/Usuario.php" );
+require_once( "../_model/Feedback.php" );
 require_once( "../_model/Questao.php" );
 require_once( "../_model/Prova.php" );
 require_once( "../_util/questaodao.php" );
@@ -47,6 +49,23 @@ class Controllerdados {
 				echo "deu errado";
 			}
 			$this->realizalogin( $email, $senha, 1 );
+
+		}
+	}
+	
+	public function cadastraFeedback($iduser, $descricao, $titulo){
+		if ( $descricao == null || $titulo == null || $descricao == "" ) {
+			echo "Saia daqui";
+		} else {
+			$feed = new Feedback( $iduser, $titulo, $descricao );
+
+			$dao = new FeedbackDao();
+			$verifica = $dao->inserir( $feed );
+			if ( $verifica == true ) {
+				echo "deu certo";
+			} else {
+				echo "deu errado";
+			}
 
 		}
 	}
