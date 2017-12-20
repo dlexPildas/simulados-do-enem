@@ -6,7 +6,7 @@
  * Time: 13:17
  */
 
-class Prova
+class Prova implements JsonSerializable
 {
     private $id;
     private $ano;
@@ -130,5 +130,13 @@ class Prova
     public function anteriorQuestao() {
         $this->indexAtualQuest--;
         
+    }
+
+
+    public function jsonSerialize() {
+        return [
+            'idProva' => $this->getId(),
+            'questoes' => $this->getQuestoes()
+        ];
     }
 }

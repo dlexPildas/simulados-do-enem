@@ -1,7 +1,7 @@
 <?php header("Content-type: text/html; charset=utf-8");
 require_once( "../_model/Questao.php" );
 require_once( "../_model/Prova.php" );
-require_once( "../_controller/solicitarProva.php" );
+//require_once( "../_controller/solicitarProva.php" );
 //include_once( "../_model/seguranca.php" );
 //include_once( "../_controller/controllerdados.php" );
 ?>
@@ -24,11 +24,11 @@ require_once( "../_controller/solicitarProva.php" );
 	<link href="../_css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="../_js/cronometro.js"></script>
 	<script type="text/javascript" src="../_js/simulado.js"></script>
-	<script>
+	<!-- <script>
 		window.onload = inicio;
-	</script>
+	</script> -->
 
-	<!-- <script type="text/javascript">
+	<script type="text/javascript">
 		function selectIndex(str) {
 			document.getElementById(str).className += " active";
 			for (var i = 1; i <= 90; i++) {
@@ -41,7 +41,7 @@ require_once( "../_controller/solicitarProva.php" );
 				}
 			}
 		}
-	</script> -->
+	</script>
 
 </head>
 <body>
@@ -59,11 +59,11 @@ require_once( "../_controller/solicitarProva.php" );
 		</div>
 	</nav>
 
-	<div role="main" class="col-md-9" style="height: 100px; margin-left: 35px">
+	<div role="main" class="col-md-9" style="margin-left: 35px">
 
 
 		<div class="panel panel-info"  style="font-size: 16px">
-			<div class="panel-body tituloQuestao"> <div id="enunciado"><?php echo $prova->getQuestaoAtual()->getEnunciado();?></div></div>
+			<div class="panel-body tituloQuestao"> <div id="enunciado"></div></div>
 
 			<div style="height: 100px">
 
@@ -71,19 +71,19 @@ require_once( "../_controller/solicitarProva.php" );
 
 			<!-- Selecionar respostas-->
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respa"><?php echo $prova->getQuestaoAtual()->getRespostaA();?></label>
+				<label><input type="radio" name="optradio" id="respa"><span class="alternativa"></span></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respb"> <?php echo $prova->getQuestaoAtual()->getRespostaB();?></label>
+				<label><input type="radio" name="optradio" id="respb"></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respc"> <?php echo $prova->getQuestaoAtual()->getRespostaC();?></label>
+				<label><input type="radio" name="optradio" id="respc"></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respd"> <?php echo $prova->getQuestaoAtual()->getRespostaD();?></label>
+				<label><input type="radio" name="optradio" id="respd"></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respe"> <?php echo $prova->getQuestaoAtual()->getRespostaE();?></label>
+				<label><input type="radio" name="optradio" id="respe"></label>
 			</div> 
 
 		</div>
@@ -96,16 +96,8 @@ require_once( "../_controller/solicitarProva.php" );
 
 		<nav aria-label="..." class="previous">
 			<ul class="pager">
-				<li><a href="#" style="font-size: 14px" id="btn_anterior">Anterior</a></li>
+				<li><a href="#" style="font-size: 14px" onclick="anteriorQuestao()">Anterior</a></li>
 				<li><a href="#" style="font-size: 14px" onclick="proximaQuestao()">Próximo</a></li>
-
-				<script>
-					var anterior = document.getElementById('btn_anterior');
-					anterior.addEventListener('click',function(){
-						<?php $prova->feijao()?>
-						
-					});
-				</script>
 			</ul>
 		</nav>
 
