@@ -30,13 +30,13 @@ function setQuestoesProva(questoes){
 
 function apresentarQuestao(index){
 	indexAtual = index;
+	//selectIndex();
 	document.getElementById("enunciado").innerText = questoesProva[index].enunciado;
-
-	$('#respa').children('.alternativa').text(questoesProva[index].respostaA);
-	$('#respb').parent().append('<span class="alternativa">'+questoesProva[index].respostaB+'</span>');
-	$('#respc').parent().append('<span class="alternativa">'+questoesProva[index].respostaC+'</span>');
-	$('#respd').parent().append('<span class="alternativa">'+questoesProva[index].respostaD+'</span>');
-	$('#respe').parent().append('<span class="alternativa">'+questoesProva[index].respostaE+'</span>');
+	$('#respa').parent().children('.alternativa').text(questoesProva[index].respostaA);
+	$('#respb').parent().children('.alternativa').text(questoesProva[index].respostaB);
+	$('#respc').parent().children('.alternativa').text(questoesProva[index].respostaC);
+	$('#respd').parent().children('.alternativa').text(questoesProva[index].respostaD);
+	$('#respe').parent().children('.alternativa').text(questoesProva[index].respostaE);
 }
 
 
