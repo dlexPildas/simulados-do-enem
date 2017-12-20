@@ -56,7 +56,7 @@ class Controllerdados {
 	
 	public function cadastraFeedback($iduser, $descricao, $titulo){
 		if ( $descricao == null || $titulo == null || $descricao == "" ) {
-			echo "Saia daqui";
+			echo "Saia daqui do cadastra feedback";
 		} else {
 			$feed = new Feedback( $iduser, $titulo, $descricao );
 
@@ -65,7 +65,7 @@ class Controllerdados {
 			if ( $verifica == true ) {
 				echo "deu certo";
 			} else {
-				echo "deu errado";
+				echo "deu errado na inserção";
 			}
 
 		}
