@@ -152,6 +152,7 @@ class Controllerdados {
             return false;
         }
         $linha = pg_fetch_array($result);
+        // não retornar privilegio
         return $linha['privilegio'];
 	}
 
