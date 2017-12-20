@@ -22,6 +22,9 @@ insert into simulado (idsimulado, idusuario, data_simulado, tempo, pontuacao, ti
 		
 --Cadastro de prova
 insert into prova (idprova, qtdquestoes, ano) values ('1','90', '2016');
+insert into prova (idprova, qtdquestoes, ano) values ('2','90', '2015');
+insert into prova (idprova, qtdquestoes, ano) values ('3','90', '2014');
+insert into prova (idprova, qtdquestoes, ano) values ('4','90', '2013');
 
 --Cadastro de Área de Conhecimento
 insert into areadeconhecimento (idarea, nome) values ('1', 'Ciências Humanas e suas Tecnologias');
