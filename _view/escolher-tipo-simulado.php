@@ -6,13 +6,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="text/javascript">
 		function abrirProva(obj){
-			$.ajax({
+			window.location.href = "../_view/simulado.php?idProva="+obj;
+			/*$.ajax({
 				url: "../_controller/solicitarProva.php",
 				type: 'post',
-				data: {tipoProva: "1"}
+				data: {tipoProva: obj}
 			}).done(function () {
 				window.location.href = "../_view/simulado.php";
-			});
+			});*/
 		}
 	</script>
 	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap.min.css">
@@ -54,9 +55,9 @@
 		<h3 style="text-align: center">Selecione um modo de criação</h3>
 		<div class="row">
 			<div class="col-md-10">
-				<a class="btn css_btn_class" href="#" role="button" onclick="abrirProva(this)">Edições anteriores</a>
-				<a class="btn css_btn_class" href="#" role="button" onclick="abrirProva(this)">Áreas especificas</a>
-				<a class="btn css_btn_class" href="#" role="button" onclick="abrirProva(this)">Questões oficiais</a>
+				<a class="btn css_btn_class" href="#" role="button" onclick="abrirProva(1)">Edições anteriores</a>
+				<a class="btn css_btn_class" href="#" role="button" onclick="abrirProva(2)">Áreas especificas</a>
+				<a class="btn css_btn_class" href="#" role="button" onclick="abrirProva(3)">Questões oficiais</a>
 			</div>
 		</div>
 		<div class="row">

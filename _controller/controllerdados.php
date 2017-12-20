@@ -56,7 +56,7 @@ class Controllerdados {
 	
 	public function cadastraFeedback($iduser, $descricao, $titulo){
 		if ( $descricao == null || $titulo == null || $descricao == "" ) {
-			echo "Saia daqui";
+			echo "Saia daqui do cadastra feedback";
 		} else {
 			$feed = new Feedback( $iduser, $titulo, $descricao );
 
@@ -65,7 +65,7 @@ class Controllerdados {
 			if ( $verifica == true ) {
 				echo "deu certo";
 			} else {
-				echo "deu errado";
+				echo "deu errado na inserção";
 			}
 
 		}
@@ -136,10 +136,8 @@ class Controllerdados {
 
 	public function gerarProva( $tipo_prova ) {
 		$dao = new QuestaoDAO();
-		echo "ta no gerar prova";
 		//if($tipo_prova === '1'){
 		$questoes = $dao->ler( "select * from questao" );
-		echo "Retornou a questão";
 		$prova = new Prova( 1, 2017, "Aquele Tipo", sizeof( $questoes, 0 ), $questoes );
 		return $prova;
 		//}
