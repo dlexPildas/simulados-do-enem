@@ -63,19 +63,19 @@
                 <ul class="nav navbar-nav">
                     
                      <li>
-                        <a href="paineldeusuario.php">Pagina inicial <span class="sr-only">(current)</span> </a>
+                        <a style="margin-right: 125px" href="paineldeusuario.php">Pagina inicial <span class="sr-only">(current)</span> </a>
                     </li>
                     <li>
-                        <a href="_view/escolher-tipo-simulado.php">Realizar simulado </a>
+                        <a style="margin-right: 125px" href="_view/escolher-tipo-simulado.php">Realizar simulado </a>
                     </li>
                     <li>
-                        <a href="tela-feedbacks.html">Dar feedbacks</a>
+                        <a style="margin-right: 125px" href="tela-de-feedback.php">Dar feedbacks</a>
                     </li>
                     <li>
-                        <a href="minha-conta.php">Minha conta</a>
+                        <a style="margin-right: 125px" href="gerencia-de-conta.php">Minha conta</a>
                     </li>
                     <li>
-                        <a href="tela-de-ajuda.php">Ajuda</a>
+                        <a style="margin-right: 125px" href="tela-de-ajuda.php">Ajuda</a>
                     </li>
                     <li>
                         <a href="_controller/logout.php">Sair da conta</a>
