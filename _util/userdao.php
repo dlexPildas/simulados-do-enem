@@ -53,6 +53,9 @@ class UserDao {
         $banc->abrirconexao();
         $SQL = "UPDATE FROM usuarios SET '$atributo' = '$acao' WHERE idusuario = '$id'";
         $resultado = pg_query($SQL);
+        if(pg_num_rows($resultado)===0){
+            return false;
+        }
         $banc->fecharconexao();
 		return $resultado;
 	}

@@ -150,19 +150,31 @@ class Controllerdados {
 	public function promoverModerador( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'M', $id );
-		return $result;
+        if($result==false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
 	}
 
 	public function promoverAdministridador( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'A', $id );
-		return $result;
+        if($result==false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
 	}
 
 	public function removerPrivilegio( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'N', $id );
-		return $result;
+		if($result==false){
+		    return false;
+        }
+        $linha = pg_fetch_array($result);
+		return $linha['privilegio'];
 	}
 
 	public function buscarUsuarios($nome){
@@ -179,13 +191,21 @@ class Controllerdados {
     public function verificarPrivilegio($id){
 	    $userdao = new UserDao();
 	    $result = $userdao->buscar(null,$id);
-	    return $result;
+	    if($result==false){
+	        return false;
+        }
+	    $linha = pg_fetch_array($result);
+	    return $linha['privilegio'];
     }
 
     public function banirUsuario($id){
         $userdao = new UserDao();
         $result = $userdao->atualizar('privilegio', 'B', $id);
-        return $result;
+        if($result === false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
     }
 
     public function addProva() {
