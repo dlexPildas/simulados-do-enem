@@ -88,11 +88,15 @@ class UserDao {
 		return $Resultado;
 	}
 	//SELECT
-    function buscar($nome){
+    function buscar($nome, $id){
 	    $banco = Bd::getInstance();
 	    $banco->abrirconexao();
-	    $SQL = "SELECT nome,email FROM usuarios WHERE nome = {'$nome'} ";
-	    $result = pg_query($SQL);
+	    if($id == 0 && $nome != null){
+	        $sql = "SELECT nome,email FROM usuarios WHERE nome ='$nome'";
+        }else if($id != 0 && $nome == null){
+            $sql = "SELECT nome,email FROM usuarios WHERE id ='$id'";
+        }
+	    $result = pg_query($sql);
 	    if(pg_num_rows($result)===0){
             $banco->fecharconexao();
 	        return false;
@@ -103,4 +107,3 @@ class UserDao {
 
     }
 }
-?>

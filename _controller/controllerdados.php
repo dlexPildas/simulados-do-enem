@@ -1,6 +1,6 @@
 <?php
 
-require_once( "../_util/userdao.php" );
+require_once( '../_util/userdao.php' );
 require_once( "../_util/logdao.php" );
 require_once( "../_model/Usuario.php" );
 require_once( "../_model/Questao.php" );
@@ -133,34 +133,39 @@ class Controllerdados {
 		return $result;
 	}
 
-	public function removerModerador( $id ) {
-		$userdao = new UserDao();
-		$result = $userdao->atualizar( 'privilegio', 'N', $id );
-		return $result;
-	}
-
 	public function promoverAdministridador( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'A', $id );
 		return $result;
 	}
 
-	public function removerAdministridador( $id ) {
+	public function removerPrivilegio( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'N', $id );
 		return $result;
 	}
 
-	public function addProva() {
-		//Não sei o que fazer aqui por enquanto zZzZz... (Allan)
-	}
-
 	public function buscarUsuarios($nome){
 	    $userdao = new UserDao();
-	    $result = $userdao->buscar($nome);
+	    $result = $userdao->buscar($nome, 0);
 	    return $result;
     }
 
+    public function verificarPrivilegio($id){
+	    $userdao = new UserDao();
+	    $result = $userdao->buscar(null,$id);
+	    return $result;
+    }
+
+    public function banirUsuario($id){
+        $userdao = new UserDao();
+        $result = $userdao->atualizar('privilegio', 'B', $id);
+        return $result;
+    }
+
+    public function addProva() {
+        //Não sei o que fazer aqui por enquanto zZzZz... (Allan)
+    }
 	/**
 	1 - cadastro de usuário
 	2 - promoção de usuário
