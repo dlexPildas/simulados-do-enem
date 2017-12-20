@@ -1,9 +1,8 @@
 <?php
 require_once( "../_model/Questao.php" );
-	/**
-	* 
-	*/
-	class QuestaoDAO {
+require_once( "../_model/Prova.php" );
+
+	class SimuladoDAO {
 		
 		public function __construct(){
 			# code...
@@ -65,4 +64,4 @@ require_once( "../_model/Questao.php" );
 
 
 	}
-	?>
+?>
