@@ -22,7 +22,7 @@ class Bd {
     }
 	
 	public static function zeraSingleton(){
-		$this->fechaconexao();
+		fechaconexao();
 		
 		self::$instance = new Bd();
         

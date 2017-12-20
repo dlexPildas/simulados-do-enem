@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 //include_once( "seguranca.php" );
 require_once( "bd.php" );
 
@@ -87,5 +89,23 @@ class UserDao {
 		pg_close( $this->conectar() );
 		return $Resultado;
 	}
+	//SELECT
+    function buscar($nome, $id){
+	    $banco = Bd::getInstance();
+	    $banco->abrirconexao();
+	    if($id == 0 && $nome != null){
+	        $sql = "SELECT nome,email FROM usuarios WHERE nome ='$nome'";
+        }else if($id != 0 && $nome == null){
+            $sql = "SELECT nome,email FROM usuarios WHERE id ='$id'";
+        }
+	    $result = pg_query($sql);
+	    if(pg_num_rows($result)===0){
+            $banco->fecharconexao();
+	        return false;
+        }else{
+            $banco->fecharconexao();
+	        return $result;
+        }
+
+    }
 }
-?>
