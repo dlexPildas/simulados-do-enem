@@ -56,7 +56,7 @@ class Controllerdados {
 	
 	public function cadastraFeedback($iduser, $descricao, $titulo){
 		if ( $descricao == null || $titulo == null || $descricao == "" ) {
-			echo "Saia daqui";
+			echo "Saia daqui do cadastra feedback";
 		} else {
 			$feed = new Feedback( $iduser, $titulo, $descricao );
 
@@ -65,7 +65,7 @@ class Controllerdados {
 			if ( $verifica == true ) {
 				echo "deu certo";
 			} else {
-				echo "deu errado";
+				echo "deu errado na inserção";
 			}
 
 		}
@@ -148,19 +148,31 @@ class Controllerdados {
 	public function promoverModerador( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'M', $id );
-		return $result;
+        if($result==false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
 	}
 
 	public function promoverAdministridador( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'A', $id );
-		return $result;
+        if($result==false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
 	}
 
 	public function removerPrivilegio( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'N', $id );
-		return $result;
+		if($result==false){
+		    return false;
+        }
+        $linha = pg_fetch_array($result);
+		return $linha['privilegio'];
 	}
 
 	public function buscarUsuarios($nome){
@@ -177,13 +189,21 @@ class Controllerdados {
     public function verificarPrivilegio($id){
 	    $userdao = new UserDao();
 	    $result = $userdao->buscar(null,$id);
-	    return $result;
+	    if($result==false){
+	        return false;
+        }
+	    $linha = pg_fetch_array($result);
+	    return $linha['privilegio'];
     }
 
     public function banirUsuario($id){
         $userdao = new UserDao();
         $result = $userdao->atualizar('privilegio', 'B', $id);
-        return $result;
+        if($result === false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
     }
 
     public function addProva() {
