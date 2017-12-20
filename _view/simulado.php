@@ -80,7 +80,7 @@ require_once( "../_model/Prova.php" );
 				<label><input type="radio" name="optradio" id="respc"><span class="alternativa"></span></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respd"><span class="alternativa"></span></label>
+				<label> <input type="radio" name="optradio" id="respd"><span class="alternativa"></span></label>
 			</div>
 			<div class="radio">
 				<label><input type="radio" name="optradio" id="respe"><span class="alternativa"></span></label>
