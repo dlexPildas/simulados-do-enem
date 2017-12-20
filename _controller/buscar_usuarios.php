@@ -16,6 +16,7 @@
     }else{
         echo "<br>$result[1]<br>";
     }
+    // mudar essa função para o controller
     function getUsuario($result){
         $usuario = new Usuario( $result[1], '', '', '', $result[3] );
         $usuario->setId($result[0]);

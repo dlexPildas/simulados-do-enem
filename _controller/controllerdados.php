@@ -10,6 +10,7 @@ require_once( "../_model/Questao.php" );
 require_once( "../_model/Prova.php" );
 require_once( "../_util/questaodao.php" );
 
+
 class Controllerdados {
 	public static $instance = null;
 	private $user;
@@ -70,6 +71,28 @@ class Controllerdados {
 
 		}
 	}
+
+	//Método usado para cadastrar uma questão não oficial
+	public function cadastrarQuestaoNaoOficial($idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta ){
+        if($idusuario==null || $idprova==null || $idareaconhecimento==null || $enunciado==null || $questaooficial==null ||
+            $respostaa==null || $respostab==null || $respostac==null || $respostad==null || $respostae==null || $respostacorreta==null){
+
+            echo "Cai fora";
+        }else{
+            $questao = new Questao($idusuario,$idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab,
+                $respostac, $respostad, $respostae, $respostacorreta);
+
+            $dao = new QuestaoDAO();
+            $verifica = $dao->inserir($questao);
+            if($verifica == true){
+                echo "deu certo";
+            }else{
+                echo "deu errado";
+            }
+        }
+
+
+    }
 
 	/**
 	Protocolo de aplicação
@@ -137,7 +160,7 @@ class Controllerdados {
 	public function gerarProva( $tipo_prova ) {
 		$dao = new QuestaoDAO();
 		//if($tipo_prova === '1'){
-		$questoes = $dao->ler( "select * from questao" );
+		$questoes = $dao->ler(1,1); //<--- Retorna as questões do banco de dados
 		$prova = new Prova( 1, 2017, "Aquele Tipo", sizeof( $questoes, 0 ), $questoes );
 		return $prova;
 		//}
@@ -148,19 +171,32 @@ class Controllerdados {
 	public function promoverModerador( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'M', $id );
-		return $result;
+        if($result==false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        // não retornar privilegio
+        return $linha['privilegio'];
 	}
 
 	public function promoverAdministridador( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'A', $id );
-		return $result;
+        if($result==false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
 	}
 
 	public function removerPrivilegio( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'N', $id );
-		return $result;
+		if($result==false){
+		    return false;
+        }
+        $linha = pg_fetch_array($result);
+		return $linha['privilegio'];
 	}
 
 	public function buscarUsuarios($nome){
@@ -177,13 +213,21 @@ class Controllerdados {
     public function verificarPrivilegio($id){
 	    $userdao = new UserDao();
 	    $result = $userdao->buscar(null,$id);
-	    return $result;
+	    if($result==false){
+	        return false;
+        }
+	    $linha = pg_fetch_array($result);
+	    return $linha['privilegio'];
     }
 
     public function banirUsuario($id){
         $userdao = new UserDao();
         $result = $userdao->atualizar('privilegio', 'B', $id);
-        return $result;
+        if($result === false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
     }
 
     public function addProva() {

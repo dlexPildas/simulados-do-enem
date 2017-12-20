@@ -24,9 +24,9 @@ require_once( "../_model/Prova.php" );
 	<link href="../_css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="../_js/cronometro.js"></script>
 	<script type="text/javascript" src="../_js/simulado.js"></script>
-	<!-- <script>
+	<script>
 		window.onload = inicio;
-	</script> -->
+	</script>
 
 	<script type="text/javascript">
 		function selectIndex(str) {
