@@ -51,7 +51,7 @@
                         
                         
                         <div class="col-sm-9 col-md-9 col-lg-9">                
-                        <input type="text"required placeholder="Digite o nome do usuário desejado"</label>
+                        <input type="text" name="nome" id="nome" required placeholder="Digite o nome do usuário desejado"</label>
                         </div>
                        
                         <div class="col-sm-3 col-md-3 col-lg-3">                

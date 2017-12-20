@@ -12,7 +12,12 @@
     $result = $controller->buscarUsuarios($nome);
     if($result==false){
         echo "Erro, usuários com o nome especificado não foram encontrados.";
+        return false;
     }else{
-        echo "$result<br>";
-        return $result;
+        echo "<br>$result[1]<br>";
+    }
+    function getUsuario($result){
+        $usuario = new Usuario( $result[1], '', '', '', $result[3] );
+        $usuario->setId($result[0]);
+        return $usuario;
     }

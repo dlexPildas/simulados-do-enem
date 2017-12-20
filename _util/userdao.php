@@ -51,12 +51,9 @@ class UserDao {
 	function atualizar($atributo,$acao,$id) {
         $banc = Bd::getInstance();
         $banc->abrirconexao();
-        $SQL = "UPDATE FROM usuarios SET '{$atributo}' = '{$acao}' WHERE idusuario = '{$id}'";
+        $SQL = "UPDATE FROM usuarios SET '$atributo' = '$acao' WHERE idusuario = '$id'";
         $resultado = pg_query($SQL);
         $banc->fecharconexao();
-		/*$banco = $this->conectar();
-		$Resultado = pg_query( $this->conectar(), $SQL );
-		pg_close( $this->conectar() );*/
 		return $resultado;
 	}
 
@@ -91,18 +88,23 @@ class UserDao {
 	}
 	//SELECT
     function buscar($nome, $id){
+	    $array = null;
 	    $banco = Bd::getInstance();
 	    $banco->abrirconexao();
+	    $sql = null;
 	    if($id == 0 && $nome != null){
-	        $sql = "SELECT nome,email FROM usuarios WHERE nome ='$nome'";
+	        $sql = "SELECT idusuario,nome,email,privilegio FROM usuarios WHERE nome = '$nome'";
+	        echo "Chegou no select do nome";
         }else if($id != 0 && $nome == null){
-            $sql = "SELECT nome,email FROM usuarios WHERE id ='$id'";
+            $sql = "SELECT idusuario,nome,email,privilegio FROM usuarios WHERE idusuario ='$id'";
         }
 	    $result = pg_query($sql);
 	    if(pg_num_rows($result)===0){
+	        echo "entrou no if que diz que não pegou ngm no banco";
             $banco->fecharconexao();
 	        return false;
         }else{
+	        echo"Resultado da query : ".$result." !!";
             $banco->fecharconexao();
 	        return $result;
         }
