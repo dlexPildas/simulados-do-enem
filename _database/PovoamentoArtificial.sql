@@ -22,6 +22,9 @@ insert into simulado (idsimulado, idusuario, data_simulado, tempo, pontuacao, ti
 		
 --Cadastro de prova
 insert into prova (idprova, qtdquestoes, ano) values ('1','90', '2016');
+insert into prova (idprova, qtdquestoes, ano) values ('2','90', '2015');
+insert into prova (idprova, qtdquestoes, ano) values ('3','90', '2014');
+insert into prova (idprova, qtdquestoes, ano) values ('4','90', '2013');
 
 --Cadastro de Área de Conhecimento
 insert into areadeconhecimento (idarea, nome) values ('1', 'Ciências Humanas e suas Tecnologias');
@@ -29,3 +32,27 @@ insert into areadeconhecimento (idarea, nome) values ('2', 'Ciências da Naturez
 insert into areadeconhecimento (idarea, nome) values ('3', 'Linguagens');
 insert into areadeconhecimento (idarea, nome) values ('4', 'Códigos e suas Tecnologias');
 insert into areadeconhecimento (idarea, nome) values ('5', 'Matemática e suas Tecnologias');
+
+--Cadastro de Relatório
+insert into relatorio (quantidadecadastrados,quantidadeacessos,quantidadedestivados,quantidadeplanoscancelados,quantidadeplanosnovos) values('30','40','20','5','3');
+
+
+--Cadastro de Histórico
+insert into logsistema (idusuario,descricao,idacao) values ('1','fez alguma coisa pq ele é top','1');
+insert into logsistema (idusuario,descricao,idacao) values ('2','fez alguma coisa pq ele é top','2');
+insert into logsistema (idusuario,descricao,idacao) values ('3','fez alguma coisa pq ele é top','3');
+insert into logsistema (idusuario,descricao,idacao) values ('1','fez alguma coisa pq ele é top','4');
+insert into logsistema (idusuario,descricao,idacao) values ('2','fez alguma coisa pq ele é top','5');
+insert into logsistema (idusuario,descricao,idacao) values ('3','fez alguma coisa pq ele é top','6');
+
+-- Cadastro de Relatorio
+
+insert into usuariorelatorio (idusuario, idrelatorio) values ('1','1');
+
+--Cadastro Denuncia de Questão
+insert into denunciaquestao (idusuario,idquestao,observacao) values ('1','2','Muito difícil');
+insert into denunciaquestao (idusuario,idquestao,observacao) values ('2','3','Muito Fácil');
+
+--Cadastro Feedback
+insert into feedback (idusuario,descricao,titulo) values('1','Adorei o sistema','Muito top');
+insert into feedback (idusuario,descricao,titulo) values('2','Odiei o Sistema','Muito ruim');

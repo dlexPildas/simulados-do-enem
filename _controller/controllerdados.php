@@ -10,6 +10,7 @@ require_once( "../_model/Questao.php" );
 require_once( "../_model/Prova.php" );
 require_once( "../_util/questaodao.php" );
 
+
 class Controllerdados {
 	public static $instance = null;
 	private $user;
@@ -70,6 +71,28 @@ class Controllerdados {
 
 		}
 	}
+
+	//Método usado para cadastrar uma questão não oficial
+	public function cadastrarQuestaoNaoOficial($idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta ){
+        if($idusuario==null || $idprova==null || $idareaconhecimento==null || $enunciado==null || $questaooficial==null ||
+            $respostaa==null || $respostab==null || $respostac==null || $respostad==null || $respostae==null || $respostacorreta==null){
+
+            echo "Cai fora";
+        }else{
+            $questao = new Questao($idusuario,$idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab,
+                $respostac, $respostad, $respostae, $respostacorreta);
+
+            $dao = new QuestaoDAO();
+            $verifica = $dao->inserir($questao);
+            if($verifica == true){
+                echo "deu certo";
+            }else{
+                echo "deu errado";
+            }
+        }
+
+
+    }
 
 	/**
 	Protocolo de aplicação
@@ -152,6 +175,7 @@ class Controllerdados {
             return false;
         }
         $linha = pg_fetch_array($result);
+        // não retornar privilegio
         return $linha['privilegio'];
 	}
 

@@ -69,7 +69,7 @@
                         <a style="margin-right: 125px" href="_view/escolher-tipo-simulado.php">Realizar simulado </a>
                     </li>
                     <li>
-                        <a style="margin-right: 125px" href="tela-de-feedback.php">Dar feedbacks</a>
+                        <a style="margin-right: 125px" href="tela-envio-feedback.php">Dar feedbacks</a>
                     </li>
                     <li>
                         <a style="margin-right: 125px" href="gerencia-de-conta.php">Minha conta</a>
