@@ -124,6 +124,7 @@ class Prova
 
     public function proximaQuestao() {
         $this->indexAtualQuest++;
+        echo "alert(\"proximaQuestao\");";
     }
 
     public function anteriorQuestao() {

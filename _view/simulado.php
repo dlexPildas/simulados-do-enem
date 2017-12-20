@@ -23,33 +23,14 @@ require_once( "../_controller/solicitarProva.php" );
 	<script src="../_css/bootstrap/js/bootstrap.js"></script>
 	<link href="../_css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="../_js/cronometro.js"></script>
+	<script type="text/javascript" src="../_js/simulado.js"></script>
 	<script>
 		window.onload = inicio;
 	</script>
-	<script type="text/javascript">
-		function anteriorQuestao(){
-			<?php $prova->anteriorQuestao();?>
-			atualiza();
-		}
-		function atualiza(){
-			
-			document.getElementById("enunciado").innerHTML = ;
-			document.getElementById("respa").innerHTML = ;
-			document.getElementById("respb").innerHTML = ;
-			document.getElementById("respc").innerHTML = ;
-			document.getElementById("respd").innerHTML = ;
-			document.getElementById("respe").innerHTML = ;
-			
-		}
-		function proximaQuestao(){
-			<?php $prova->proximaQuestao();?>
-			atualiza();
-		}
-	</script>
 
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		function selectIndex(str) {
-			document.getElementById(str).className = "item active";
+			document.getElementById(str).className += " active";
 			for (var i = 1; i <= 90; i++) {
 				strin = str.substring(0, 5) + i;
 				if (strin !== str) {
@@ -60,23 +41,22 @@ require_once( "../_controller/solicitarProva.php" );
 				}
 			}
 		}
-	</script>
+	</script> -->
 
 </head>
 <body>
-
 	<nav class="navbar navbar-default">
-		 <div class="container-fluid">
-			 <div class="navbar-header">
-				 <a class="navbar-brand" href="../index.html">SOS ENEM</a>
-			 </div>
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="../index.html">SOS ENEM</a>
+			</div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a style="font-size: 16px" href="../painel-do-usuario.php">Minha conta</a></li>
 				<li><a style="font-size: 16px" href="#">Ajuda</a></li>
 				<li><a style="font-size: 16px" href="../_controller/logout.php">Sair</a></li>
 			</ul>
 
-		 </div>
+		</div>
 	</nav>
 
 	<div role="main" class="col-md-9" style="height: 100px; margin-left: 35px">
@@ -116,105 +96,41 @@ require_once( "../_controller/solicitarProva.php" );
 
 		<nav aria-label="..." class="previous">
 			<ul class="pager">
-			<li><a href="#" style="font-size: 14px" onclick="anteriorQuestao()">Anterior</a></li>
+				<li><a href="#" style="font-size: 14px" id="btn_anterior">Anterior</a></li>
 				<li><a href="#" style="font-size: 14px" onclick="proximaQuestao()">Próximo</a></li>
+
+				<script>
+					var anterior = document.getElementById('btn_anterior');
+					anterior.addEventListener('click',function(){
+						<?php $prova->feijao()?>
+						
+					});
+				</script>
 			</ul>
 		</nav>
 
 		<footer class="simulado-indicators" style="margin-top: 70px">
 			<nav>
-				<ol class="indice">
-					<li class="item active" id="index1" onclick="selectIndex(this.id)">01</li>
-					
-					<li class="item" id="index2" onclick="selectIndex(this.id)">02</li>
-					<li class="item" id="index3" onclick="selectIndex(this.id)">03</li>
-					<li class="item" id="index4" onclick="selectIndex(this.id)">04</li>
-					<li class="item" id="index5" onclick="selectIndex(this.id)">05</li>
-					<li class="item" id="index6" onclick="selectIndex(this.id)">06</li>
-					<li class="item" id="index7" onclick="selectIndex(this.id)">07</li>
-					<li class="item" id="index8" onclick="selectIndex(this.id)">08</li>
-					<li class="item" id="index9" onclick="selectIndex(this.id)">09</li>
-					<li class="item" id="index10" onclick="selectIndex(this.id)">10</li>
-					<li class="item" id="index11" onclick="selectIndex(this.id)">11</li>
-					<li class="item" id="index12" onclick="selectIndex(this.id)">12</li>
-					<li class="item" id="index13" onclick="selectIndex(this.id)">13</li>
-					<li class="item" id="index14" onclick="selectIndex(this.id)">14</li>
-					<li class="item" id="index15" onclick="selectIndex(this.id)">15</li>
-					<li class="item" id="index16" onclick="selectIndex(this.id)">16</li>
-					<li class="item" id="index17" onclick="selectIndex(this.id)">17</li>
-					<li class="item" id="index18" onclick="selectIndex(this.id)">18</li>
-					<li class="item" id="index19" onclick="selectIndex(this.id)">19</li>
-					<li class="item" id="index20" onclick="selectIndex(this.id)">20</li>
-					<li class="item" id="index21" onclick="selectIndex(this.id)">21</li>
-					<li class="item" id="index22" onclick="selectIndex(this.id)">22</li>
-					<li class="item" id="index23" onclick="selectIndex(this.id)">23</li>
-					<li class="item" id="index24" onclick="selectIndex(this.id)">24</li>
-					<li class="item" id="index25" onclick="selectIndex(this.id)">25</li>
-					<li class="item" id="index26" onclick="selectIndex(this.id)">26</li>
-					<li class="item" id="index27" onclick="selectIndex(this.id)">27</li>
-					<li class="item" id="index28" onclick="selectIndex(this.id)">28</li>
-					<li class="item" id="index29" onclick="selectIndex(this.id)">29</li>
-					<li class="item" id="index30" onclick="selectIndex(this.id)">30</li>
-					<li class="item" id="index31" onclick="selectIndex(this.id)">31</li>
-					<li class="item" id="index32" onclick="selectIndex(this.id)">32</li>
-					<li class="item" id="index33" onclick="selectIndex(this.id)">33</li>
-					<li class="item" id="index34" onclick="selectIndex(this.id)">34</li>
-					<li class="item" id="index35" onclick="selectIndex(this.id)">35</li>
-					<li class="item" id="index36" onclick="selectIndex(this.id)">36</li>
-					<li class="item" id="index37" onclick="selectIndex(this.id)">37</li>
-					<li class="item" id="index38" onclick="selectIndex(this.id)">38</li>
-					<li class="item" id="index39" onclick="selectIndex(this.id)">39</li>
-					<li class="item" id="index40" onclick="selectIndex(this.id)">40</li>
-					<li class="item" id="index41" onclick="selectIndex(this.id)">41</li>
-					<li class="item" id="index42" onclick="selectIndex(this.id)">42</li>
-					<li class="item" id="index43" onclick="selectIndex(this.id)">43</li>
-					<li class="item" id="index44" onclick="selectIndex(this.id)">44</li>
-					<li class="item" id="index45" onclick="selectIndex(this.id)">45</li>
-					<li class="item" id="index46" onclick="selectIndex(this.id)">46</li>
-					<li class="item" id="index47" onclick="selectIndex(this.id)">47</li>
-					<li class="item" id="index48" onclick="selectIndex(this.id)">48</li>
-					<li class="item" id="index49" onclick="selectIndex(this.id)">49</li>
-					<li class="item" id="index50" onclick="selectIndex(this.id)">50</li>
-					<li class="item" id="index51" onclick="selectIndex(this.id)">51</li>
-					<li class="item" id="index52" onclick="selectIndex(this.id)">52</li>
-					<li class="item" id="index53" onclick="selectIndex(this.id)">53</li>
-					<li class="item" id="index54" onclick="selectIndex(this.id)">54</li>
-					<li class="item" id="index55" onclick="selectIndex(this.id)">55</li>
-					<li class="item" id="index56" onclick="selectIndex(this.id)">56</li>
-					<li class="item" id="index57" onclick="selectIndex(this.id)">57</li>
-					<li class="item" id="index58" onclick="selectIndex(this.id)">58</li>
-					<li class="item" id="index59" onclick="selectIndex(this.id)">59</li>
-					<li class="item" id="index60" onclick="selectIndex(this.id)">60</li>
-					<li class="item" id="index61" onclick="selectIndex(this.id)">61</li>
-					<li class="item" id="index62" onclick="selectIndex(this.id)">62</li>
-					<li class="item" id="index63" onclick="selectIndex(this.id)">63</li>
-					<li class="item" id="index64" onclick="selectIndex(this.id)">64</li>
-					<li class="item" id="index65" onclick="selectIndex(this.id)">65</li>
-					<li class="item" id="index66" onclick="selectIndex(this.id)">66</li>
-					<li class="item" id="index67" onclick="selectIndex(this.id)">67</li>
-					<li class="item" id="index68" onclick="selectIndex(this.id)">68</li>
-					<li class="item" id="index69" onclick="selectIndex(this.id)">69</li>
-					<li class="item" id="index70" onclick="selectIndex(this.id)">70</li>
-					<li class="item" id="index71" onclick="selectIndex(this.id)">71</li>
-					<li class="item" id="index72" onclick="selectIndex(this.id)">72</li>
-					<li class="item" id="index73" onclick="selectIndex(this.id)">73</li>
-					<li class="item" id="index74" onclick="selectIndex(this.id)">74</li>
-					<li class="item" id="index75" onclick="selectIndex(this.id)">75</li>
-					<li class="item" id="index76" onclick="selectIndex(this.id)">76</li>
-					<li class="item" id="index77" onclick="selectIndex(this.id)">77</li>
-					<li class="item" id="index78" onclick="selectIndex(this.id)">78</li>
-					<li class="item" id="index79" onclick="selectIndex(this.id)">79</li>
-					<li class="item" id="index80" onclick="selectIndex(this.id)">80</li>
-					<li class="item" id="index81" onclick="selectIndex(this.id)">81</li>
-					<li class="item" id="index82" onclick="selectIndex(this.id)">82</li>
-					<li class="item" id="index83" onclick="selectIndex(this.id)">83</li>
-					<li class="item" id="index84" onclick="selectIndex(this.id)">84</li>
-					<li class="item" id="index85" onclick="selectIndex(this.id)">85</li>
-					<li class="item" id="index86" onclick="selectIndex(this.id)">86</li>
-					<li class="item" id="index87" onclick="selectIndex(this.id)">87</li>
-					<li class="item" id="index88" onclick="selectIndex(this.id)">88</li>
-					<li class="item" id="index89" onclick="selectIndex(this.id)">89</li>
-					<li class="item" id="index90" onclick="selectIndex(this.id)">90</li>
+				<ol class="indice" id="pagina_questao">
+					<script type="text/javascript">
+						var lista = document.getElementById("pagina_questao");
+						for(var i=0;i<90;i++){
+							var li = document.createElement('li');
+							if(i==0){
+								li.setAttribute('class', 'item active');
+								//li.classList += "item active";
+							}else{
+								li.setAttribute('class', 'item');
+								//li.classList += "item";
+							}
+							
+							li.setAttribute('id','index'+(i+1));
+							li.setAttribute('onclick','selectIndex(this.id)');
+							li.innerText = i+1;
+							lista.appendChild(li);
+						}
+						
+					</script>
 				</ol>
 			</nav>
 		</footer>

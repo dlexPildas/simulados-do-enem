@@ -35,7 +35,7 @@
                 
             </div>
 
-            <div class="col-sm-5 col-md-5 col-lg-5">
+            <div class="col-sm-6 col-md-6 col-lg-6">
 				<div class="col-sm-3 col-md-2 col-lg-2">
 					
 				</div>
@@ -47,16 +47,18 @@
 						<input type="file" class="form-control-file" id="exampleFormControlFile1">
 						<br><br><br><br><br>
 						<h4>Escolha o ano da prova que deseja cadastrar</h4>
-						<div class="col-sm-3 col-md-4 col-lg-4">
+						<div class="col-sm-3 col-md-3 col-lg-3">
 					
 						</div>
-						<div class="col-sm-3 col-md-4 col-lg-4">
+						<div class="col-sm-3 col-md-5 col-lg-5">
 							<input type="number" name="points" min="1995" max="2017" step="1" value="2017">
 						</div>
 						<div class="col-sm-3 col-md-4 col-lg-4">
 					
 						</div>
-						
+					<br><br><br><br><br>			
+				<button class="button">Submeter Questão</button>
+				<button class="button">Cancelar</button>	
                     </div>
 				</form>
 				</div>
@@ -67,10 +69,8 @@
 				
                 
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-4">
-			<br><br><br><br><br><br><br><br><br><br><br><br><br>			
-				<button class="button">Submeter Questão</button>
-				<button class="button">Cancelar</button>				
+            <div class="col-sm-3 col-md-3 col-lg-3">
+						
                
             </div>
 		</div>
