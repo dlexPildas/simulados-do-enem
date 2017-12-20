@@ -136,10 +136,8 @@ class Controllerdados {
 
 	public function gerarProva( $tipo_prova ) {
 		$dao = new QuestaoDAO();
-		echo "ta no gerar prova";
 		//if($tipo_prova === '1'){
 		$questoes = $dao->ler( "select * from questao" );
-		echo "Retornou a questão";
 		$prova = new Prova( 1, 2017, "Aquele Tipo", sizeof( $questoes, 0 ), $questoes );
 		return $prova;
 		//}

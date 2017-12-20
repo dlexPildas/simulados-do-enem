@@ -2,10 +2,11 @@
 	/**
 	* 
 	*/
-	class Questao{
+	class Questao implements JsonSerializable{
 		private $idusuario;
 		private  $idprova;
 		private $idareaconhecimento;
+		private $idQuestao;
 		private $enunciado;
 		private $questaooficial;
 		private $respostaa;
@@ -15,7 +16,8 @@
 		private $respostae;
 		private $respostacorreta;
 		
-		function __construct($idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta) {
+		function __construct($idQuestao,$idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta) {
+			$this->idQuestao = $idQuestao;
 			$this->idusuario = $idusuario;
 			$this->idprova = $idprova;
 			$this->idareaconhecimento = $idareaconhecimento;
@@ -29,6 +31,9 @@
 			$this->respostacorreta = $respostacorreta;
 		}
 
+		function getIdQuestao(){
+			return $this->idQuestao;
+		}
 		function getIDUsuario() {
 			return $this->idusuario;
 		}
@@ -63,5 +68,16 @@
 		function getRespostaE(){
 			return $this->respostae;
 		}
+		public function jsonSerialize() {
+        return [
+        	'idQuestao' => $this->getIdQuestao(),
+            'enunciado' => $this->getEnunciado(),
+            'respostaA' => $this->getRespostaA(),
+            'respostaB' => $this->getRespostaB(),
+            'respostaC' => $this->getRespostaC(),
+            'respostaD' => $this->getRespostaD(),
+            'respostaE' => $this->getRespostaE(),
+        ];
+    }
 	}
-	?>
+?>
