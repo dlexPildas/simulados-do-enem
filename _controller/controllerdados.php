@@ -168,7 +168,12 @@ class Controllerdados {
 	public function buscarUsuarios($nome){
 	    $userdao = new UserDao();
 	    $result = $userdao->buscar($nome, 0);
-	    return $result;
+	    if($result==false){
+	        return false;
+        }
+	    $linha = pg_fetch_array($result);
+        echo "Os dados'" . $linha[ 'idusuario' ] . " | " . $linha[ 'nome' ] . " | " . $linha[ 'email' ] . " | " . $linha[ 'privilegio' ] . "\n ";
+	    return $linha;
     }
 
     public function verificarPrivilegio($id){
