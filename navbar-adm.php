@@ -8,10 +8,10 @@
     <title>Navbar-Adm</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
-    <link rel="stylesheet" type="javascript/js" href="_js/script.js">
+   
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="_css/barra-adm.css">
+    
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-default">
         <div id="nav1" class="container-fluid">
-            <!-- Toggle que faz com que apareçam as opções em celualar e telas menores. -->
+            <!-- Toggle que faz com que apareçam as opções em celular e telas menores. -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="_controller/logout.php">SOS ENEM</a>
                 <div class="navbar-header">
