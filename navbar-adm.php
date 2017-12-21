@@ -21,7 +21,10 @@
         <div id="nav1" class="container-fluid">
             <!-- Toggle que faz com que apareçam as opções em celular e telas menores. -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="_controller/logout.php">SOS ENEM</a>
+               
+              
+                    <img src="_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png" height="150" width="150" style="margin-top:-20px; margin-bottom:-40px;">
+               
                 <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
