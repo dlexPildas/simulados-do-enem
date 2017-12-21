@@ -1,5 +1,5 @@
 <?php
-	include_once( "_model/seguranca.php" );
+	include_once( "../_model/seguranca.php" );
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tela de ajuda</title>
-    <link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
-    <link rel="stylesheet" type="text/css" href="_css/gerencia-conta.css">
+    <link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
+    <link rel="stylesheet" type="text/css" href="../_css/gerencia-conta.css">
 </head>
 <body>
     <div>

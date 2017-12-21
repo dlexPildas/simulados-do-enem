@@ -1,5 +1,5 @@
 <?php
-	include_once( "_model/segurancaA.php" );
+	include_once( "../_model/segurancaA.php" );
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -7,7 +7,7 @@
 <head>
     <title>Navbar-Adm</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
+    <link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,7 @@
             <div class="navbar-header">
                
               
-                    <img src="_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png" height="150" width="150" style="margin-top:-25px; margin-bottom:-45px;">
+                    <img src="../_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png" height="150" width="150" style="margin-top:-25px; margin-bottom:-45px;">
                
                 <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
@@ -111,7 +111,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="_js/bootstrap.js"></script>
+    <script src="../_js/bootstrap.js"></script>
     <script>
         $(function () {
 

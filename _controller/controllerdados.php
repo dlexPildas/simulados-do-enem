@@ -133,7 +133,7 @@ class Controllerdados {
 				//header( 'location:nossos-planos.html' );
 			} else if ( $linha[ 'privilegio' ] == 'A' ) {
 				echo "usuario adm";
-				header( 'location:../tela-inicial-adm.php' );
+				header( 'location:../_view/tela-inicial-adm.php' );
 			}
 		} else {
 			echo "erro de senha ou email";
