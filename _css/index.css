@@ -14,6 +14,9 @@
 h2{
 	color: #FFFFFF;
 }
+.nav-brand{
+	color:#FFFFFF;
+}
 #teste{
     margin-top: 10px;
 }
@@ -146,6 +149,7 @@ li#fa{
 	padding: 5px 8px;
 	width: 260px;
 }
+
 li#go{
 	background-color: #C11302;
 	margin-top: 5px;
