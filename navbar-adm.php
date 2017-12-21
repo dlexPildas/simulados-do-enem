@@ -23,7 +23,7 @@
             <div class="navbar-header">
                
               
-                    <img src="_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png" height="150" width="150" style="margin-top:-20px; margin-bottom:-40px;">
+                    <img src="_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png" height="150" width="150" style="margin-top:-25px; margin-bottom:-45px;">
                
                 <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
