@@ -5,6 +5,7 @@ var idProva;
 var questoesProva;
 
 var indexAtual;
+var respostas = new Map();
 
 buscarProva();
 function buscarProva() {
@@ -15,6 +16,8 @@ function buscarProva() {
         	setIdProva(resposta.idProva);
         	setQuestoesProva(resposta.questoes);
         	apresentarQuestao(0);
+        	setIndexAtual(0);
+        	criarIndices(questoesProva.length); //Cria os indices das questoes de acordo com a quantidade.
        }
     };
     xhttp.open("GET", url, true);
@@ -28,6 +31,10 @@ function setQuestoesProva(questoes){
 	questoesProva = questoes;
 }
 
+function setIndexAtual(indexatual) {
+	indexAtual = indexatual;
+}
+
 function apresentarQuestao(index){
 	indexAtual = index;
 	//selectIndex();
@@ -39,11 +46,55 @@ function apresentarQuestao(index){
 	$('#respe').parent().children('.alternativa').text(questoesProva[index].respostaE);
 }
 
+function criarIndices(quant) {
+    var lista = document.getElementById("pagina_questao");
+    for(var i=0;i<quant;i++){
+        var li = document.createElement('li');
+        if(i==0){
+            li.setAttribute('class', 'item active');
+            //li.classList += "item active";
+        }else{
+            li.setAttribute('class', 'item');
+            //li.classList += "item";
+        }
+
+        li.setAttribute('id','index'+(i+1));
+        li.setAttribute('onclick','selectIndex(this.id); apresentarQuestao('+i+');');
+        li.innerText = i+1;
+        lista.appendChild(li);
+    }
+}
+
+function marcarIndice(index){
+	prox = 'index'+(indexAtual+1);
+    for(var i=1; i<questoesProva.length+1; i++){
+        var elemento = document.getElementById('index'+i);
+    	if (elemento.className == 'item active'){
+            elemento.setAttribute('class', 'item');
+            document.getElementById(prox).setAttribute('class', 'item active');
+            return;
+		}
+	}
+
+}
 
 function proximaQuestao(){
-	apresentarQuestao(indexAtual+1);
+    if(indexAtual < questoesProva.length-1) {
+    	indexAtual++;
+        marcarIndice(indexAtual);
+        apresentarQuestao(indexAtual);
+    }
 }
 
 function anteriorQuestao(){
-	apresentarQuestao(indexAtual-1);
+	if(indexAtual > 0) {
+		indexAtual--;
+        marcarIndice(indexAtual);
+        apresentarQuestao(indexAtual);
+    }
+}
+
+function selecionarResposta(letra_resp) {
+	console.log(questoesProva[indexAtual].idQuestao + ":" + letra_resp);
+	respostas.set(questoesProva[indexAtual].idQuestao, letra_resp);
 }

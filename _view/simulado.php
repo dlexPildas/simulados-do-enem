@@ -71,19 +71,19 @@ require_once( "../_model/Prova.php" );
 
 			<!-- Selecionar respostas-->
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respa"><span class="alternativa"></span></label>
+				<label><input type="radio" name="optradio" id="respa" onclick="selecionarResposta('A')"><span class="alternativa"></span></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respb"><span class="alternativa"></span></label>
+				<label><input type="radio" name="optradio" id="respb" onclick="selecionarResposta('B')"><span class="alternativa"></span></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respc"><span class="alternativa"></span></label>
+				<label><input type="radio" name="optradio" id="respc" onclick="selecionarResposta('C')"><span class="alternativa"></span></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respd"><span class="alternativa"></span></label>
+				<label><input type="radio" name="optradio" id="respd" onclick="selecionarResposta('D')"><span class="alternativa"></span></label>
 			</div>
 			<div class="radio">
-				<label><input type="radio" name="optradio" id="respe"><span class="alternativa"></span></label>
+				<label><input type="radio" name="optradio" id="respe" onclick="selecionarResposta('E')"><span class="alternativa"></span></label>
 			</div> 
 
 		</div>
@@ -104,25 +104,8 @@ require_once( "../_model/Prova.php" );
 		<footer class="simulado-indicators" style="margin-top: 70px">
 			<nav>
 				<ol class="indice" id="pagina_questao">
-					<script type="text/javascript">
-						var lista = document.getElementById("pagina_questao");
-						for(var i=0;i<90;i++){
-							var li = document.createElement('li');
-							if(i==0){
-								li.setAttribute('class', 'item active');
-								//li.classList += "item active";
-							}else{
-								li.setAttribute('class', 'item');
-								//li.classList += "item";
-							}
-							
-							li.setAttribute('id','index'+(i+1));
-							li.setAttribute('onclick','selectIndex(this.id); apresentarQuestao('+i+');');
-							li.innerText = i+1;
-							lista.appendChild(li);
-						}
-						
-					</script>
+                    <!-- Os componentes dessa lista são criados em tempo de execuçao pelo javascript, isso ocorre pelo
+                     fato de serem itens que variam de acordo com a quantidade de questões da prova. -->
 				</ol>
 			</nav>
 		</footer>
@@ -149,19 +132,7 @@ require_once( "../_model/Prova.php" );
 		<div class="panel panel-default">
 			<div class="panel-heading" style="font-size: 16px">Avalie essa questão</div>
 			<div class="panel-body">
-				<div class="estrelas ">
-					<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-					<label for="cm_star-1"><i class="fa"></i></label>
-					<input type="radio" id="cm_star-1" name="fb" value="1"/>
-					<label for="cm_star-2"><i class="fa"></i></label>
-					<input type="radio" id="cm_star-2" name="fb" value="2"/>
-					<label for="cm_star-3"><i class="fa"></i></label>
-					<input type="radio" id="cm_star-3" name="fb" value="3"/>
-					<label for="cm_star-4"><i class="fa"></i></label>
-					<input type="radio" id="cm_star-4" name="fb" value="4"/>
-					<label for="cm_star-5"><i class="fa"></i></label>
-					<input type="radio" id="cm_star-5" name="fb" value="5"/>
-				</div>
+
 			</div>
 		</div>
 		<a href="#" role="button" style="margin-bottom: 15px" class="btn btn-success botaoFinaliza">Finalizar prova</a>

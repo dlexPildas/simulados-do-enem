@@ -4,18 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Escolha o tipo de simulado</title>
-		
-
-	
-	
-	
 	<!-- Milligram CSS minified -->
 	<link rel="stylesheet" href="../_css/milligram.min.css">
 	
 	<!-- Main Styles -->
     <link rel="stylesheet" href="../_css/tela-inicial-adm.css">		
 	<link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
-	
+
 	
 </head>
 <body>
