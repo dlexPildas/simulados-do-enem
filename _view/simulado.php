@@ -10,14 +10,13 @@ require_once( "../_model/Prova.php" );
 <head>
 	<title>Simulado</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap-grid.css">
-	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap-reboot.css">
-	<link rel="stylesheet" type="text/css" href="../_css/bootstrap/css/bootstrap-theme.css">
-	<link rel="stylesheet" type="text/css" href="../_css/estilo_simulado.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../_css/canal-enem.css">
 	<link rel="stylesheet" type="text/css" href="../_css/ig-canais.css">
 	<link rel="stylesheet" href="../_css/font-awesome.min.css">
+    <link rel="stylesheet" href="../_css/simulado.css">
 
 	<script type="text/javascript" src="../_js/jquery.min.js"></script>
 	<script src="../_css/bootstrap/js/bootstrap.js"></script>
@@ -45,24 +44,12 @@ require_once( "../_model/Prova.php" );
 
 </head>
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="../index.html">SOS ENEM</a>
-			</div>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a style="font-size: 16px" href="../painel-do-usuario.php">Minha conta</a></li>
-				<li><a style="font-size: 16px" href="#">Ajuda</a></li>
-				<li><a style="font-size: 16px" href="../_controller/logout.php">Sair</a></li>
-			</ul>
-
-		</div>
-	</nav>
+    <?php include('../navbar-usuario.php'); ?>
 
 	<div role="main" class="col-md-9" style="margin-left: 35px">
 
 
-		<div class="panel panel-info"  style="font-size: 16px">
+		<div class="painel-elevado"  style="font-size: 16px">
 			<div class="panel-body tituloQuestao"> <div id="enunciado"></div></div>
 
 			<div style="height: 100px">

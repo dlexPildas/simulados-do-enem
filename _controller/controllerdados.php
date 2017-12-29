@@ -8,6 +8,7 @@ require_once( "../_model/Usuario.php" );
 require_once( "../_model/Feedback.php" );
 require_once( "../_model/Questao.php" );
 require_once( "../_model/Prova.php" );
+require_once( "../_model/Simulado.php" );
 require_once( "../_util/questaodao.php" );
 
 
@@ -157,12 +158,22 @@ class Controllerdados {
 		}
 	}
 
-	public function gerarProva( $tipo_prova ) {
+	//OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
+	public function gerarProva($tipo_prova, $ano_or_area) {
 		$dao = new QuestaoDAO();
-		//if($tipo_prova === '1'){
-
-		$questoes = $dao->ler(1,3); //<--- Retorna as questões do banco de dados
-
+		$questoes = [];
+		switch ($tipo_prova){
+            case 3: //Questões oficiais
+                break;
+            case 4: //Questões não oficiais
+                break;
+            case 5: //Questões mistas
+                break;
+            default : //Edições anteriores ou Area do conhecimento
+                $questoes = $dao->ler($tipo_prova, $ano_or_area,90);
+                break;
+        }
+        //GERAR SIMULADO DAO PARA SALVAR NO BANCO
 		$prova = new Prova( 1, 2017, "Aquele Tipo", sizeof( $questoes, 0 ), $questoes );
 		return $prova;
 		//}

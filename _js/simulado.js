@@ -1,5 +1,5 @@
 var tipoProva = window.location.href[window.location.href.length-1]
-var url = "http://localhost/simulados-do-enem/_controller/solicitarProva.php?idProva="+tipoProva;
+var url = "http://localhost/simulados-do-enem/_controller/solicitarProva.php?tipoProva="+tipoProva;
 
 var idProva;
 var questoesProva;
@@ -104,7 +104,6 @@ function selecionarResposta(letra_resp) {
 //Carrega marcação anteriores das questoes.
 function carregarMarcacao() {
     var letra = respostas.get(questoesProva[indexAtual].idQuestao);
-    console.log(letra);
     switch (letra) {
 		case 'A':
 			document.getElementById('respa').checked = true;

@@ -7,7 +7,15 @@
     private $tempo;
     private $pontuacao;
 
-    public function getIdSimulado(){
+    public function __construct($idsimulado, $idusuario, $data_simulado, $tempo, $pontuacao){
+        $this->idsimulado = $idsimulado;
+        $this->idusuario = $idusuario;
+        $this->data_simulado = $data_simulado;
+        $this->tempo = $tempo;
+        $this->pontuacao = $pontuacao;
+    }
+
+     public function getIdSimulado(){
         return $this->idsimulado;
     }
     public function getIdUsuario(){

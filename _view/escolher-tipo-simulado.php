@@ -128,7 +128,7 @@
 	<script type="text/javascript" src="../_js/jquery.min.js"></script>
 	<script type="text/javascript">
 		function abrirProva(obj){
-			window.location.href = "../_view/simulado.php?idProva="+obj;
+			window.location.href = "../_view/simulado.php?tipoProva="+obj+"&anoOrArea=1";
 			/*$.ajax({
 				url: "../_controller/solicitarProva.php",
 				type: 'post',

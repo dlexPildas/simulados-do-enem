@@ -40,27 +40,42 @@ require_once( "../_model/Questao.php" );
 			}
 		}
 
-		public function ler($area_conhec, $quant_quest) {
-			$sql = "select * from (questao join areadeconhecimento on questao.idareaconhecimento = areadeconhecimento.idarea) where questao.idareaconhecimento = $area_conhec limit $quant_quest";
 
-			$banc = Bd::getInstance();
-			$banc->abrirconexao();
-
-			$questoes = [];
-			$resultado = pg_query($sql);
-			while($linha = pg_fetch_array($resultado)) {
-				$questoes[] = new Questao($linha["idquestao"], $linha["idusuario"], $linha["idprova"], $linha["idareaconhecimento"], $linha["enunciado"], $linha["questaooficial"], $linha["respostaa"], $linha["respostab"], $linha["respostac"], $linha["respostad"], $linha["respostae"], $linha["respostacorreta"]);
+        //OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
+		public function ler($tipo_prova, $ano_or_area, $quant_quest){
+			if($tipo_prova == 1) {
+                $sql = "select * from (questao join areadeconhecimento on questao.idareaconhecimento = areadeconhecimento.idarea) where questao.idareaconhecimento = $ano_or_area limit $quant_quest";
+            }
+            if($tipo_prova == 2){
+                $sql = "select * from questao where idareaconhecimento = $ano_or_area limit $quant_quest";
 			}
 
-			$banc->fecharconexao();
+            $banc = Bd::getInstance();
+            $banc->abrirconexao();
 
-			/*$questoes = [];
-			$questoes[] = new Questao("50","1", "1", "1", "Sentimos que toda satisfação de nossos desejos advinda do mundo assemelha-se à esmola que mantém hoje o mendigo vivo, porém prolonga amanhã a sua fome. A resignação, ao contrário, assemelha-se à fortuna herdada: livra o herdeiro para sempre de todas as preocupações.SCHOPENHAUER, A. Aforismo para a sabedoria da vida. São Paulo: Martins Fontes, 2005.O  trecho  destaca  uma  ideia  remanescente  de  umaWUDGLomR ORVyFD RFLGHQWDO  VHJXQGR D TXDO D IHOLFLGDGH  se mostra indissociavelmente ligada", "S", "A consagração de relacionamentos afetivos.", "B administração da independência interior. ", "C fugacidade do conhecimento emperico.", "D liberdade de expressão religiosa.", "E busca de prazeres efomeros.", "B");
-			$questoes[] = new Questao("51","1", "1", "1", "Desejos advinda do mundo assemelha-se à esmola que mantém hoje o mendigo vivo, porém prolonga se mostra indissociavelmente ligada", "S", "A essa aqui é a certa.", "B administração da independência interior. ", "C fugacidade do conhecimento emperico.", "D liberdade de expressão religiosa.", "E busca de prazeres efomeros.", "B");
-			*/
-			return $questoes;
+            $questoes = [];
+            $resultado = pg_query($sql);
+            while ($linha = pg_fetch_array($resultado)) {
+                $questoes[] = new Questao($linha["idquestao"], $linha["idusuario"], $linha["idprova"], $linha["idareaconhecimento"], $linha["enunciado"], $linha["questaooficial"], $linha["respostaa"], $linha["respostab"], $linha["respostac"], $linha["respostad"], $linha["respostae"], $linha["respostacorreta"]);
+            }
+
+            $banc->fecharconexao();
+            return $questoes;
+        }
+
+        public function lerPorIndex($vetor_id_questoes){
+            $banc = Bd::getInstance();
+            $banc->abrirconexao();
+
+            $questoes = [];
+			foreach ($vetor_id_questoes as $id){
+                $resultado = pg_query("select * from questao where idquestao = $id");
+                $linha = pg_fetch_array($resultado);
+                $questoes[] = new Questao($linha["idquestao"], $linha["idusuario"], $linha["idprova"], $linha["idareaconhecimento"], $linha["enunciado"], $linha["questaooficial"], $linha["respostaa"], $linha["respostab"], $linha["respostac"], $linha["respostad"], $linha["respostae"], $linha["respostacorreta"]);
+			}
+            $banc->fecharconexao();
+            return $questoes;
 		}
-
 
 	}
 	?>
