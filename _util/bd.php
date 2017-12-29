@@ -31,7 +31,7 @@ class Bd {
 	function abrirconexao() {
 		if($this->verificador == false){
 			if($this->banco){
-			 echo "++Conexão com o PostgreSQL realizada com sucesso!!<br /><br />";
+			 //echo "++Conexão com o PostgreSQL realizada com sucesso!!<br /><br />";
 				return $this->banco;
 		 }else{
 			echo "++Erro ao abrir conexão!<br /><br />";

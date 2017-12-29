@@ -160,7 +160,9 @@ class Controllerdados {
 	public function gerarProva( $tipo_prova ) {
 		$dao = new QuestaoDAO();
 		//if($tipo_prova === '1'){
-		$questoes = $dao->ler(1,1); //<--- Retorna as questões do banco de dados
+
+		$questoes = $dao->ler(1,3); //<--- Retorna as questões do banco de dados
+
 		$prova = new Prova( 1, 2017, "Aquele Tipo", sizeof( $questoes, 0 ), $questoes );
 		return $prova;
 		//}

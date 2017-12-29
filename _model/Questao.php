@@ -6,7 +6,7 @@
 		private $idusuario;
 		private  $idprova;
 		private $idareaconhecimento;
-		private $idQuestao;
+		private $idquestao;
 		private $enunciado;
 		private $questaooficial;
 		private $respostaa;
@@ -16,8 +16,8 @@
 		private $respostae;
 		private $respostacorreta;
 		
-		function __construct($idQuestao,$idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta) {
-			$this->idQuestao = $idQuestao;
+		function __construct($idquestao,$idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta) {
+			$this->idquestao = $idquestao;
 			$this->idusuario = $idusuario;
 			$this->idprova = $idprova;
 			$this->idareaconhecimento = $idareaconhecimento;
@@ -32,7 +32,7 @@
 		}
 
 		function getIdQuestao(){
-			return $this->idQuestao;
+			return $this->idquestao;
 		}
 		function getIDUsuario() {
 			return $this->idusuario;
