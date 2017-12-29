@@ -44,6 +44,8 @@ function apresentarQuestao(index){
 	$('#respc').parent().children('.alternativa').text(questoesProva[index].respostaC);
 	$('#respd').parent().children('.alternativa').text(questoesProva[index].respostaD);
 	$('#respe').parent().children('.alternativa').text(questoesProva[index].respostaE);
+
+	carregarMarcacao(); //Carrega a letra marcada na questão
 }
 
 function criarIndices(quant) {
@@ -97,4 +99,29 @@ function anteriorQuestao(){
 function selecionarResposta(letra_resp) {
 	console.log(questoesProva[indexAtual].idQuestao + ":" + letra_resp);
 	respostas.set(questoesProva[indexAtual].idQuestao, letra_resp);
+}
+
+//Carrega marcação anteriores das questoes.
+function carregarMarcacao() {
+    var letra = respostas.get(questoesProva[indexAtual].idQuestao);
+    console.log(letra);
+    switch (letra) {
+		case 'A':
+			document.getElementById('respa').checked = true;
+			break;
+        case 'B':
+            document.getElementById('respb').checked = true;
+            break;
+        case 'C':
+            document.getElementById('respc').checked = true;
+            break;
+        case 'D':
+            document.getElementById('respd').checked = true;
+            break;
+        case 'E':
+            document.getElementById('respe').checked = true;
+            break;
+        default :
+
+	}
 }
