@@ -10,6 +10,9 @@
 	<!-- Main Styles -->
     <link rel="stylesheet" href="../_css/tela-inicial-adm.css">		
 	<link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	
 </head>
@@ -28,11 +31,11 @@
 				<ul style="list-style: none">
 					<br><br><br>
 					<li>
-						<button type="button" onclick="abrirProva(1)">Edições anteriores</button>				
+                        <button type="button" data-toggle="modal" data-target="#modalEdicAnt">Edições anteriores</button>
 					</li>	
 
 					<li>
-						<button type="button" onclick="abrirProva(2)">Áreas especificas</button>
+                        <button type="button" data-toggle="modal" data-target="#modalAreaEsp">Áreas específicas</button>
 					</li>
 					<li>
 						<button type="button" onclick="abrirProva(3)">Questões oficiais</button>
@@ -45,8 +48,74 @@
 					<li>
 						<button type="button" onclick="abrirProva(3)">Questões mistas <br>(Oficiais e não oficiais)</button>
 					</li>
-				</ul>																
-								
+				</ul>
+
+                <!-- Todos os modal necessários são descritos aqui-->
+
+                <!-- Modal edições anteriores-->
+                <div id="modalEdicAnt" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Selecione o ano da prova do ENEM</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Ano da prova
+                                        <span class="caret"></span></button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2017</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2016</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2015</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2014</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2013</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2012</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2011</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Modal areas especificas-->
+                <div id="modalAreaEsp" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Selecione uma área especifica</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Área do conhecimento
+                                        <span class="caret"></span></button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ciências Humanas e suas Tecnologias</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ciências da Natureza e suas Tecnologias</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Linguagens</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Códigos e suas Tecnologias</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Matemática e suas Tecnologias</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
 			</div>
 		
 			<div class="col-md-3 col-lg-3">

@@ -122,6 +122,10 @@ function carregarMarcacao() {
             document.getElementById('respe').checked = true;
             break;
         default :
-
+            document.getElementById('respa').checked = false;
+            document.getElementById('respb').checked = false;
+            document.getElementById('respc').checked = false;
+            document.getElementById('respd').checked = false;
+            document.getElementById('respe').checked = false;
 	}
 }
