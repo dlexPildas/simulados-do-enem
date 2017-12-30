@@ -1,67 +1,45 @@
 <?php
-require_once( "../_model/Questao.php" );
-require_once( "../_model/Prova.php" );
+require_once("../_model/Questao.php");
+require_once("../_model/Prova.php");
+require_once("../_model/Simulado.php");
 
-	class SimuladoDAO {
-		
-		public function __construct(){
-			# code...
-		}
+class SimuladoDAO{
 
-		public function inserir($questao){
-			echo get_class($questao);
-			$idusuario = $this->idusuario;
-			$idprova = $this->idprova;
-			$idareaconhecimento = $this->idareaconhecimento;
-			$enunciado = $this->enunciado;
-			$questaooficial = $this->questaooficial;
-			$respostaa = $this->respostaa;
-			$respostab = $this->respostab;
-			$respostac = $this->respostac;
-			$respostad = $this->respostad;
-			$respostae = $this->respostae;
-			$respostacorreta = $this->respostacorreta;
-			
-			$SQL = "INSERT INTO questao (idusuario,idprova,idareaconhecimento,enunciado,questaooficial,respostaa,respostab,respostac,respostad,respostae,respostacorreta) VALUES ('$idusuario', '$idprova', '$idareaconhecimento', '$enunciado', '$questaooficial', '$respostaa', '$respostab', '$respostac', '$respostad', '$respostae', '$respostacorreta')";
-			
-			$banc = Bd::getInstance();
-			$obanco = $banc->abrirconexao();
+    public function __construct(){
+        # code...
+    }
 
-			$result = pg_query( $obanco, $SQL );
-			if ($result != false  ) {
-				echo "<script type='javascript'>alert('Cadastrado com sucesso!');";
-				$banc->fecharconexao();
-				return true;
-			} else {
-				$banc->fecharconexao();
-				return false;
-				echo "<script type='javascript'>alert('Cadastrado com Erro!');";
-			}
-		}
-
-		public function ler($area_conhec, $quant_quest) {
-			$sql = "select * from (questao join areadeconhecimento on questao.idareaconhecimento = areadeconhecimento.idarea) where questao.idareaconhecimento = '$area_conhec' limit $quant_quest";
-			/*
-			$banc = Bd::getInstance();
-			$banc->abrirconexao();
-
-			$questoes = [];
-			$resultado = pg_query($sql);
-			while($linha = pg_fetch_array($resultado)) {
-				$questoes[] = new Questao($linha['idusuario'], $linha['idprova'], $linha['idareaconhecimento'], $linha['enunciado'], $linha['questaooficial'], $linha['respostaa'], $linha['respostab'], $linha['respostac'], $linha['respostad'], $linha['respostae'], $linha['respostacorreta']);
-				$banc->fecharconexao(); //<- REMOVER DEPOIS, APENAS TESTE
-				return $obj; //<- REMOVER DEPOIS, APENAS TESTE
-			}
-
-			$banc->fecharconexao();
-			*/
-			$questoes = [];
-			$questoes[] = new Questao("50","1", "1", "1", "Sentimos que toda satisfação de nossos desejos advinda do mundo assemelha-se à esmola que mantém hoje o mendigo vivo, porém prolonga amanhã a sua fome. A resignação, ao contrário, assemelha-se à fortuna herdada: livra o herdeiro para sempre de todas as preocupações.SCHOPENHAUER, A. Aforismo para a sabedoria da vida. São Paulo: Martins Fontes, 2005.O  trecho  destaca  uma  ideia  remanescente  de  umaWUDGLomR ORVyFD RFLGHQWDO  VHJXQGR D TXDO D IHOLFLGDGH  se mostra indissociavelmente ligada", "S", "A consagração de relacionamentos afetivos.", "B administração da independência interior. ", "C fugacidade do conhecimento emperico.", "D liberdade de expressão religiosa.", "E busca de prazeres efomeros.", "B");
-			$questoes[] = new Questao("51","1", "1", "1", "Desejos advinda do mundo assemelha-se à esmola que mantém hoje o mendigo vivo, porém prolonga se mostra indissociavelmente ligada", "S", "A essa aqui é a certa.", "B administração da independência interior. ", "C fugacidade do conhecimento emperico.", "D liberdade de expressão religiosa.", "E busca de prazeres efomeros.", "B");
-
-			return $questoes;
-		}
+    public function inserir($simulado){
+        $idusuario = $simulado->idusuario;
+        $data_simulado = $simulado->data_simulado;
+        $tempo = $simulado->tempo;
+        $pontuacao = $simulado->pontuacao;
 
 
-	}
+        $SQL = "INSERT INTO simulado(idusuario, data_simulado, tempo, pontuacao) VALUES ($idusuario, $data_simulado, $tempo, $pontuacao)";
+
+        $banc = Bd::getInstance();
+        $obanco = $banc->abrirconexao();
+
+        $result = pg_query($obanco, $SQL);
+        $banc->fecharconexao();
+        return $simulado;
+    }
+
+    public function ler($id_simulado)
+    {
+        $sql = "select * from simulado where idsimulado = '$id_simulado' limit 1";
+
+        $banc = Bd::getInstance();
+        $banc->abrirconexao();
+
+        $resultado = pg_query($sql);
+        $linha = pg_fetch_array($resultado);
+        $simulado = new Simulado(linha['idsimulado'], linha['idusuario'], linha['data_simulado'], linha['tempo'], linha['pontuacao']);
+        $banc->fecharconexao();
+
+        return $simulado;
+    }
+}
+
 ?>

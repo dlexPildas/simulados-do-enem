@@ -15,13 +15,13 @@ function buscarProva() {
         	var resposta = JSON.parse(this.response);
         	setIdProva(resposta.idProva);
         	setQuestoesProva(resposta.questoes);
-        	apresentarQuestao(0);
         	setIndexAtual(0);
+            apresentarQuestao(0);
         	criarIndices(questoesProva.length); //Cria os indices das questoes de acordo com a quantidade.
        }
     };
     xhttp.open("GET", url, true);
-    xhttp.send(); 
+    xhttp.send();
 }
 
 function setIdProva(idProvaRecebida){
@@ -50,21 +50,24 @@ function apresentarQuestao(index){
 
 function criarIndices(quant) {
     var lista = document.getElementById("pagina_questao");
-    for(var i=0;i<quant;i++){
-        var li = document.createElement('li');
-        if(i==0){
-            li.setAttribute('class', 'item active');
-            //li.classList += "item active";
-        }else{
-            li.setAttribute('class', 'item');
-            //li.classList += "item";
-        }
+    if(lista != null) {
+        for (var i = 0; i < quant; i++) {
+            var li = document.createElement('li');
+            if (i == 0) {
+                li.setAttribute('class', 'item active');
+                //li.classList += "item active";
+            } else {
+                li.setAttribute('class', 'item');
+                //li.classList += "item";
+            }
 
-        li.setAttribute('id','index'+(i+1));
-        li.setAttribute('onclick','selectIndex(this.id); apresentarQuestao('+i+');');
-        li.innerText = i+1;
-        lista.appendChild(li);
+            li.setAttribute('id', 'index' + (i + 1));
+            li.setAttribute('onclick', 'selectIndex(this.id); apresentarQuestao(' + i + ');');
+            li.innerText = i + 1;
+            lista.appendChild(li);
+        }
     }
+
 }
 
 function marcarIndice(index){

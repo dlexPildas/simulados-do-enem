@@ -9,6 +9,7 @@ require_once( "../_model/Feedback.php" );
 require_once( "../_model/Questao.php" );
 require_once( "../_model/Prova.php" );
 require_once( "../_model/Simulado.php" );
+require_once( "../_model/DataHora.php" );
 require_once( "../_util/questaodao.php" );
 
 
@@ -173,7 +174,9 @@ class Controllerdados {
                 $questoes = $dao->ler($tipo_prova, $ano_or_area,90);
                 break;
         }
-        //GERAR SIMULADO DAO PARA SALVAR NO BANCO
+        $NTP = new DataHora();
+        $simulado = new Simulado(0,0, $NTP->getDataHora(),0, 0);
+        //Adicionar salvar no banco aqui
 		$prova = new Prova( 1, 2017, "Aquele Tipo", sizeof( $questoes, 0 ), $questoes );
 		return $prova;
 		//}
