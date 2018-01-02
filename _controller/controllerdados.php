@@ -11,7 +11,7 @@ require_once( "../_model/Prova.php" );
 require_once( "../_model/Simulado.php" );
 require_once( "../_model/DataHora.php" );
 require_once( "../_util/questaodao.php" );
-
+require_once( "../_util/simuladodao.php" );
 
 class Controllerdados {
 	public static $instance = null;
@@ -161,7 +161,8 @@ class Controllerdados {
 
 	//OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
 	public function gerarProva($tipo_prova, $ano_or_area) {
-		$dao = new QuestaoDAO();
+		$questaodao = new QuestaoDAO();
+		$simuladodao = new SimuladoDAO();
 		$questoes = [];
 		switch ($tipo_prova){
             case 3: //Questões oficiais
@@ -171,12 +172,12 @@ class Controllerdados {
             case 5: //Questões mistas
                 break;
             default : //Edições anteriores ou Area do conhecimento
-                $questoes = $dao->ler($tipo_prova, $ano_or_area,90);
+                $questoes = $questaodao->ler($tipo_prova, $ano_or_area,90);
                 break;
         }
         $NTP = new DataHora();
-        $simulado = new Simulado(0,0, $NTP->getDataHora(),0, 0);
-        //Adicionar salvar no banco aqui
+        $simulado = new Simulado("0", $_SESSION['id'], "02/01/2018","0", "0", "N");
+        $simuladodao->inserir($simulado);
 		$prova = new Prova( 1, 2017, "Aquele Tipo", sizeof( $questoes, 0 ), $questoes );
 		return $prova;
 		//}

@@ -38,15 +38,15 @@
                         <button type="button" data-toggle="modal" data-target="#modalAreaEsp">Áreas específicas</button>
 					</li>
 					<li>
-						<button type="button" onclick="abrirProva(3)">Questões oficiais</button>
+						<button type="button" onclick="abrirProva(3, 0)">Questões oficiais</button>
 					</li>
 									
 					<li>					
-						<button type="button" onclick="abrirProva(3)">Questões não oficiais</button>
+						<button type="button" onclick="abrirProva(4, 0)">Questões não oficiais</button>
 					</li>
 					
 					<li>
-						<button type="button" onclick="abrirProva(3)">Questões mistas <br>(Oficiais e não oficiais)</button>
+						<button type="button" onclick="abrirProva(5, 0)">Questões mistas <br>(Oficiais e não oficiais)</button>
 					</li>
 				</ul>
 
@@ -67,13 +67,13 @@
                                     <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Ano da prova
                                         <span class="caret"></span></button>
                                     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2017</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2016</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2015</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2014</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2013</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2012</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2011</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 2017)">2017</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 2016)">2016</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 2015)">2015</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 2014)">2014</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 2013)">2013</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 2012)">2012</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 2011)">2011</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -100,11 +100,11 @@
                                     <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Área do conhecimento
                                         <span class="caret"></span></button>
                                     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ciências Humanas e suas Tecnologias</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ciências da Natureza e suas Tecnologias</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Linguagens</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Códigos e suas Tecnologias</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Matemática e suas Tecnologias</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 1)">Ciências Humanas e suas Tecnologias</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 2)">Ciências da Natureza e suas Tecnologias</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 3)">Linguagens</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 4)">Códigos e suas Tecnologias</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 5)">Matemática e suas Tecnologias</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -127,8 +127,8 @@
 	<script type="text/javascript" src="../_js/chamarSelecao.js"></script>
 	<script type="text/javascript" src="../_js/jquery.min.js"></script>
 	<script type="text/javascript">
-		function abrirProva(obj){
-			window.location.href = "../_view/simulado.php?tipoProva="+obj+"&anoOrArea=1";
+		function abrirProva(tipo_q, ano_or_tipo){
+			window.location.href = "../_view/simulado.php?tipoProva="+tipo_q+"&anoOrArea="+ano_or_tipo;
 			/*$.ajax({
 				url: "../_controller/solicitarProva.php",
 				type: 'post',

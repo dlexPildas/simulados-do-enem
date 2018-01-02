@@ -10,13 +10,14 @@ class SimuladoDAO{
     }
 
     public function inserir($simulado){
-        $idusuario = $simulado->idusuario;
-        $data_simulado = $simulado->data_simulado;
-        $tempo = $simulado->tempo;
-        $pontuacao = $simulado->pontuacao;
+        $idusuario = (int) $simulado->getIdUsuario();
+        $data_simulado = (string) $simulado->getDataSimulado();
+        $tempo = (string) $simulado->getTempo();
+        $pontuacao = (int) $simulado->getPontuacao();
+        $tipo = $simulado->getTipo();
 
 
-        $SQL = "INSERT INTO simulado(idusuario, data_simulado, tempo, pontuacao) VALUES ($idusuario, $data_simulado, $tempo, $pontuacao)";
+        $SQL = "INSERT INTO simulado(idusuario, data_simulado, tempo, pontuacao, tipo) VALUES ('$idusuario', '$data_simulado', '$tempo', '$pontuacao', '$tipo')";
 
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();

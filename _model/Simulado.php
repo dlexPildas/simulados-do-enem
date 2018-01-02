@@ -6,16 +6,18 @@
     private $data_simulado;
     private $tempo;
     private $pontuacao;
+    private $tipo;
 
-    public function __construct($idsimulado, $idusuario, $data_simulado, $tempo, $pontuacao){
+    public function __construct($idsimulado, $idusuario, $data_simulado, $tempo, $pontuacao, $tipo){
         $this->idsimulado = $idsimulado;
         $this->idusuario = $idusuario;
         $this->data_simulado = $data_simulado;
         $this->tempo = $tempo;
         $this->pontuacao = $pontuacao;
+        $this->tipo = $tipo;
     }
 
-     public function getIdSimulado(){
+    public function getIdSimulado(){
         return $this->idsimulado;
     }
     public function getIdUsuario(){
@@ -29,6 +31,9 @@
     }
     public function getPontuacao(){
         return $this->pontuacao;
+    }
+    public function getTipo(){
+        return $this->tipo;
     }
 }
 
