@@ -3,9 +3,11 @@ require_once( "../_model/Questao.php" );
 require_once( "../_model/Prova.php" );
 require_once( "../_controller/controllerdados.php" );
 
+$idSimulado = $_POST['idSimulado'];
 $respostas = $_POST['respostas'];
+$tempo = $_POST['tempo'];
 
 $controller = Controllerdados::getInstance();
-$controller->finalizarSimulado($respostas);
+$controller->finalizarSimulado($idSimulado, $respostas, $tempo);
 
 ?>

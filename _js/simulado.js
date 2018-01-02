@@ -139,10 +139,11 @@ function carregarMarcacao() {
 
 function enviarSimulado(){
     respostasString = mapForString();
+    tempo = getTempoTotal();
     $.ajax({
         url: "../_controller/finalizaSimulado.php",
 		type: 'post',
-		data: {respostas:respostasString}
+		data: {idSimulado:idProva,respostas:respostasString,tempo:tempo}
     }).done(function () {
         alert("Seu simulado foi finalizado com sucesso.");
         //window.location.href = "../paineldeusuario.php";

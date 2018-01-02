@@ -32,8 +32,14 @@
     public function getTempo(){
         return $this->tempo;
     }
+    public function setTempo($tempo){
+        $this->tempo = $tempo;
+    }
     public function getPontuacao(){
         return $this->pontuacao;
+    }
+    public function setPontuacao($pontuacao){
+        $this->pontuacao = $pontuacao;
     }
     public function getTipo(){
         return $this->tipo;

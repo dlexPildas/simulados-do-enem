@@ -12,6 +12,7 @@ require_once( "../_model/Simulado.php" );
 require_once( "../_model/DataHora.php" );
 require_once( "../_util/questaodao.php" );
 require_once( "../_util/simuladodao.php" );
+require_once( "../_util/respostasimuladodao.php" );
 
 class Controllerdados {
 	public static $instance = null;
@@ -183,13 +184,19 @@ class Controllerdados {
 		return $prova;
 	}
 
-	public function finalizarSimulado($resposta_questoes){
-        echo $resposta_questoes;
-        $vectorResp = $resposta_questoes.str_split(',');
-        //print_r($vectorResp);
-        foreach ($vectorResp as $v){
-            echo $v;
-        }
+	public function finalizarSimulado($id_simulado,$resposta_questoes, $tempo){
+        $vectorResp = explode(',',$resposta_questoes);
+        $resp_simdao = new RespostaSimuladoDAO();
+        $resp_simdao->inserir($id_simulado, $vectorResp);
+        $simuladodao = new SimuladoDAO();
+        $simulado = $simuladodao->ler($id_simulado);
+        $simulado->setTempo($tempo);
+        $simulado->setPontuacao($this->gerarPontuacao($resposta_questoes));
+        $simuladodao->atualizar($simulado);
+    }
+
+    private function gerarPontuacao($resp){
+        return 678;
     }
 
 

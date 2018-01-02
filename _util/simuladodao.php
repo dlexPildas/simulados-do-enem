@@ -30,8 +30,7 @@ class SimuladoDAO{
         return $simulado;
     }
 
-    public function ler($id_simulado)
-    {
+    public function ler($id_simulado){
         $sql = "select * from simulado where idsimulado = '$id_simulado' limit 1";
         $banc = Bd::getInstance();
         $banc->abrirconexao();
@@ -52,7 +51,7 @@ class SimuladoDAO{
         $banc = Bd::getInstance();
         $banc->abrirconexao();
 
-        $SQL = "UPDATE FROM simulado SET 'tempo' = '$tempoNovo', 'pontuacao' = '$pontuacaoNova' WHERE idusuario = '$id'";
+        $SQL = "UPDATE simulado SET tempo='$tempoNovo', pontuacao='$pontuacaoNova' WHERE idusuario=$id";
         $resultado = pg_query($SQL);
         $banc->fecharconexao();
         $linha = pg_fetch_array($resultado);

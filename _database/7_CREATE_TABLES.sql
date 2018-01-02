@@ -27,9 +27,9 @@ CREATE TABLE simulado (
 
 CREATE TABLE respostasimulado (
   idrespostasimulado serial,
-  idsimulado int,
-  idquestao int,
-  resposta VARCHAR(1),
+  idsimulado int NOT NULL,
+  idquestao int NOT NULL,
+  resposta VARCHAR(1) NOT NULL,
   CONSTRAINT PKResposta PRIMARY KEY (idrespostasimulado),
   CONSTRAINT FKRespostaSimulado_Simulado FOREIGN KEY (idsimulado) 
     REFERENCES simulado(idsimulado)

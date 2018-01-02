@@ -36,3 +36,7 @@ function ajustarInput(str) {
     resul+=str;
     return resul;
 }
+
+function getTempoTotal() {
+    return horas+":"+minutos+":"+segundos;
+}
