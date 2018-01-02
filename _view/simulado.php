@@ -122,7 +122,7 @@ require_once( "../_model/Prova.php" );
 
 			</div>
 		</div>
-		<a href="#" role="button" style="margin-bottom: 15px" class="btn btn-success botaoFinaliza">Finalizar prova</a>
+		<a href="#" role="button" style="margin-bottom: 15px" class="btn btn-success botaoFinaliza" onclick="enviarSimulado()">Finalizar prova</a>
 
 
 	</aside>

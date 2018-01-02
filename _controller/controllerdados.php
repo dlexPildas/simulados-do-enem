@@ -176,9 +176,10 @@ class Controllerdados {
                 break;
         }
         $NTP = new DataHora();
-        $simulado = new Simulado("0", $_SESSION['id'], "02/01/2018","0", "0", "N");
-        $simuladodao->inserir($simulado);
-		$prova = new Prova( 1, 2017, "Aquele Tipo", sizeof( $questoes, 0 ), $questoes );
+        $time = "02/01/2018";//$NTP->getDataHora();
+        $simulado = new Simulado(0, $_SESSION['id'], $time,0, 0, "N");
+        $simulado = $simuladodao->inserir($simulado);
+		$prova = new Prova( $simulado->getIdSimulado(), 2018, $simulado->getTipo(), sizeof( $questoes, 0 ), $questoes );
 		return $prova;
 		//}
 

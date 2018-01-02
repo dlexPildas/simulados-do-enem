@@ -20,6 +20,9 @@
     public function getIdSimulado(){
         return $this->idsimulado;
     }
+    public function setIdSimulado($id){
+        $this->idsimulado = $id;
+    }
     public function getIdUsuario(){
         return $this->idusuario;
     }

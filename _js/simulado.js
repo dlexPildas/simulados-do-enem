@@ -131,3 +131,26 @@ function carregarMarcacao() {
             document.getElementById('respe').checked = false;
 	}
 }
+
+function enviarSimulado(){
+    respostasString = mapForString();
+    $.ajax({
+        url: "../_controller/finalizaSimulado.php",
+		type: 'post',
+		data: {respostas: respostasString}
+    }).done(function () {
+        //window.location.href = "../_view/simulado.php";
+        alert("Seu simulado foi finalizado com sucesso.");
+    });
+}
+
+function mapForString(){
+    respString = "";
+    for(var i=0; i < questoesProva.length; i++){
+        valor = questoesProva[i].idQuestao + ":" +respostas.get(questoesProva[i].idQuestao)+",";
+        if(valor != null){
+            respString += valor;
+        }
+    }
+    return respString;
+}
