@@ -25,6 +25,22 @@ CREATE TABLE simulado (
     NOT DEFERRABLE
 );
 
+CREATE TABLE respostasimulado (
+  idrespostasimulado serial,
+  idsimulado int,
+  idquestao int,
+  resposta VARCHAR(1),
+  CONSTRAINT PKResposta PRIMARY KEY (idrespostasimulado),
+  CONSTRAINT FKRespostaSimulado_Simulado FOREIGN KEY (idsimulado) 
+    REFERENCES simulado(idsimulado)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT FKResposta_Questao FOREIGN KEY (idquestao)
+   REFERENCES questao(idquestao)
+   ON DELETE NO ACTION
+   ON UPDATE NO ACTION
+);
+
 CREATE TABLE prova (
   idprova SERIAL,
   qtdquestoes INTEGER NOT NULL,

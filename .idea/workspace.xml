@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78ce532a-3aab-4fcc-aaea-55e76b42f6e8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/_controller/controllerdados.php" afterPath="$PROJECT_DIR$/_controller/controllerdados.php" />
-      <change beforePath="$PROJECT_DIR$/_controller/finalizaSimulado.php" afterPath="$PROJECT_DIR$/_controller/finalizaSimulado.php" />
-      <change beforePath="$PROJECT_DIR$/_controller/solicitarProva.php" afterPath="$PROJECT_DIR$/_controller/solicitarProva.php" />
-      <change beforePath="$PROJECT_DIR$/_js/simulado.js" afterPath="$PROJECT_DIR$/_js/simulado.js" />
-      <change beforePath="$PROJECT_DIR$/_util/simuladodao.php" afterPath="$PROJECT_DIR$/_util/simuladodao.php" />
-      <change beforePath="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" afterPath="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,8 +84,8 @@
       <file leaf-file-name="controllerdados.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="187" column="56" lean-forward="true" selection-start-line="187" selection-start-column="56" selection-end-line="187" selection-end-column="56" />
+            <state relative-caret-position="279">
+              <caret line="190" column="18" lean-forward="false" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -264,12 +258,12 @@
       <workItem from="1514638401190" duration="49000" />
       <workItem from="1514641225396" duration="4429000" />
       <workItem from="1514742061102" duration="156000" />
-      <workItem from="1514911947692" duration="12384000" />
+      <workItem from="1514911947692" duration="13555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40479000" />
+    <option name="totallyTimeSpent" value="41650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -738,8 +732,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="187" column="56" lean-forward="true" selection-start-line="187" selection-start-column="56" selection-end-line="187" selection-end-column="56" />
+        <state relative-caret-position="279">
+          <caret line="190" column="18" lean-forward="false" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="18" />
           <folding />
         </state>
       </provider>

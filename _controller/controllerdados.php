@@ -186,6 +186,10 @@ class Controllerdados {
 	public function finalizarSimulado($resposta_questoes){
         echo $resposta_questoes;
         $vectorResp = $resposta_questoes.str_split(',');
+        //print_r($vectorResp);
+        foreach ($vectorResp as $v){
+            echo $v;
+        }
     }
 
 
