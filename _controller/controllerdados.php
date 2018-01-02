@@ -172,7 +172,7 @@ class Controllerdados {
             case 5: //Questões mistas
                 break;
             default : //Edições anteriores ou Area do conhecimento
-                $questoes = $questaodao->ler($tipo_prova, $ano_or_area,90);
+                $questoes = $questaodao->ler($tipo_prova, $ano_or_area,2);
                 break;
         }
         $NTP = new DataHora();
@@ -181,9 +181,12 @@ class Controllerdados {
         $simulado = $simuladodao->inserir($simulado);
 		$prova = new Prova( $simulado->getIdSimulado(), 2018, $simulado->getTipo(), sizeof( $questoes, 0 ), $questoes );
 		return $prova;
-		//}
-
 	}
+
+	public function finalizarSimulado($resposta_questoes){
+        echo $resposta_questoes;
+        $vectorResp = $resposta_questoes.str_split(',');
+    }
 
 
 	public function promoverModerador( $id ) {

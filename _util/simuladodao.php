@@ -38,26 +38,26 @@ class SimuladoDAO{
 
         $resultado = pg_query($sql);
         $linha = pg_fetch_array($resultado);
-        $simulado = new Simulado($linha['idsimulado'], $linha['idusuario'], $linha['data_simulado'], $linha['tempo'], $linha['pontuacao']);
+        $simulado = new Simulado($linha['idsimulado'], $linha['idusuario'], $linha['data_simulado'], $linha['tempo'], $linha['pontuacao'], $linha['tipo']);
         $banc->fecharconexao();
 
         return $simulado;
     }
 
     public function atualizar($simulado){
-        $tempo = (string) $simulado->getTempo();
-        $pontuacao = (int) $simulado->getPontuacao();
+        $id = $simulado->getIdSimulado();
+        $tempoNovo = (string) $simulado->getTempo();
+        $pontuacaoNova = (int) $simulado->getPontuacao();
 
         $banc = Bd::getInstance();
         $banc->abrirconexao();
 
-        $SQL = "UPDATE FROM simulado SET '$atributo' = '$acao' WHERE idusuario = '$id'";
+        $SQL = "UPDATE FROM simulado SET 'tempo' = '$tempoNovo', 'pontuacao' = '$pontuacaoNova' WHERE idusuario = '$id'";
         $resultado = pg_query($SQL);
-        if(pg_num_rows($resultado)===0){
-            return false;
-        }
         $banc->fecharconexao();
-        return $resultado;
+        $linha = pg_fetch_array($resultado);
+        $simulado = new Simulado($linha['idsimulado'], $linha['idusuario'], $linha['data_simulado'], $linha['tempo'], $linha['pontuacao'], $linha['tipo']);
+        return $simulado;
     }
 }
 

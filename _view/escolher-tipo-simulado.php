@@ -103,8 +103,7 @@
                                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 1)">Ciências Humanas e suas Tecnologias</a></li>
                                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 2)">Ciências da Natureza e suas Tecnologias</a></li>
                                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 3)">Linguagens</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 4)">Códigos e suas Tecnologias</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 5)">Matemática e suas Tecnologias</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="abrirProva(1, 4)">Matemática e suas Tecnologias</a></li>
                                     </ul>
                                 </div>
                             </div>

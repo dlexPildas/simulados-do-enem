@@ -1,5 +1,10 @@
-var tipoProva = window.location.href[window.location.href.length-1]
-var url = "http://localhost/simulados-do-enem/_controller/solicitarProva.php?tipoProva="+tipoProva;
+//var tipoProva = window.location.href[window.location.href.length-1]
+
+var tipoProva = window.location.href;
+indexInicio = tipoProva.indexOf('?');
+substring = tipoProva.substr(indexInicio);
+
+var url = "http://localhost/simulados-do-enem/_controller/solicitarProva.php"+substring;
 
 var idProva;
 var questoesProva;
@@ -137,19 +142,19 @@ function enviarSimulado(){
     $.ajax({
         url: "../_controller/finalizaSimulado.php",
 		type: 'post',
-		data: {respostas: respostasString}
+		data: {respostas:respostasString}
     }).done(function () {
-        //window.location.href = "../_view/simulado.php";
         alert("Seu simulado foi finalizado com sucesso.");
+        //window.location.href = "../paineldeusuario.php";
     });
 }
 
 function mapForString(){
     respString = "";
     for(var i=0; i < questoesProva.length; i++){
-        valor = questoesProva[i].idQuestao + ":" +respostas.get(questoesProva[i].idQuestao)+",";
+        valor = questoesProva[i].idQuestao + ":" +respostas.get(questoesProva[i].idQuestao);
         if(valor != null){
-            respString += valor;
+            respString += valor+",";
         }
     }
     return respString;
