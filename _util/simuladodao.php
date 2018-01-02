@@ -30,7 +30,6 @@ class SimuladoDAO{
     public function ler($id_simulado)
     {
         $sql = "select * from simulado where idsimulado = '$id_simulado' limit 1";
-
         $banc = Bd::getInstance();
         $banc->abrirconexao();
 
