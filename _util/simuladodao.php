@@ -9,21 +9,19 @@ class SimuladoDAO{
     }
 
     public function inserir($simulado){
-        $idusuario = (int) $simulado->getIdUsuario();
-        $data_simulado = (string) $simulado->getDataSimulado();
-        $tempo = (string) $simulado->getTempo();
-        $pontuacao = (int) $simulado->getPontuacao();
+        $idusuario = $simulado->getIdUsuario();
+        $data_simulado =  $simulado->getDataSimulado();
+        $tempo = $simulado->getTempo();
+        $pontuacao =  $simulado->getPontuacao();
         $tipo = $simulado->getTipo();
-
 
         $SQL = "INSERT INTO simulado(idusuario, data_simulado, tempo, pontuacao, tipo) VALUES ('$idusuario', '$data_simulado', '$tempo', '$pontuacao', '$tipo')";
 
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
-
-        $result = pg_query($obanco, $SQL);
+        pg_query($obanco, $SQL);
+        $result = pg_query($obanco, "select lastval();"); //<- Verifica o ultimo index adicionado.
         $banc->fecharconexao();
-        $result = pg_query($obanco, "select lastval();");
         $linha = pg_fetch_array($result);
         $simulado->setIdSimulado($linha[0]);
         //$simuladoBD = new Simulado($linha['idsimulado'], $linha['idusuario'], $linha['data_simulado'], $linha['tempo'], $linha['pontuacao'], $linha['tipo']);

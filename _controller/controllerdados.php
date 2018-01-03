@@ -176,12 +176,15 @@ class Controllerdados {
                 $questoes = $questaodao->ler($tipo_prova, $ano_or_area,2);
                 break;
         }
-        $NTP = new DataHora();
-        $time = "02/01/2018";//$NTP->getDataHora();
-        $simulado = new Simulado(0, $_SESSION['id'], $time,0, 0, "N");
-        $simulado = $simuladodao->inserir($simulado);
-		$prova = new Prova( $simulado->getIdSimulado(), 2018, $simulado->getTipo(), sizeof( $questoes, 0 ), $questoes );
-		return $prova;
+        if(sizeof($questoes) > 0) {
+            $NTP = new DataHora();
+            $time = "02/01/2018";//$NTP->getDataHora();
+            $simulado = new Simulado(-1, $_SESSION['id'], $time, 0, 0, "N");
+            $simulado = $simuladodao->inserir($simulado);
+            $prova = new Prova($simulado->getIdSimulado(), 2018, $simulado->getTipo(), sizeof($questoes, 0), $questoes);
+            return $prova;
+        }
+        return null;
 	}
 
 	public function finalizarSimulado($id_simulado,$resposta_questoes, $tempo){

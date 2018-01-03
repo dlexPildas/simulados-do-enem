@@ -44,7 +44,7 @@ require_once( "../_model/Questao.php" );
         //OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
 		public function ler($tipo_prova, $ano_or_area, $quant_quest){
 			if($tipo_prova == 1) {
-                $sql = "select * from (questao join areadeconhecimento on questao.idareaconhecimento = areadeconhecimento.idarea) where questao.idareaconhecimento = $ano_or_area limit $quant_quest";
+                $sql = "select * from (questao join prova on questao.idprova = prova.idprova) where prova.ano = $ano_or_area limit $quant_quest";
             }
             if($tipo_prova == 2){
                 $sql = "select * from questao where idareaconhecimento = $ano_or_area limit $quant_quest";

@@ -18,6 +18,10 @@ function buscarProva() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
         	var resposta = JSON.parse(this.response);
+            if (resposta == null) {
+                mensagemErro();
+                irParaPagina("http://localhost/simulados-do-enem/_view/escolher-tipo-simulado.php");
+            }
         	setIdProva(resposta.idProva);
         	setQuestoesProva(resposta.questoes);
         	setIndexAtual(0);
@@ -159,4 +163,12 @@ function mapForString(){
         }
     }
     return respString;
+}
+
+function mensagemErro(){
+    alert("Nao foi possivel criar um simulado com as configurações pedidas. Selecione outra opção.");
+}
+
+function irParaPagina(url){
+    window.location.href = url;
 }

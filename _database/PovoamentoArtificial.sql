@@ -30,8 +30,7 @@ insert into prova (idprova, qtdquestoes, ano) values ('4','90', '2013');
 insert into areadeconhecimento (idarea, nome) values ('1', 'Ciências Humanas e suas Tecnologias');
 insert into areadeconhecimento (idarea, nome) values ('2', 'Ciências da Natureza e suas Tecnologias');
 insert into areadeconhecimento (idarea, nome) values ('3', 'Linguagens');
-insert into areadeconhecimento (idarea, nome) values ('4', 'Códigos e suas Tecnologias');
-insert into areadeconhecimento (idarea, nome) values ('5', 'Matemática e suas Tecnologias');
+insert into areadeconhecimento (idarea, nome) values ('4', 'Matemática e suas Tecnologias');
 
 --Cadastro de Relatório
 insert into relatorio (quantidadecadastrados,quantidadeacessos,quantidadedestivados,quantidadeplanoscancelados,quantidadeplanosnovos) values('30','40','20','5','3');
