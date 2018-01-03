@@ -178,7 +178,7 @@ class Controllerdados {
         }
         if(sizeof($questoes) > 0) {
             $NTP = new DataHora();
-            $time = "02/01/2018";//$NTP->getDataHora();
+            $time = $NTP->getDataHora();
             $simulado = new Simulado(-1, $_SESSION['id'], $time, 0, 0, "N");
             $simulado = $simuladodao->inserir($simulado);
             $prova = new Prova($simulado->getIdSimulado(), 2018, $simulado->getTipo(), sizeof($questoes, 0), $questoes);
@@ -194,12 +194,39 @@ class Controllerdados {
         $simuladodao = new SimuladoDAO();
         $simulado = $simuladodao->ler($id_simulado);
         $simulado->setTempo($tempo);
-        $simulado->setPontuacao($this->gerarPontuacao($resposta_questoes));
+        $simulado->setPontuacao($this->gerarPontuacao($vectorResp));
         $simuladodao->atualizar($simulado);
     }
 
+    public function verificarSimuladoAndamento($id_usuario){
+        $simuladodao = new SimuladoDAO();
+        $simulados = $simuladodao->lerIdUsuario($id_usuario);
+        foreach ($simulados as $s){
+            if ($s->getTempo() == 0){
+                echo "alert(\"Existe um simulado em andamento iniciado em $s->getDataSimulado(). Ele será aberto.<br>OBS: As questões respondidas ainda não ficam salvas, logo, você deve responder tudo novamente.\")";
+                return $s;
+            }
+        }
+        return null;
+    }
+
     private function gerarPontuacao($resp){
-        return 678;
+        $questaodao = new QuestaoDAO();
+        $valorPontuacao = 1;
+        $pontuacaoTotal = 0;
+
+	    foreach ($resp as $v){
+            if(!empty($v[0]) && !empty($v[1])) {
+                $vv = explode(':', $v);
+                $id_q = $vv[0][0];
+                $respp = $vv[1][0];
+                $questao = $questaodao->lerPorIndex($id_q);
+                if($questao->getRespostaCorreta() == $respp){
+                    $pontuacaoTotal += $valorPontuacao;
+                }
+            }
+        }
+        return $pontuacaoTotal;
     }
 
 

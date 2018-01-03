@@ -14,10 +14,11 @@ class DataHora {
             if (fwrite($socket, chr(bindec('00'.sprintf('%03d', decbin(3)).'011')).str_repeat(chr(0x0), 39).pack('N', time()).pack("N", 0))) {
                 stream_set_timeout($socket, 1);
                 $unpack0 = unpack("N12", fread($socket, 48));
-                fclose($socket);
-                return (string) date('d-m-Y H:i:s', $unpack0[7]);
+                $datahora = date('Y-m-d H:i:s', $unpack0[7]);
             }
 
+            fclose($socket);
+            return (string) $datahora;
         }
     }
 }

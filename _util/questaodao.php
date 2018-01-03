@@ -63,7 +63,7 @@ require_once( "../_model/Questao.php" );
             return $questoes;
         }
 
-        public function lerPorIndex($vetor_id_questoes){
+        public function lerPorVetorIndex($vetor_id_questoes){
             $banc = Bd::getInstance();
             $banc->abrirconexao();
 
@@ -76,6 +76,16 @@ require_once( "../_model/Questao.php" );
             $banc->fecharconexao();
             return $questoes;
 		}
+
+		public function lerPorIndex($index){
+            $banc = Bd::getInstance();
+            $banc->abrirconexao();
+            $resultado = pg_query("select * from questao where idquestao = $index");
+            $linha = pg_fetch_array($resultado);
+            $questao = new Questao($linha["idquestao"], $linha["idusuario"], $linha["idprova"], $linha["idareaconhecimento"], $linha["enunciado"], $linha["questaooficial"], $linha["respostaa"], $linha["respostab"], $linha["respostac"], $linha["respostad"], $linha["respostae"], $linha["respostacorreta"]);
+            $banc->fecharconexao();
+            return $questao;
+        }
 
 	}
 	?>

@@ -41,6 +41,17 @@ class SimuladoDAO{
         return $simulado;
     }
 
+    public function lerIdUsuario($id_usuario){
+        $SQL = "SELECT * FROM simulado WHERE idusuario=$id_usuario";
+        $resultado = pg_query($SQL);
+        $linha = pg_fetch_array($resultado);
+        $simulados = [];
+        while ($linha = pg_fetch_array($resultado)) {
+            $simulados[] = new Simulado($linha['idsimulado'], $linha['idusuario'], $linha['data_simulado'], $linha['tempo'], $linha['pontuacao'], $linha['tipo']);
+        }
+        return $simulados;
+    }
+
     public function atualizar($simulado){
         $id = $simulado->getIdSimulado();
         $tempoNovo = (string) $simulado->getTempo();

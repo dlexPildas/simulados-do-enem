@@ -68,6 +68,10 @@
 		function getRespostaE(){
 			return $this->respostae;
 		}
+
+		function getRespostaCorreta(){
+			return $this->respostacorreta;
+		}
 		public function jsonSerialize() {
         return [
         	'idQuestao' => $this->getIdQuestao(),

@@ -150,7 +150,7 @@ function enviarSimulado(){
 		data: {idSimulado:idProva,respostas:respostasString,tempo:tempo}
     }).done(function () {
         alert("Seu simulado foi finalizado com sucesso.");
-        //window.location.href = "../paineldeusuario.php";
+        //irParaPagina("../paineldeusuario.php");
     });
 }
 
