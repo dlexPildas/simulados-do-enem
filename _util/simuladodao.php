@@ -51,7 +51,7 @@ class SimuladoDAO{
         $banc = Bd::getInstance();
         $banc->abrirconexao();
 
-        $SQL = "UPDATE simulado SET tempo='$tempoNovo', pontuacao='$pontuacaoNova' WHERE idusuario=$id";
+        $SQL = "UPDATE simulado SET tempo='$tempoNovo', pontuacao='$pontuacaoNova' WHERE idsimulado=$id";
         $resultado = pg_query($SQL);
         $banc->fecharconexao();
         $linha = pg_fetch_array($resultado);

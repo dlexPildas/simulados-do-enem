@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78ce532a-3aab-4fcc-aaea-55e76b42f6e8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/_controller/controllerdados.php" afterPath="$PROJECT_DIR$/_controller/controllerdados.php" />
-      <change beforePath="$PROJECT_DIR$/_controller/finalizaSimulado.php" afterPath="$PROJECT_DIR$/_controller/finalizaSimulado.php" />
-      <change beforePath="$PROJECT_DIR$/_database/7_CREATE_TABLES.sql" afterPath="$PROJECT_DIR$/_database/7_CREATE_TABLES.sql" />
-      <change beforePath="$PROJECT_DIR$/_js/cronometro.js" afterPath="$PROJECT_DIR$/_js/cronometro.js" />
-      <change beforePath="$PROJECT_DIR$/_js/simulado.js" afterPath="$PROJECT_DIR$/_js/simulado.js" />
-      <change beforePath="$PROJECT_DIR$/_model/Simulado.php" afterPath="$PROJECT_DIR$/_model/Simulado.php" />
+      <change beforePath="$PROJECT_DIR$/_controller/solicitarProva.php" afterPath="$PROJECT_DIR$/_controller/solicitarProva.php" />
       <change beforePath="$PROJECT_DIR$/_util/simuladodao.php" afterPath="$PROJECT_DIR$/_util/simuladodao.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,25 +69,25 @@
       <file leaf-file-name="simuladodao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_util/simuladodao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+            <state relative-caret-position="330">
+              <caret line="53" column="100" lean-forward="false" selection-start-line="53" selection-start-column="100" selection-end-line="53" selection-end-column="100" />
               <folding>
-                <marker date="1514933720747" expanded="true" signature="502:645" ph="INSERT INTO simulado... " />
-                <marker date="1514933720747" expanded="true" signature="1194:1258" ph="select * fro... simulado" />
-                <marker date="1514933720747" expanded="true" signature="1911:1961" ph="UPDATE FROM... " />
-                <marker date="1514933720747" expanded="true" signature="1911:1977" ph="UPDATE FROM... " />
-                <marker date="1514933720747" expanded="true" signature="1911:1994" ph="UPDATE simulado... " />
-                <marker date="1514933720747" expanded="true" signature="1911:1997" ph="UPDATE FROM... " />
+                <marker date="1514936400219" expanded="true" signature="502:645" ph="INSERT INTO simulado... " />
+                <marker date="1514936400219" expanded="true" signature="1194:1258" ph="select * fro... simulado" />
+                <marker date="1514936400219" expanded="true" signature="1911:1961" ph="UPDATE FROM... " />
+                <marker date="1514936400219" expanded="true" signature="1911:1977" ph="UPDATE FROM... " />
+                <marker date="1514936400219" expanded="true" signature="1911:1995" ph="UPDATE simulado... " />
+                <marker date="1514936400219" expanded="true" signature="1911:1998" ph="UPDATE FROM... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="respostasimuladodao.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="respostasimuladodao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_util/respostasimuladodao.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
               <folding>
                 <marker date="1514935851974" expanded="true" signature="570:674" ph="INSERT INTO respostasimulado... " />
               </folding>
@@ -103,8 +98,8 @@
       <file leaf-file-name="solicitarProva.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_controller/solicitarProva.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -120,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllerdados.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controllerdados.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="187" column="29" lean-forward="false" selection-start-line="187" selection-start-column="22" selection-end-line="187" selection-end-column="29" />
+            <state relative-caret-position="194">
+              <caret line="163" column="20" lean-forward="false" selection-start-line="163" selection-start-column="20" selection-end-line="163" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -155,14 +150,14 @@
         <option value="$PROJECT_DIR$/_model/DataHora.php" />
         <option value="$PROJECT_DIR$/_view/simulado.php" />
         <option value="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" />
-        <option value="$PROJECT_DIR$/_controller/solicitarProva.php" />
         <option value="$PROJECT_DIR$/_model/Simulado.php" />
         <option value="$PROJECT_DIR$/_controller/finalizaSimulado.php" />
         <option value="$PROJECT_DIR$/_js/simulado.js" />
         <option value="$PROJECT_DIR$/_js/cronometro.js" />
-        <option value="$PROJECT_DIR$/_util/simuladodao.php" />
         <option value="$PROJECT_DIR$/_controller/controllerdados.php" />
         <option value="$PROJECT_DIR$/_util/respostasimuladodao.php" />
+        <option value="$PROJECT_DIR$/_util/simuladodao.php" />
+        <option value="$PROJECT_DIR$/_controller/solicitarProva.php" />
       </list>
     </option>
   </component>
@@ -279,12 +274,12 @@
       <workItem from="1514638401190" duration="49000" />
       <workItem from="1514641225396" duration="4429000" />
       <workItem from="1514742061102" duration="156000" />
-      <workItem from="1514911947692" duration="21810000" />
+      <workItem from="1514911947692" duration="23022000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49905000" />
+    <option name="totallyTimeSpent" value="51117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -664,14 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_controller/solicitarProva.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_view/simulado.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -730,36 +717,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_util/respostasimuladodao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding>
+            <marker date="1514935851974" expanded="true" signature="570:674" ph="INSERT INTO respostasimulado... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_util/simuladodao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="53" column="22" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        <state relative-caret-position="330">
+          <caret line="53" column="100" lean-forward="false" selection-start-line="53" selection-start-column="100" selection-end-line="53" selection-end-column="100" />
           <folding>
-            <marker date="1514933720747" expanded="true" signature="502:645" ph="INSERT INTO simulado... " />
-            <marker date="1514933720747" expanded="true" signature="1194:1258" ph="select * fro... simulado" />
-            <marker date="1514933720747" expanded="true" signature="1911:1961" ph="UPDATE FROM... " />
-            <marker date="1514933720747" expanded="true" signature="1911:1977" ph="UPDATE FROM... " />
-            <marker date="1514933720747" expanded="true" signature="1911:1994" ph="UPDATE simulado... " />
-            <marker date="1514933720747" expanded="true" signature="1911:1997" ph="UPDATE FROM... " />
+            <marker date="1514936400219" expanded="true" signature="502:645" ph="INSERT INTO simulado... " />
+            <marker date="1514936400219" expanded="true" signature="1194:1258" ph="select * fro... simulado" />
+            <marker date="1514936400219" expanded="true" signature="1911:1961" ph="UPDATE FROM... " />
+            <marker date="1514936400219" expanded="true" signature="1911:1977" ph="UPDATE FROM... " />
+            <marker date="1514936400219" expanded="true" signature="1911:1995" ph="UPDATE simulado... " />
+            <marker date="1514936400219" expanded="true" signature="1911:1998" ph="UPDATE FROM... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_controller/solicitarProva.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="187" column="29" lean-forward="false" selection-start-line="187" selection-start-column="22" selection-end-line="187" selection-end-column="29" />
+        <state relative-caret-position="194">
+          <caret line="163" column="20" lean-forward="false" selection-start-line="163" selection-start-column="20" selection-end-line="163" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_util/respostasimuladodao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1514935851974" expanded="true" signature="570:674" ph="INSERT INTO respostasimulado... " />
-          </folding>
         </state>
       </provider>
     </entry>
