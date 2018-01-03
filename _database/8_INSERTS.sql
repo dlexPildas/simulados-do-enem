@@ -22,14 +22,14 @@ insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano
 insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Lucas', 'Fada Cardoso', 'null', 'lucas@yahoo.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'N', '11/07/2017');
 
 --Cadastro de simulado
-insert into simulado (idsimulado, idusuario, data_simulado, tempo, pontuacao, tipo) values ('1','14', '12/11/2017', '03:14:38', '734', '');
-insert into simulado (idsimulado, idusuario, data_simulado, tempo, pontuacao, tipo) values ('2','13', '11/06/2017', '02:59:32', '653', '');
-insert into simulado (idsimulado, idusuario, data_simulado, tempo, pontuacao, tipo) values ('3','15', '12/12/2017', '03:31:53', '832', '');
-insert into simulado (idsimulado, idusuario, data_simulado, tempo, pontuacao, tipo) values ('4','16', '15/12/2017', '03:46:24', '767', '');
-insert into simulado (idsimulado, idusuario, data_simulado, tempo, pontuacao, tipo) values ('5','13', '16/12/2017', '01:12:46', '322', '');
+insert into simulado (idusuario, data_simulado, tempo, pontuacao, tipo) values ('1', '12/11/2017', '03:14:38', '734', '');
+insert into simulado (idusuario, data_simulado, tempo, pontuacao, tipo) values ('2', '11/06/2017', '02:59:32', '653', '');
+insert into simulado (idusuario, data_simulado, tempo, pontuacao, tipo) values ('3', '12/12/2017', '03:31:53', '832', '');
+insert into simulado (idusuario, data_simulado, tempo, pontuacao, tipo) values ('4', '15/12/2017', '03:46:24', '767', '');
+insert into simulado (idusuario, data_simulado, tempo, pontuacao, tipo) values ('4', '16/12/2017', '01:12:46', '322', '');
 		
 --Cadastro de prova
-insert into prova (idprova, qtdquestoes, ano) values ('1','90', '2016');
+insert into prova (qtdquestoes, ano) values ('90', '2016');
 
 --Cadastro de Área de Conhecimento
 insert into areadeconhecimento (idarea, nome) values ('1', 'Ciências Humanas e suas Tecnologias');

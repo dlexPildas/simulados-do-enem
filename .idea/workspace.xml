@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78ce532a-3aab-4fcc-aaea-55e76b42f6e8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_controller/controllerdados.php" afterPath="$PROJECT_DIR$/_controller/controllerdados.php" />
-      <change beforePath="$PROJECT_DIR$/_database/7_CREATE_TABLES.sql" afterPath="$PROJECT_DIR$/_database/7_CREATE_TABLES.sql" />
-      <change beforePath="$PROJECT_DIR$/_database/8_INSERTS.sql" afterPath="$PROJECT_DIR$/_database/8_INSERTS.sql" />
-      <change beforePath="$PROJECT_DIR$/_database/9_INSERTS_QUESTIONS.sql" afterPath="$PROJECT_DIR$/_database/9_INSERTS_QUESTIONS.sql" />
-      <change beforePath="$PROJECT_DIR$/_database/PovoamentoArtificial.sql" afterPath="$PROJECT_DIR$/_database/PovoamentoArtificial.sql" />
-      <change beforePath="$PROJECT_DIR$/_database/PovoamentoProvaOficial.sql" afterPath="$PROJECT_DIR$/_database/PovoamentoProvaOficial.sql" />
-      <change beforePath="$PROJECT_DIR$/_js/simulado.js" afterPath="$PROJECT_DIR$/_js/simulado.js" />
-      <change beforePath="$PROJECT_DIR$/_util/questaodao.php" afterPath="$PROJECT_DIR$/_util/questaodao.php" />
-      <change beforePath="$PROJECT_DIR$/_util/simuladodao.php" afterPath="$PROJECT_DIR$/_util/simuladodao.php" />
-    </list>
+    <list default="true" id="78ce532a-3aab-4fcc-aaea-55e76b42f6e8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +16,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-              <folding />
+              <folding>
+                <marker date="1514983039730" expanded="true" signature="5367:5369" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,8 +36,8 @@
       <file leaf-file-name="escolher-tipo-simulado.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_view/escolher-tipo-simulado.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="129" column="28" lean-forward="false" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="103" />
+            <state relative-caret-position="2091">
+              <caret line="123" column="8" lean-forward="true" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -288,12 +279,12 @@
       <workItem from="1514641225396" duration="4429000" />
       <workItem from="1514742061102" duration="156000" />
       <workItem from="1514911947692" duration="24171000" />
-      <workItem from="1514977175504" duration="3766000" />
+      <workItem from="1514977175504" duration="4714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56032000" />
+    <option name="totallyTimeSpent" value="56980000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -454,7 +445,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1514983039730" expanded="true" signature="5367:5369" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -758,14 +751,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-          <folding />
+          <folding>
+            <marker date="1514983039730" expanded="true" signature="5367:5369" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_view/escolher-tipo-simulado.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="129" column="28" lean-forward="false" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="103" />
+        <state relative-caret-position="2091">
+          <caret line="123" column="8" lean-forward="true" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
           <folding />
         </state>
       </provider>
