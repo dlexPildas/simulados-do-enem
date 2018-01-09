@@ -8,13 +8,14 @@
     require_once ("Controllerdados.php");
     echo "<br> Chegou aqui <br>";
     $nome = $_POST['nome'];
+
     $controller = Controllerdados::getInstance();
     $result = $controller->buscarUsuarios($nome);
     if($result==false){
         echo "Erro, usuários com o nome especificado não foram encontrados.";
         return false;
     }else{
-        echo "<br>$result[1]<br>";
+        print_r($result);
     }
     // mudar essa função para o controller
     function getUsuario($result){
@@ -22,3 +23,4 @@
         $usuario->setId($result[0]);
         return $usuario;
     }
+?>

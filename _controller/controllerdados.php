@@ -267,9 +267,13 @@ class Controllerdados {
 	    if($result==false){
 	        return false;
         }
-	    $linha = pg_fetch_array($result);
-        echo "Os dados'" . $linha[ 'idusuario' ] . " | " . $linha[ 'nome' ] . " | " . $linha[ 'email' ] . " | " . $linha[ 'privilegio' ] . "\n ";
-	    return $linha;
+        $matriz = array();
+	    $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $matriz[$i] = array($escrever[0], $escrever[1], $escrever[3]);
+            $i++;
+        }
+	    return $matriz;
     }
 
     public function verificarPrivilegio($id){
