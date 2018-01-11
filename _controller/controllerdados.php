@@ -278,7 +278,7 @@ class Controllerdados {
     }
 
     private function getUsuario($escrever){
-        $usuario = new Usuario( $escrever[1], '', '', '', $escrever[3] );
+        $usuario = new Usuario( $escrever[1], null, null, $escrever[2],null, $escrever[3], null );
         $usuario->setId($escrever[0]);
         return $usuario;
     }
