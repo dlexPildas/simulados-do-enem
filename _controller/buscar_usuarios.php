@@ -6,7 +6,6 @@
  * Time: 11:28
  */
     require_once ("Controllerdados.php");
-    echo "<br> Chegou aqui <br>";
     $nome = $_POST['nome'];
 
     $controller = Controllerdados::getInstance();
@@ -17,6 +16,5 @@
     }else{
         print_r($result);
     }
-    // mudar essa função para o controller
 
 ?>
