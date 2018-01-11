@@ -18,9 +18,5 @@
         print_r($result);
     }
     // mudar essa função para o controller
-    function getUsuario($result){
-        $usuario = new Usuario( $result[1], '', '', '', $result[3] );
-        $usuario->setId($result[0]);
-        return $usuario;
-    }
+
 ?>
