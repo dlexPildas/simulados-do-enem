@@ -326,8 +326,15 @@ class Controllerdados {
 		return false;
 
 	}
+
+    /**
+     * @param $idquestao
+     * @param $idusuario
+     * @param $data
+     */
     public function inserirDenuncia($idquestao,$idusuario,$data){
 	    //pensando na implementação (Allan)
+        //return true or false;
     }
 
 }
