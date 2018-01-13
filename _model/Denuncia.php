@@ -90,5 +90,5 @@ class Denuncia
         $this->usuario = $usuario;
     }
 
-    
+
 }
