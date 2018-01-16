@@ -286,10 +286,17 @@ class Controllerdados {
         $matriz = array();
 	    $i = 0;
         while($escrever=pg_fetch_array($result)){
-            $matriz[$i] = array($escrever[0], $escrever[1], $escrever[3]);
+            $usuario = $this->getUsuario($escrever);
+            $matriz[$i] = array($usuario);
             $i++;
         }
 	    return $matriz;
+    }
+
+    private function getUsuario($escrever){
+        $usuario = new Usuario( $escrever[1], null, null, $escrever[2],null, $escrever[3], null );
+        $usuario->setId($escrever[0]);
+        return $usuario;
     }
 
     public function verificarPrivilegio($id){
@@ -336,6 +343,15 @@ class Controllerdados {
 
 	}
 
+    /**
+     * @param $idquestao
+     * @param $idusuario
+     * @param $data
+     */
+    public function inserirDenuncia($idquestao,$idusuario,$data){
+	    //pensando na implementação (Allan)
+        //return true or false;
+    }
 
 }
 ?>
