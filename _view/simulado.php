@@ -71,11 +71,11 @@ require_once( "../_model/Prova.php" );
 			</div>
 			<div class="radio">
 				<label><input type="radio" name="optradio" id="respe" onclick="selecionarResposta('E')"><span class="alternativa"></span></label>
-			</div> 
+			</div>
 
 		</div>
 
-		<!-- Botões proximo e anterior 
+		<!-- Botões proximo e anterior
 		<div class="pull-right">
 			<a role="button" class="btn btn-info"><- Anterior</a>
 			<a role="button" class="btn btn-info">Pr�xima -></a>
@@ -112,7 +112,7 @@ require_once( "../_model/Prova.php" );
 		<div class="panel panel-warning">
 			<div class="panel-heading" style="font-size: 16px">Achou algo errado?</div>
 			<div class="panel-body">
-				<a href="#" style="margin-bottom: 15px" class="btn btn-danger botao" role="button">Denunciar</a>
+				<a href="#" style="margin-bottom: 15px" class="btn btn-danger botao" role="button" onclick="denuncia()">Denunciar</a>
 			</div>
 		</div>
 
@@ -129,6 +129,5 @@ require_once( "../_model/Prova.php" );
 	<footer>
 
 	</footer>
-
 </body>
 </html>

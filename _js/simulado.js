@@ -12,6 +12,11 @@ var questoesProva;
 var indexAtual;
 var respostas = new Map();
 
+/*window.onload = initPage;
+function initPage(){
+    buscarProva();
+}*/
+
 buscarProva();
 function buscarProva() {
     var xhttp = new XMLHttpRequest();
@@ -24,9 +29,10 @@ function buscarProva() {
             }
         	setIdProva(resposta.idProva);
         	setQuestoesProva(resposta.questoes);
+            setTempo(resposta.dataprova, null);
         	setIndexAtual(0);
-            apresentarQuestao(0);
         	criarIndices(questoesProva.length); //Cria os indices das questoes de acordo com a quantidade.
+            apresentarQuestao(0);
        }
     };
     xhttp.open("GET", url, true);
@@ -152,6 +158,18 @@ function enviarSimulado(){
         alert("Seu simulado foi finalizado com sucesso.");
         //irParaPagina("../paineldeusuario.php");
     });
+}
+
+function denuncia(){
+  var idQuest = questoesProva[indexAtual].idQuestao;
+  $.ajax({
+      url: "../_controller/xxxxxx.php",
+  type: 'post',
+  data: {idQuestao:idQuest}
+  }).done(function () {
+      alert("Sua denúncia foi realizada com sucesso.");
+      //irParaPagina("../paineldeusuario.php");
+  });
 }
 
 function mapForString(){

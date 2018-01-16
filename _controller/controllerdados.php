@@ -164,33 +164,41 @@ class Controllerdados {
 	public function gerarProva($tipo_prova, $ano_or_area) {
 		$questaodao = new QuestaoDAO();
 		$simuladodao = new SimuladoDAO();
-		$questoes = [];
-		switch ($tipo_prova){
-            case 3: //Questões oficiais
-                break;
-            case 4: //Questões não oficiais
-                break;
-            case 5: //Questões mistas
-                break;
-            default : //Edições anteriores ou Area do conhecimento
-                $questoes = $questaodao->ler($tipo_prova, $ano_or_area,2);
-                break;
+		$respostasimuladodao = new RespostaSimuladoDAO();
+
+		$prova = $this->verificarSimuladoAndamento($_SESSION['id']);
+		if($prova == null) {
+            $questoes = [];
+            switch ($tipo_prova) {
+                case 3: //Questões oficiais
+                    break;
+                case 4: //Questões não oficiais
+                    break;
+                case 5: //Questões mistas
+                    break;
+                default : //Edições anteriores ou Area do conhecimento
+                    $questoes = $questaodao->ler($tipo_prova, $ano_or_area, 3);
+                    break;
+            }
+            if (sizeof($questoes) > 0) {
+                $NTP = new DataHora();
+                $time = $NTP->getDataHora();
+                $simulado = new Simulado(-1, $_SESSION['id'], $time, 0, 0, "N");
+                $simulado = $simuladodao->inserir($simulado);
+                $prova = new Prova($simulado->getIdSimulado(), 2018, $simulado->getTipo(), sizeof($questoes, 0), $questoes);
+                $prova->setDatahora($simulado->getDataSimulado());
+                $respostasimuladodao->inserirVectorObjeto($simulado->getIdSimulado(), $questoes);
+                return $prova;
+            }
+        } else {
+		    return $prova;
         }
-        if(sizeof($questoes) > 0) {
-            $NTP = new DataHora();
-            $time = $NTP->getDataHora();
-            $simulado = new Simulado(-1, $_SESSION['id'], $time, 0, 0, "N");
-            $simulado = $simuladodao->inserir($simulado);
-            $prova = new Prova($simulado->getIdSimulado(), 2018, $simulado->getTipo(), sizeof($questoes, 0), $questoes);
-            return $prova;
-        }
-        return null;
 	}
 
 	public function finalizarSimulado($id_simulado,$resposta_questoes, $tempo){
         $vectorResp = explode(',',$resposta_questoes);
         $resp_simdao = new RespostaSimuladoDAO();
-        $resp_simdao->inserir($id_simulado, $vectorResp);
+        $resp_simdao->atualizarVetor($id_simulado, $vectorResp);
         $simuladodao = new SimuladoDAO();
         $simulado = $simuladodao->ler($id_simulado);
         $simulado->setTempo($tempo);
@@ -199,12 +207,20 @@ class Controllerdados {
     }
 
     public function verificarSimuladoAndamento($id_usuario){
-        $simuladodao = new SimuladoDAO();
-        $simulados = $simuladodao->lerIdUsuario($id_usuario);
+        //return null;
+	    $simuladodao = new SimuladoDAO();
+        $resp_simdao = new RespostaSimuladoDAO();
+        $questaodao  = new QuestaoDAO();
+
+        $simulados = $simuladodao->lerIdUsuario($id_usuario); //Procura todos os simulados do usuario logado.
         foreach ($simulados as $s){
-            if ($s->getTempo() == 0){
-                echo "alert(\"Existe um simulado em andamento iniciado em $s->getDataSimulado(). Ele será aberto.<br>OBS: As questões respondidas ainda não ficam salvas, logo, você deve responder tudo novamente.\")";
-                return $s;
+            if ($s->getTempo() == 0){ //Verifica se o simulado foi concluído.
+                //echo "<script>alert(\"Existe um simulado em andamento. Ele será aberto.<br>OBS: As questões respondidas ainda não ficam salvas, logo, você deve responder tudo novamente.\")</script>";
+                $id_questoes = $resp_simdao->obterIdQuestoesSimulado($s->getIdSimulado());
+                $questoes = $questaodao->lerPorVetorIndex($id_questoes);
+                $prova_realizar = new Prova($s->getidSimulado(), $s->getDataSimulado(), $s->getTipo(), sizeof($questoes, 0), $questoes);
+                $prova_realizar->setDatahora($s->getDataSimulado());
+                return $prova_realizar;
             }
         }
         return null;

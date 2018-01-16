@@ -5,6 +5,7 @@ class DataHora {
      * DataHora constructor.
      */
     public function __construct(){
+        date_default_timezone_set("Brazil/East");
     }
 
     //Retorna a hora do servidor NTP.

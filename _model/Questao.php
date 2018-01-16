@@ -15,6 +15,7 @@
 		private $respostad;
 		private $respostae;
 		private $respostacorreta;
+		private $respostaMarcadaUsuario;
 		
 		function __construct($idquestao,$idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta) {
 			$this->idquestao = $idquestao;
@@ -72,6 +73,17 @@
 		function getRespostaCorreta(){
 			return $this->respostacorreta;
 		}
+
+
+        public function getRespostaMarcadaUsuario(){
+            return $this->respostaMarcadaUsuario;
+        }
+
+        public function setRespostaMarcadaUsuario($respostaMarcadaUsuario){
+            $this->respostaMarcadaUsuario = $respostaMarcadaUsuario;
+        }
+
+
 		public function jsonSerialize() {
         return [
         	'idQuestao' => $this->getIdQuestao(),

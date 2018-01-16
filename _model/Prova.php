@@ -14,6 +14,7 @@ class Prova implements JsonSerializable
     private $qtdquestoes;
     private $questoes;
     private $indexAtualQuest;
+    private $datahora;
 
     /**
      * Prova constructor.
@@ -113,6 +114,22 @@ class Prova implements JsonSerializable
         $this->questoes = $questoes;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDatahora()
+    {
+        return $this->datahora;
+    }
+
+    /**
+     * @param mixed $datahora
+     */
+    public function setDatahora($datahora){
+        $this->datahora = $datahora;
+    }
+
+
     public function getQuestao($index) {
         $this->indexAtualQuest = $index-1;
         return $this->questoes[$this->indexAtualQuest];
@@ -136,6 +153,7 @@ class Prova implements JsonSerializable
     public function jsonSerialize() {
         return [
             'idProva' => $this->getId(),
+            'dataprova' => $this->getDatahora(),
             'questoes' => $this->getQuestoes()
         ];
     }
