@@ -21,17 +21,11 @@ class denunciadao
     //CREATE
     function inserir( $denuncia ) {
 
-        //$iduser = $feed->getIduser();
-        //$titulo= $feed->getTitulo();
-        //$descricao= $feed->getDescricao();
+        $idusuario = $denuncia->getIdUsuario();
+        $idquestao = $denuncia->getIdQuestao;
 
-        $idusuario = 0;
-        $idquestao = 0;
-        $data = 0;
+        $SQL = "INSERT INTO denuncia (idusuario, idquestao, datadenuncia) VALUES ('$idusuario', '$idquestao')";
 
-        $SQL = "INSERT INTO feedback (idusuario, idquestao, data) VALUES ('$iduser', '$titulo', '$descricao')";
-
-        //echo 'aqui';
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
 
@@ -46,6 +40,9 @@ class denunciadao
             echo "<script type='javascript'>alert('Cadastrado com Erro!');";
         }
 
-
+    }
+    function buscar(){
+        //Em desenvolvimento
+        $SQL = "SELECT * FROM denuncia";
     }
 }

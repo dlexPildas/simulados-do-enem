@@ -45,7 +45,7 @@ class Denuncia
     /**
      * @return mixed
      */
-    public function getIDQuestao()
+    public function getIdQuestao()
     {
         return $this->idquestao;
     }
