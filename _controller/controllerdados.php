@@ -214,7 +214,7 @@ class Controllerdados {
 
         $simulados = $simuladodao->lerIdUsuario($id_usuario); //Procura todos os simulados do usuario logado.
         foreach ($simulados as $s){
-            if ($s->getTempo() == 0){ //Verifica se o simulado foi concluído.
+            if ($s->getTempo() == "0:0:0"){ //Verifica se o simulado foi concluído.
                 //echo "<script>alert(\"Existe um simulado em andamento. Ele será aberto.<br>OBS: As questões respondidas ainda não ficam salvas, logo, você deve responder tudo novamente.\")</script>";
                 $id_questoes = $resp_simdao->obterIdQuestoesSimulado($s->getIdSimulado());
                 $questoes = $questaodao->lerPorVetorIndex($id_questoes);

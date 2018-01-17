@@ -17,7 +17,6 @@
 	
 </head>
 <body>
-		
 	<?php
 		include('../navbar-usuario.php');
 	?>

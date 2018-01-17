@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78ce532a-3aab-4fcc-aaea-55e76b42f6e8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/_controller/controllerdados.php" afterPath="$PROJECT_DIR$/_controller/controllerdados.php" />
-      <change beforePath="$PROJECT_DIR$/_js/cronometro.js" afterPath="$PROJECT_DIR$/_js/cronometro.js" />
       <change beforePath="$PROJECT_DIR$/_js/simulado.js" afterPath="$PROJECT_DIR$/_js/simulado.js" />
-      <change beforePath="$PROJECT_DIR$/_util/respostasimuladodao.php" afterPath="$PROJECT_DIR$/_util/respostasimuladodao.php" />
+      <change beforePath="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" afterPath="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" />
       <change beforePath="$PROJECT_DIR$/_view/simulado.php" afterPath="$PROJECT_DIR$/_view/simulado.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,23 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Simulado.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_model/Simulado.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="36" />
-              <folding>
-                <marker date="1514930271760" expanded="true" signature="1177:1184" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="respostasimuladodao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_util/respostasimuladodao.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="348">
-              <caret line="88" column="24" lean-forward="true" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+              <caret line="88" column="24" lean-forward="false" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
               <folding>
                 <marker date="1516221463666" expanded="true" signature="570:674" ph="INSERT INTO respostasimulado... " />
                 <marker date="1516221463666" expanded="true" signature="1086:1190" ph="INSERT INTO respostasimulado... " />
@@ -53,31 +39,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllerdados.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controllerdados.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="235" column="43" lean-forward="true" selection-start-line="235" selection-start-column="43" selection-end-line="235" selection-end-column="43" />
+            <state relative-caret-position="245">
+              <caret line="216" column="36" lean-forward="true" selection-start-line="216" selection-start-column="36" selection-end-line="216" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cronometro.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_js/cronometro.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="71" lean-forward="false" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="simulado.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="simulado.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_js/simulado.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="188" column="31" lean-forward="false" selection-start-line="188" selection-start-column="31" selection-end-line="188" selection-end-column="31" />
+            <state relative-caret-position="5">
+              <caret line="182" column="36" lean-forward="false" selection-start-line="182" selection-start-column="36" selection-end-line="182" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -87,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/_controller/finalizaSimulado.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -107,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/_controller/carregarRespostas.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+              <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -116,8 +92,28 @@
       <file leaf-file-name="simulado.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_view/simulado.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="130" column="65" lean-forward="false" selection-start-line="130" selection-start-column="65" selection-end-line="130" selection-end-column="65" />
+            <state relative-caret-position="-1105">
+              <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="8_INSERTS.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_database/8_INSERTS.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="20" column="150" lean-forward="true" selection-start-line="20" selection-start-column="131" selection-end-line="20" selection-end-column="150" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="escolher-tipo-simulado.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_view/escolher-tipo-simulado.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -143,7 +139,6 @@
         <option value="$PROJECT_DIR$/_css/estilo_simulado.css" />
         <option value="$PROJECT_DIR$/_css/simulado.css" />
         <option value="$PROJECT_DIR$/navbar-usuario.php" />
-        <option value="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" />
         <option value="$PROJECT_DIR$/_model/Simulado.php" />
         <option value="$PROJECT_DIR$/_controller/finalizaSimulado.php" />
         <option value="$PROJECT_DIR$/_util/questaodao.php" />
@@ -151,14 +146,15 @@
         <option value="$PROJECT_DIR$/_model/Questao.php" />
         <option value="$PROJECT_DIR$/_model/Prova.php" />
         <option value="$PROJECT_DIR$/_model/DataHora.php" />
-        <option value="$PROJECT_DIR$/_view/simulado.php" />
         <option value="$PROJECT_DIR$/_js/cronometro.js" />
-        <option value="$PROJECT_DIR$/_controller/controllerdados.php" />
         <option value="$PROJECT_DIR$/_controller/atualizarResposta.php" />
         <option value="$PROJECT_DIR$/_controller/solicitarProva.php" />
         <option value="$PROJECT_DIR$/_util/respostasimuladodao.php" />
         <option value="$PROJECT_DIR$/_controller/carregarRespostas.php" />
         <option value="$PROJECT_DIR$/_js/simulado.js" />
+        <option value="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" />
+        <option value="$PROJECT_DIR$/_view/simulado.php" />
+        <option value="$PROJECT_DIR$/_controller/controllerdados.php" />
       </list>
     </option>
   </component>
@@ -169,7 +165,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -202,6 +198,11 @@
               <item name="simulados-do-enem" type="b2602c69:ProjectViewProjectNode" />
               <item name="simulados-do-enem" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="_controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="simulados-do-enem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulados-do-enem" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_database" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="simulados-do-enem" type="b2602c69:ProjectViewProjectNode" />
@@ -289,16 +290,15 @@
       <workItem from="1515885756575" duration="709000" />
       <workItem from="1516031563061" duration="592000" />
       <workItem from="1516145438070" duration="1322000" />
-      <workItem from="1516213822055" duration="8728000" />
+      <workItem from="1516213822055" duration="10393000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102159000" />
+    <option name="totallyTimeSpent" value="103824000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -333,13 +333,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_controller/solicitarProva.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2907">
@@ -536,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_database/8_INSERTS.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_css/estilo_simulado.css" />
     <entry file="file://$PROJECT_DIR$/_css/simulado.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -583,13 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_view/escolher-tipo-simulado.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" column="8" lean-forward="false" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -653,14 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_view/simulado.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="130" column="65" lean-forward="false" selection-start-line="130" selection-start-column="65" selection-end-line="130" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_js/cronometro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -672,7 +643,7 @@
     <entry file="file://$PROJECT_DIR$/_controller/finalizaSimulado.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -693,18 +664,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="235" column="43" lean-forward="true" selection-start-line="235" selection-start-column="43" selection-end-line="235" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_util/respostasimuladodao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
-          <caret line="88" column="24" lean-forward="true" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+          <caret line="88" column="24" lean-forward="false" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
           <folding>
             <marker date="1516221463666" expanded="true" signature="570:674" ph="INSERT INTO respostasimulado... " />
             <marker date="1516221463666" expanded="true" signature="1086:1190" ph="INSERT INTO respostasimulado... " />
@@ -722,18 +685,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_controller/receber-denuncia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_view/escolher-tipo-simulado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_view/simulado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1105">
+          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_database/8_INSERTS.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="20" column="150" lean-forward="true" selection-start-line="20" selection-start-column="131" selection-end-line="20" selection-end-column="150" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_controller/carregarRespostas.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_js/simulado.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="188" column="31" lean-forward="false" selection-start-line="188" selection-start-column="31" selection-end-line="188" selection-end-column="31" />
+        <state relative-caret-position="5">
+          <caret line="182" column="36" lean-forward="false" selection-start-line="182" selection-start-column="36" selection-end-line="182" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="216" column="36" lean-forward="true" selection-start-line="216" selection-start-column="36" selection-end-line="216" selection-end-column="36" />
           <folding />
         </state>
       </provider>

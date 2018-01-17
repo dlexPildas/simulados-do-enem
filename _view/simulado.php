@@ -42,7 +42,9 @@ require_once( "../_model/Prova.php" );
 
 </head>
 <body>
-    <?php include('../navbar-usuario.php'); ?>
+    <?php
+        include('../navbar-usuario.php');
+    ?>
 
 	<div role="main" class="col-md-9" style="margin-left: 35px">
 

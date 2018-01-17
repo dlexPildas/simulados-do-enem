@@ -157,6 +157,9 @@ function enviarSimulado(){
         url: "../_controller/finalizaSimulado.php",
 		type: 'post',
 		data: {idSimulado:idProva,respostas:respostasString,tempo:tempo}
+    }).done(function () {
+        alert("Seu simulado foi salvo, você será redirecionado para ver seu acertos e erros.");
+        irParaPagina("../paineldeusuario.php");
     });
 }
 
@@ -178,7 +181,6 @@ function carregarRespostas() {
         type: 'post',
         data: {idSimulado:idProva},
         success: function (result) {
-            alert(result);
             vetor = result.split(",");
             for (var v in vetor){
                 var temp = vetor[v].split(":");
