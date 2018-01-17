@@ -163,7 +163,7 @@ function enviarSimulado(){
 function denuncia(){
   var idQuest = questoesProva[indexAtual].idQuestao;
   $.ajax({
-      url: "../_controller/xxxxxx.php",
+      url: "../_controller/receber-denuncia.php",
   type: 'post',
   data: {idQuestao:idQuest}
   }).done(function () {
