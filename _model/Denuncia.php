@@ -9,9 +9,9 @@
 class Denuncia
 {
     private $id;
-    private $questao;
+    private $idquestao;
     private $data;
-    private $usuario;
+    private $idusuario;
 
     /**
      * Denuncia constructor.
@@ -19,11 +19,11 @@ class Denuncia
      * @param $data
      * @param $usuario
      */
-    public function __construct($questao, $data, $usuario)
+    public function __construct($idquestao, $data, $idusuario)
     {
-        $this->questao = $questao;
+        $this->idquestao = $idquestao;
         $this->data = $data;
-        $this->usuario = $usuario;
+        $this->idusuario = $idusuario;
     }
 
     /**
@@ -45,17 +45,17 @@ class Denuncia
     /**
      * @return mixed
      */
-    public function getQuestao()
+    public function getIdQuestao()
     {
-        return $this->questao;
+        return $this->idquestao;
     }
 
     /**
      * @param mixed $questao
      */
-    public function setQuestao($questao)
+    public function setIdQuestao($idquestao)
     {
-        $this->questao = $questao;
+        $this->idquestao = $idquestao;
     }
 
     /**
@@ -77,17 +77,17 @@ class Denuncia
     /**
      * @return mixed
      */
-    public function getUsuario()
+    public function getIdUsuario()
     {
-        return $this->usuario;
+        return $this->idusuario;
     }
 
     /**
      * @param mixed $usuario
      */
-    public function setUsuario($usuario)
+    public function setIdUsuario($idusuario)
     {
-        $this->usuario = $usuario;
+        $this->idusuario = $idusuario;
     }
 
 

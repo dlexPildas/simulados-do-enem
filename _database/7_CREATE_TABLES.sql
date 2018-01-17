@@ -106,7 +106,7 @@ CREATE TABLE  denunciaquestao (
   idusuario INTEGER NOT NULL,
   idquestao INTEGER NOT NULL,
   observacao VARCHAR(400),
-  data DATE DEFAULT 'now'::text::date NOT NULL,
+  datadenuncia DATE DEFAULT 'now'::text::date NOT NULL,
   CONSTRAINT denunciaquestao_pkey PRIMARY KEY(iddencuncia)
 ) ;
 
