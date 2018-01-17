@@ -12,9 +12,9 @@ function inicio() {
 
 function cronometro() {
     segundos++;
-    document.getElementById("segundos").innerHTML = ":" + segundos;
-    document.getElementById("minutos").innerHTML = ":" + minutos;
-    document.getElementById("horas").innerHTML = horas;
+    document.getElementById("segundos").innerHTML = ":" + ("0" + segundos).slice(-2);
+    document.getElementById("minutos").innerHTML = ":" + ("0" + minutos).slice(-2);
+    document.getElementById("horas").innerHTML = ("0" + horas).slice(-2);
 
     
     

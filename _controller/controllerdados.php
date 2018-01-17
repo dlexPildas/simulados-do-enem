@@ -57,7 +57,7 @@ class Controllerdados {
 
 		}
 	}
-	
+
 	public function cadastraFeedback($iduser, $descricao, $titulo){
 		if ( $descricao == null || $titulo == null || $descricao == "" ) {
 			echo "Saia daqui do cadastra feedback";
@@ -166,7 +166,7 @@ class Controllerdados {
 		$simuladodao = new SimuladoDAO();
 		$respostasimuladodao = new RespostaSimuladoDAO();
 
-		$prova = $this->verificarSimuladoAndamento($_SESSION['id']);
+		$prova = $this->verificarSimuladoAndamento($_SESSION['id']); // Verifica se existe um simulado em andamento. Caso haja o usuario é redirecionado para terminar o simulado.
 		if($prova == null) {
             $questoes = [];
             switch ($tipo_prova) {
@@ -224,6 +224,16 @@ class Controllerdados {
             }
         }
         return null;
+    }
+
+    public function atualizaResposta($idQuetao, $resposta, $idSimulado){
+        $resp_simdao = new RespostaSimuladoDAO();
+        $resp_simdao->atualizar($idQuetao,$resposta,$idSimulado);
+    }
+
+    public function obterRespostasQuestoes($idSimulado){
+        $resp_simdao = new RespostaSimuladoDAO();
+        return $resp_simdao->obterRepostaQuestoes($idSimulado);
     }
 
     private function gerarPontuacao($resp){
@@ -329,7 +339,7 @@ class Controllerdados {
 	4 - banimento de usuário
 	5 - submissão de questão
 	6 - realização de simulado
-	7 - 
+	7 -
 	*/
 	public function insereLog( $tipo, $idusuario, $descricao ) {
 		echo "---nova inserção de log os dados são: " . $tipo . " | " . $idusuario . " | " . $descricao;

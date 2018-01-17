@@ -22,10 +22,8 @@ require_once( "../_model/Prova.php" );
 	<script src="../_css/bootstrap/js/bootstrap.js"></script>
 	<link href="../_css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="../_js/cronometro.js"></script>
-	<script type="text/javascript" src="../_js/simulado.js"></script>
-	<script>
-		window.onload = inicio;
-	</script>
+
+
 
 	<script type="text/javascript">
 		function selectIndex(str) {
@@ -130,4 +128,8 @@ require_once( "../_model/Prova.php" );
 
 	</footer>
 </body>
+<script type="text/javascript" src="../_js/simulado.js"></script>
+<script>
+    window.onload = inicio;
+</script>
 </html>

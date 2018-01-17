@@ -33,6 +33,7 @@ function buscarProva() {
         	setIndexAtual(0);
         	criarIndices(questoesProva.length); //Cria os indices das questoes de acordo com a quantidade.
             apresentarQuestao(0);
+            carregarRespostas();
        }
     };
     xhttp.open("GET", url, true);
@@ -114,9 +115,11 @@ function anteriorQuestao(){
     }
 }
 
+//Salva no map as resposta de cada questão.
 function selecionarResposta(letra_resp) {
 	console.log(questoesProva[indexAtual].idQuestao + ":" + letra_resp);
 	respostas.set(questoesProva[indexAtual].idQuestao, letra_resp);
+    atualizarResposta();
 }
 
 //Carrega marcação anteriores das questoes.
@@ -154,9 +157,37 @@ function enviarSimulado(){
         url: "../_controller/finalizaSimulado.php",
 		type: 'post',
 		data: {idSimulado:idProva,respostas:respostasString,tempo:tempo}
-    }).done(function () {
-        alert("Seu simulado foi finalizado com sucesso.");
-        //irParaPagina("../paineldeusuario.php");
+    });
+}
+
+//Envia ao servidor a resposta selecionada para ser salva no banco de dados.
+function atualizarResposta(){
+  var idQuest = questoesProva[indexAtual].idQuestao;
+  var resposta = respostas.get(idQuest);
+  $.ajax({
+      url: "../_controller/atualizarResposta.php",
+  type: 'post',
+  data: {idQuest:idQuest,resposta:resposta,idSimul:idProva}
+  });
+}
+
+//Buscar no servidor as questoes já respondidas
+function carregarRespostas() {
+    $.ajax({
+        url: "../_controller/carregarRespostas.php",
+        type: 'post',
+        data: {idSimulado:idProva},
+        success: function (result) {
+            alert(result);
+            vetor = result.split(",");
+            for (var v in vetor){
+                var temp = vetor[v].split(":");
+                var idQuestao =  temp[0];
+                var resp = temp[1];
+                respostas.set(idQuestao,resp);
+            }
+            carregarMarcacao();
+        }
     });
 }
 

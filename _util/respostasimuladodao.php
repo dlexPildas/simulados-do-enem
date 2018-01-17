@@ -76,5 +76,22 @@ class RespostaSimuladoDAO {
         $banc->fecharconexao();
         return $ids;
     }
+
+    public function obterRepostaQuestoes($idSimulado){
+        $banc = Bd::getInstance();
+        $obanco = $banc->abrirconexao();
+
+        $SQL = "SELECT * FROM respostasimulado WHERE idsimulado=$idSimulado";
+        $resultado = pg_query($obanco, $SQL);
+        $retorno = "";
+
+        while ($linha = pg_fetch_array($resultado)) {
+            $retorno .= $linha['idquestao'].":".$linha['resposta'].",";
+        }
+
+        $banc->fecharconexao();
+
+        echo $retorno;
+    }
 }
 ?>
