@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78ce532a-3aab-4fcc-aaea-55e76b42f6e8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_controller/controllerdados.php" afterPath="$PROJECT_DIR$/_controller/controllerdados.php" />
-      <change beforePath="$PROJECT_DIR$/_controller/solicitarProva.php" afterPath="$PROJECT_DIR$/_controller/solicitarProva.php" />
       <change beforePath="$PROJECT_DIR$/_js/simulado.js" afterPath="$PROJECT_DIR$/_js/simulado.js" />
-      <change beforePath="$PROJECT_DIR$/_util/questaodao.php" afterPath="$PROJECT_DIR$/_util/questaodao.php" />
+      <change beforePath="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" afterPath="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" />
       <change beforePath="$PROJECT_DIR$/_view/simulado.php" afterPath="$PROJECT_DIR$/_view/simulado.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="381">
-              <caret line="174" column="38" lean-forward="true" selection-start-line="174" selection-start-column="38" selection-end-line="174" selection-end-column="38" />
+              <caret line="174" column="38" lean-forward="false" selection-start-line="174" selection-start-column="38" selection-end-line="174" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -64,8 +61,8 @@
       <file leaf-file-name="simulado.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_js/simulado.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="29" column="139" lean-forward="false" selection-start-line="29" selection-start-column="139" selection-end-line="29" selection-end-column="139" />
+            <state relative-caret-position="2720">
+              <caret line="160" column="44" lean-forward="true" selection-start-line="160" selection-start-column="44" selection-end-line="160" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -94,8 +91,8 @@
       <file leaf-file-name="simulado.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_view/simulado.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="102" column="35" lean-forward="false" selection-start-line="102" selection-start-column="35" selection-end-line="102" selection-end-column="35" />
+            <state relative-caret-position="255">
+              <caret line="45" column="17" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -118,6 +115,16 @@
                 <marker date="1516296521079" expanded="true" signature="3187:3227" ph="select * fro... questao" />
                 <marker date="1516296521079" expanded="true" signature="3824:3864" ph="select * fro... questao" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="escolher-tipo-simulado.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_view/escolher-tipo-simulado.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,12 +158,12 @@
         <option value="$PROJECT_DIR$/_js/cronometro.js" />
         <option value="$PROJECT_DIR$/_controller/atualizarResposta.php" />
         <option value="$PROJECT_DIR$/_controller/carregarRespostas.php" />
-        <option value="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" />
         <option value="$PROJECT_DIR$/_util/respostasimuladodao.php" />
-        <option value="$PROJECT_DIR$/_view/simulado.php" />
         <option value="$PROJECT_DIR$/_controller/solicitarProva.php" />
         <option value="$PROJECT_DIR$/_controller/controllerdados.php" />
         <option value="$PROJECT_DIR$/_util/questaodao.php" />
+        <option value="$PROJECT_DIR$/_view/simulado.php" />
+        <option value="$PROJECT_DIR$/_view/escolher-tipo-simulado.php" />
         <option value="$PROJECT_DIR$/_js/simulado.js" />
       </list>
     </option>
@@ -168,7 +175,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -296,15 +303,15 @@
       <workItem from="1516213822055" duration="10393000" />
       <workItem from="1516232702492" duration="1636000" />
       <workItem from="1516236286243" duration="1150000" />
-      <workItem from="1516277490273" duration="5547000" />
+      <workItem from="1516277490273" duration="6677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112157000" />
+    <option name="totallyTimeSpent" value="113287000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -610,14 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_view/escolher-tipo-simulado.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="6" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_database/8_INSERTS.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -654,14 +653,6 @@
             <marker date="1516278006977" expanded="true" signature="3047:3095" ph="SELECT * FRO... respostasimulado" />
             <marker date="1516278006977" expanded="true" signature="3047:3096" ph="SELECT * FRO... respostasimulado" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_view/simulado.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="102" column="35" lean-forward="false" selection-start-line="102" selection-start-column="35" selection-end-line="102" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -719,7 +710,7 @@
     <entry file="file://$PROJECT_DIR$/_controller/controllerdados.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
-          <caret line="174" column="38" lean-forward="true" selection-start-line="174" selection-start-column="38" selection-end-line="174" selection-end-column="38" />
+          <caret line="174" column="38" lean-forward="false" selection-start-line="174" selection-start-column="38" selection-end-line="174" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -751,10 +742,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_view/escolher-tipo-simulado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_view/simulado.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="45" column="17" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_js/simulado.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="29" column="139" lean-forward="false" selection-start-line="29" selection-start-column="139" selection-end-line="29" selection-end-column="139" />
+        <state relative-caret-position="2720">
+          <caret line="160" column="44" lean-forward="true" selection-start-line="160" selection-start-column="44" selection-end-line="160" selection-end-column="44" />
           <folding />
         </state>
       </provider>

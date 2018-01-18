@@ -21,7 +21,7 @@ function buscarProva() {
         	var resposta = JSON.parse(this.response);
             if (resposta == null) {
                 mensagemErro();
-                irParaPagina("http://localhost/simulados-do-enem/_view/escolher-tipo-simulado.php");
+                irParaPagina("escolher-tipo-simulado.php");
             }
         	setIdProva(resposta.idProva);
         	setQuestoesProva(resposta.questoes);
@@ -158,7 +158,7 @@ function enviarSimulado(){
 		data: {idSimulado:idProva,respostas:respostasString,tempo:tempo}
     }).done(function () {
         alert("Seu simulado foi salvo, você será redirecionado para ver seu acertos e erros.");
-        irParaPagina("../paineldeusuario.php");
+        irParaPagina("paineldeusuario.php");
     });
 }
 
