@@ -13,6 +13,8 @@ require_once( "../_model/DataHora.php" );
 require_once( "../_util/questaodao.php" );
 require_once( "../_util/simuladodao.php" );
 require_once( "../_util/respostasimuladodao.php" );
+require_once ("../_util/denunciadao.php");
+require_once ("../_model/Denuncia.php");
 
 class Controllerdados {
 	public static $instance = null;
@@ -350,8 +352,36 @@ class Controllerdados {
      * @param $data
      */
     public function inserirDenuncia($idquestao,$idusuario,$data){
-	    //pensando na implementação (Allan)
-        //return true or false;
+	    $denuncia = new Denuncia($idquestao,$data,$idusuario);
+    	$denunciadao = new denunciadao();
+	    $result = $denunciadao->inserir($denuncia);
+	    if ($result==true){
+	        return true;
+        }else{
+	        return false;
+        }
+    }
+    public function buscarDenuncia(){
+        $denunciadao = new denunciadao();
+        $result = $denunciadao->buscar();
+        if($result==false){
+            return false;
+        }
+        $matriz = array();
+        $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $denuncia = $this->getDenuncia($escrever);
+            $matriz[$i] = $denuncia;
+            $i++;
+        }
+        return $matriz;
+
+    }
+
+    public function getDenuncia($escrever){
+        $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1]);
+        $denuncia->setId($escrever[0]);
+        return $denuncia;
     }
 
 }

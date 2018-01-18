@@ -24,7 +24,7 @@ class denunciadao
         $idusuario = $denuncia->getIdUsuario();
         $idquestao = $denuncia->getIdQuestao;
 
-        $SQL = "INSERT INTO denuncia (idusuario, idquestao, datadenuncia) VALUES ('$idusuario', '$idquestao')";
+        $SQL = "INSERT INTO denunciaquestao (idusuario, idquestao, datadenuncia) VALUES ('$idusuario', '$idquestao')";
 
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
@@ -42,7 +42,16 @@ class denunciadao
 
     }
     function buscar(){
-        //Em desenvolvimento
-        $SQL = "SELECT * FROM denuncia";
+        $SQL = "SELECT * FROM denunciaquestao";
+        $banco = Bd::getInstance();
+        $abrir = $banco->abrirconexao();
+        $resultado = pg_query($abrir,$SQL);
+        if(pg_num_rows($resultado)==0){
+            $banco->fecharconexao();
+            return false;
+        }else{
+            $banco->fecharconexao();
+            return $resultado;
+        }
     }
 }
