@@ -23,29 +23,52 @@
 <html lang="PT-br">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title> Usuários encontrados </title>
     <link type= "text/css" rel=stylesheet href="../_css/bootstrap3.css">
+    <link type= "text/css" rel=stylesheet href="../_css/milligram.min.css">
     <?php include ('../_view/navbar-adm.php')?>
 
 </head>
 <body>
-<table>
-    <tbody>
-
-    <?php
-    $i = 0;
-    while ($i<$tamanho) { ?>
-        <tr>
-            <td><?php echo "Nome: ".$result[$i]->getNome(); ?> &nbsp;</td>
-            <td><?php echo "Email: ".$result[$i]->getEmail(); ?> &nbsp;</td>
-            <td><?php echo "Privilegio: ".$result[$i]->getPrivilegio(); ?> &nbsp;</td>
-            <td></td>
-        </tr>
-        <?php $i++;
-    }
-    ?>
-    <tbody>
-</table>
+<div class="container-fluid">
+    <div class="row">
+<div class="col-md-2 col-lg-2"></div>
+<div class="col-md-8 col-lg-8 col-sm-12">
+    <div id="table-responsive">
+        <table class="table">
+            <tbody>
+            <?php
+            $i = 0;
+            while ($i<$tamanho) { ?>
+                <tr>
+                    <td><?php echo "Nome: ".$result[$i]->getNome(); ?> &nbsp;</td>
+                    <td><?php echo "Email: ".$result[$i]->getEmail(); ?> &nbsp;</td>
+                    <td><?php echo "Privilegio: ".$result[$i]->getPrivilegio(); ?> &nbsp;</td>
+                    <td>
+                        <div class="dropdown">
+                            <button style="background-color: #35cebe" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Opções
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">Administrador</a></li>
+                                <li><a href="#">Moderador</a></li>
+                                <li><a href="#">Usuário Normal</a></li>
+                                <li><a href="#">Banir</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <?php $i++;
+            }
+            ?>
+            <tbody>
+        </table>
+    </div>
+</div>
+<div class="col-md-2 col-lg-2"></div>
+    </div>
+</div>
 
 </body>
 </html>
