@@ -130,7 +130,7 @@ class Controllerdados {
 			$this->user = $usuario;
 			if ( $linha[ 'privilegio' ] == 'N' ) {
 				echo "usuario comum";
-				header( 'location:../paineldeusuario.php' );
+				header( 'location:../_view/paineldeusuario.php' );
 			} else if ( $linha[ 'privilegio' ] == 'M' ) {
 				echo "usuario moderador";
 				//header( 'location:nossos-planos.html' );

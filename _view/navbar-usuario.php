@@ -6,49 +6,49 @@
 <html lang="PT-BR">
 
 <head>
-    <title>Navbar-Usuario</title>
+    <title>Navbar-USU</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
-    <link rel="stylesheet" type="javascript/js" href="../_js/script.js">
+   
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../_css/barra-adm.css">
+    
 </head>
 
 <body>
 
-
     <nav class="navbar navbar-default">
         <div id="nav1" class="container-fluid">
-            <!-- Toggle que faz com que apareçam as opções em celualar e telas menores. -->
+            <!-- Toggle que faz com que apareçam as opções em celular e telas menores. -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="../_controller/logout.php"><h2>SOS ENEM</h2></a>
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
+               
+              
+                    <img src="../_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png" height="150" width="150" style="margin-top:-25px; margin-bottom:-45px;">
+               
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
             </div>
             <!-- Objetos que estarão no toogle quando ele abrir. -->
             <div class="collapse navbar-collapse">
 
                 <!--Navbar com dados à direita-->
                 <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <div class="username">
-                            <div>
-                                <span class="rounded float-right" style="margin-top: 25px">  <font class="font-weight-bold" size="5"> 
-                                <p> Bem-vindo <?php echo $logado; ?> </p> </font> </span>
-                            </div>
-                        </div>
-                    </li>
                     <li>
                         <a href="#">
                             <img src="http://via.placeholder.com/50x50" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
                         </a>
+                    </li>
+                    <li>
+                        <div class="username">
+                            <h4><?php echo $logado ?></h4>
+                            <p>Bem Vindo</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -57,33 +57,31 @@
         </div>
         <!-- barra da parte de baixo com os dados dos links-->
         <div class="container-fluid">
-            <div class="navbar-header">
-                            </div>
+           
             <div id="dados-da-barra">
                 <ul class="nav navbar-nav">
-                    
-                     <li>
-                        <a style="margin-right: 125px" href="paineldeusuario.php">Pagina inicial <span class="sr-only">(current)</span> </a>
-                    </li>
-                    <li>
-                        <a style="margin-right: 125px" href="../_view/escolher-tipo-simulado.php">Realizar simulado </a>
-                    </li>
-                    <li>
-                        <a style="margin-right: 125px" href="tela-envio-feedback.php">Dar feedbacks</a>
-                    </li>
-                    <li>
-                        <a style="margin-right: 125px" href="gerencia-de-conta.php">Minha conta</a>
-                    </li>
-                    <li>
-                        <a style="margin-right: 125px" href="tela-de-ajuda.php">Ajuda</a>
-                    </li>
-                    <li>
-                        <a href="../_controller/logout.php">Sair da conta</a>
-                    </li>
-
+                <li>
+                <a href="paineldeusuario.php">Pagina inicial <span class="sr-only">(current)</span> </a>
+            </li>
+            <li>
+                <a href="escolher-tipo-simulado.php">Realizar simulado </a>
+            </li>
+            <li>
+                <a href="tela-envio-feedback.php">Dar feedbacks</a>
+            </li>
+            <li>
+                <a href="gerencia-de-conta.php">Minha conta</a>
+            </li>
+            <li>
+                <a href="tela-de-ajuda.php">Ajuda</a>
+            </li>
+            <li>
+                <a href="../_controller/logout.php">Sair da conta</a>
+            </li>
                 </ul>
 
-             </div>
+                
+            </div>
 
         </div>
 
@@ -91,7 +89,7 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../_js/jquery-3.2.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../_js/bootstrap.js"></script>
     <script>
