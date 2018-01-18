@@ -18,7 +18,7 @@
 </head>
 <body>
 	<?php
-		include('../navbar-usuario.php');
+		include('navbar-usuario.php');
 	?>
 	
 	<div class="container-fluid">		

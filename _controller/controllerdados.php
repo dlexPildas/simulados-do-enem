@@ -130,7 +130,7 @@ class Controllerdados {
 			$this->user = $usuario;
 			if ( $linha[ 'privilegio' ] == 'N' ) {
 				echo "usuario comum";
-				header( 'location:../paineldeusuario.php' );
+				header( 'location:../_view/paineldeusuario.php' );
 			} else if ( $linha[ 'privilegio' ] == 'M' ) {
 				echo "usuario moderador";
 				//header( 'location:nossos-planos.html' );
@@ -288,7 +288,7 @@ class Controllerdados {
 	    $i = 0;
         while($escrever=pg_fetch_array($result)){
             $usuario = $this->getUsuario($escrever);
-            $matriz[$i] = array($usuario);
+            $matriz[$i] = $usuario;
             $i++;
         }
 	    return $matriz;

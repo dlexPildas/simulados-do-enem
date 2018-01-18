@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tela de leitura de feedback</title>
-    <link rel="stylesheet" href="_css/tela-inicial-adm.css">
+    <link rel="stylesheet" href="../_css/tela-inicial-adm.css">
     <link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
     <link rel="stylesheet" type="text/css" href="../_css/tela-inicial-adm.css">
 </head>

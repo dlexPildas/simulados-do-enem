@@ -16,7 +16,6 @@
 
 <body>
 
-
     <nav class="navbar navbar-default">
         <div id="nav1" class="container-fluid">
             <!-- Toggle que faz com que apareçam as opções em celular e telas menores. -->
@@ -96,7 +95,7 @@
                             </li>
                             
                             <li>
-                                <a href="_controller/logout.php">Sair</a>
+                                <a href="../_controller/logout.php">Sair</a>
                             </li>
                         </ul>
                     </li>
@@ -109,7 +108,7 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../_js/jquery-3.2.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../_js/bootstrap.js"></script>
     <script>

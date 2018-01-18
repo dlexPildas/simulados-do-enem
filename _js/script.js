@@ -1,18 +1,17 @@
 function mostraOculta(ID, ID2) {
-    if (document.getElementById(ID).style.display == "block" && document.getElementById(ID2).style.display == "block") {
-        mostra(ID);
-        alert("Usou o 1");
-    } else if (document.getElementById(ID).style.display == "block" && document.getElementById(ID2).style.display != "block") {
-        esconde(ID2);
-        mostra(ID);
-        alert("Usou o 2");
-    } else if (document.getElementById(ID).style.display != "block" && document.getElementById(ID2).style.display == "block") {
+    if ((document.getElementById(ID).style.display == "none") && (document.getElementById(ID2).style.display == "none")) {
+        esconde(ID);
         mostra(ID2);
+    } else if (document.getElementById(ID).style.display == "none" && document.getElementById(ID2).style.display != "none") {
         esconde(ID);
-        alert("Usou o 3");
-    } else if (document.getElementById(ID).style.display != "block") {
+        mostra(ID2);
+
+    } else if (document.getElementById(ID).style.display != "none" && document.getElementById(ID2).style.display == "none") {
+        mostra(ID);
+
+    } else if (document.getElementById(ID).style.display != "none" && document.getElementById(ID2).style.display != "none") {
         esconde(ID);
-        alert("Usou o 4");
+        mostra(ID2);
     }
 
 
@@ -20,7 +19,6 @@ function mostraOculta(ID, ID2) {
 
 function mostra(TD) {
     document.getElementById(TD).style.display = "none";
-    alert('teste alert');
 }
 
 function esconde(TD) {
