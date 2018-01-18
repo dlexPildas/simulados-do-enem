@@ -297,7 +297,7 @@ class Controllerdados {
 	    $i = 0;
         while($escrever=pg_fetch_array($result)){
             $usuario = $this->getUsuario($escrever);
-            $matriz[$i] = array($usuario);
+            $matriz[$i] = $usuario;
             $i++;
         }
 	    return $matriz;
