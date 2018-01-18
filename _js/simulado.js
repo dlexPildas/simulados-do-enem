@@ -158,7 +158,7 @@ function enviarSimulado(){
 		type: 'post',
 		data: {idSimulado:idProva,respostas:respostasString,tempo:tempo}
     }).done(function () {
-        alert("Seu simulado foi salvo, você será redirecionado para ver seu acertos e erros.");
+        alert("Seu simulado foi salvo, você será redirecionado para ver seus acertos e erros.");
         irParaPagina("../paineldeusuario.php");
     });
 }

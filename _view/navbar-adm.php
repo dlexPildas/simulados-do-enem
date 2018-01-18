@@ -74,6 +74,9 @@
                     <li>
                         <a href="tela-de-ajuda.php">Ajuda</a>
                     </li>
+                    <li>
+                        <a href="tela-de-denuncias.php">Ver Denúncias</a>
+                    </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
