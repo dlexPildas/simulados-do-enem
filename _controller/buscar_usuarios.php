@@ -10,11 +10,15 @@
 
     $controller = Controllerdados::getInstance();
     $result = $controller->buscarUsuarios($nome);
+    $tamanho = count($result);
+    echo $tamanho;
     if($result==false){
         echo "Erro, usuários com o nome especificado não foram encontrados.";
         return false;
     }else{
-        print_r($result);
+        //Deu certo
     }
-
 ?>
+        <tbody>
+
+?>    </table>
