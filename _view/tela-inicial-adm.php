@@ -21,7 +21,7 @@
 	
 	<!-- Main Styles -->
     <link rel="stylesheet" href="../_css/tela-inicial-adm.css">		
-	<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">	
+	<link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">	
 </head>
 
 <body>

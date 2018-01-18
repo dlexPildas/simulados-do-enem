@@ -1,5 +1,5 @@
 <?php
-include_once( "_model/segurancaA.php" );
+include_once( "../_model/segurancaA.php" );
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -10,18 +10,18 @@ include_once( "_model/segurancaA.php" );
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet">
 
     <!-- Template Styles -->
-    <link rel="stylesheet" href="_css/font-awesome.min.css">
+    <link rel="stylesheet" href="../_css/font-awesome.min.css">
 
     <!-- CSS Reset -->
-    <link rel="stylesheet" href="_css/normalize.css">
+    <link rel="stylesheet" href="../_css/normalize.css">
 
     <!-- Milligram CSS minified -->
-    <link rel="stylesheet" href="_css/milligram.min.css">
+    <link rel="stylesheet" href="../_css/milligram.min.css">
 
     <!-- Main Styles -->
-    <link rel="stylesheet" href="_css/tela-inicial-adm.css">
+    <link rel="stylesheet" href="../_css/tela-inicial-adm.css">
 
-    <link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
+    <link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
 </head>
 <body>
 <?php

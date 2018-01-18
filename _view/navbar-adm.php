@@ -96,7 +96,7 @@
                             </li>
                             
                             <li>
-                                <a href="_controller/logout.php">Sair</a>
+                                <a href="../_controller/logout.php">Sair</a>
                             </li>
                         </ul>
                     </li>

@@ -1,5 +1,5 @@
 <?php
-	include_once( "_model/seguranca.php" );
+	include_once( "../_model/seguranca.php" );
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -9,8 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Enviar Feedback</title>
   
-    <link rel="stylesheet" type="text/css" href="_css/milligram.min.css">
-    <link rel="stylesheet" type="text/css" href="_css/tela-inicial-adm.css">
+    <link rel="stylesheet" type="text/css" href="../_css/milligram.min.css">
+    <link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
+    <link rel="stylesheet" type="text/css" href="../_css/tela-inicial-adm.css">
 </head>
 <body style="background-color:#606c76">
         <div class="navbar">

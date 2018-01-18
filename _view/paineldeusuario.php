@@ -1,5 +1,5 @@
 <?php
-	include_once( "_model/seguranca.php" );
+	include_once( "../_model/seguranca.php" );
 ?>
 
 <!DOCTYPE html>
@@ -7,25 +7,25 @@
 	<head>
 		<title>S.O.S ENEM</title>
 		<meta charset = "UTF-8">
-		<link rel="stylesheet" type="text/css" href="_css/estilo.css">
+		<link rel="stylesheet" type="text/css" href="../_css/estilo.css">
 			
-		<link href="_css/ig-canais.css" rel="stylesheet" type="text/css">
+		<link href="../_css/ig-canais.css" rel="stylesheet" type="text/css">
 		<header> 
-			<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
+			<link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
 			<!-- Google Fonts -->
 			<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet">
 	
 			<!-- Template Styles -->
-			<link rel="stylesheet" href="_css/font-awesome.min.css">
+			<link rel="stylesheet" href="../_css/font-awesome.min.css">
 	
 			<!-- CSS Reset -->
-			<link rel="stylesheet" href="_css/normalize.css">
+			<link rel="stylesheet" href="../_css/normalize.css">
 	
 			<!-- Milligram CSS minified -->
-			<link rel="stylesheet" href="_css/milligram.min.css">
+			<link rel="stylesheet" href="../_css/milligram.min.css">
 	
 			<!-- Main Styles -->
-   			<link rel="stylesheet" href="_css/styles.css">
+   			<link rel="stylesheet" href="../_css/styles.css">
 	    	
 		</header>
 
@@ -153,8 +153,8 @@
 			</div>	
 		</div>
 
-		<script src="_js/chart.min.js"></script>
-		<script src="_js/chart-data.js"></script>
+		<script src="../_js/chart.min.js"></script>
+		<script src="../_js/chart-data.js"></script>
 		<script>
 			window.onload = function () {
 				var chart1 = document.getElementById("line-chart").getContext("2d");

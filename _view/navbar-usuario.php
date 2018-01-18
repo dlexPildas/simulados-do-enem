@@ -1,14 +1,18 @@
+<?php
+	include_once( "../_model/seguranca.php" );
+?>
+
 <!DOCTYPE html>
 <html lang="PT-BR">
 
 <head>
     <title>Navbar-Usuario</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">
-    <link rel="stylesheet" type="javascript/js" href="_js/script.js">
+    <link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
+    <link rel="stylesheet" type="javascript/js" href="../_js/script.js">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="_css/barra-adm.css">
+    <link rel="stylesheet" type="text/css" href="../_css/barra-adm.css">
 </head>
 
 <body>
@@ -18,21 +22,33 @@
         <div id="nav1" class="container-fluid">
             <!-- Toggle que faz com que apareçam as opções em celualar e telas menores. -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">SOS ENEM</a>
+                <a class="navbar-brand" href="../_controller/logout.php"><h2>SOS ENEM</h2></a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
             </div>
             <!-- Objetos que estarão no toogle quando ele abrir. -->
             <div class="collapse navbar-collapse">
 
                 <!--Navbar com dados à direita-->
                 <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <div class="username">
+                            <div>
+                                <span class="rounded float-right" style="margin-top: 25px">  <font class="font-weight-bold" size="5"> 
+                                <p> Bem-vindo <?php echo $logado; ?> </p> </font> </span>
+                            </div>
+                        </div>
+                    </li>
                     <li>
                         <a href="#">
                             <img src="http://via.placeholder.com/50x50" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
                         </a>
-                    </li>
-                    <li>
-                        <div class="username">
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -42,29 +58,27 @@
         <!-- barra da parte de baixo com os dados dos links-->
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dados-da-barra" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+                            </div>
             <div id="dados-da-barra">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="tela-cadastrar-questao-oficial.php">Submeter Questões <span class="sr-only">(current)</span> </a>
+                    
+                     <li>
+                        <a style="margin-right: 125px" href="paineldeusuario.php">Pagina inicial <span class="sr-only">(current)</span> </a>
                     </li>
                     <li>
-                        <a href="tela-feedbacks">Dar feedbacks</a>
+                        <a style="margin-right: 125px" href="../_view/escolher-tipo-simulado.php">Realizar simulado </a>
                     </li>
                     <li>
-                        <a href="minha-conta.php">Minha conta</a>
+                        <a style="margin-right: 125px" href="tela-envio-feedback.php">Dar feedbacks</a>
                     </li>
                     <li>
-                        <a href="tela-de-ajuda.php">Ajuda</a>
+                        <a style="margin-right: 125px" href="gerencia-de-conta.php">Minha conta</a>
                     </li>
                     <li>
-                        <a href="tela-sair-da-conta">Sair da conta</a>
+                        <a style="margin-right: 125px" href="tela-de-ajuda.php">Ajuda</a>
+                    </li>
+                    <li>
+                        <a href="../_controller/logout.php">Sair da conta</a>
                     </li>
 
                 </ul>
@@ -79,7 +93,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="_js/bootstrap.js"></script>
+    <script src="../_js/bootstrap.js"></script>
     <script>
         $(function () {
 
