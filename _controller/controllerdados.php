@@ -352,7 +352,7 @@ class Controllerdados {
      * @param $data
      */
     public function inserirDenuncia($idquestao,$idusuario,$data){
-	    $denuncia = new Denuncia($idquestao,$idusuario,$data);
+	    $denuncia = new Denuncia($idquestao,$data,$idusuario);
     	$denunciadao = new denunciadao();
 	    $result = $denunciadao->inserir($denuncia);
 	    if ($result==true){
