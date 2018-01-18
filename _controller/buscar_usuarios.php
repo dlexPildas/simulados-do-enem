@@ -19,6 +19,21 @@
         //Deu certo
     }
 ?>
+<meta>
+    <table>
         <tbody>
 
-?>    </table>
+    <?php
+        $i = 0;
+        while ($i<$tamanho) { ?>
+            <tr>
+                <td><?php echo "Nome: ".$result[$i]->getNome(); ?> &nbsp;</td>
+                <td><?php echo"Email: ".$result[$i]->getEmail(); ?> &nbsp;</td>
+                <td><?php echo "Privilegio: ".$result[$i]->getPrivilegio(); ?> &nbsp;</td>
+                <td></td>
+            </tr>
+    <?php $i++;
+    }
+    ?>
+        <tbody>
+    </table>
