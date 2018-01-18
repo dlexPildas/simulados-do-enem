@@ -12,10 +12,6 @@ var questoesProva;
 var indexAtual;
 var respostas = new Map();
 
-/*window.onload = initPage;
-function initPage(){
-    buscarProva();
-}*/
 
 buscarProva();
 function buscarProva() {
@@ -30,6 +26,9 @@ function buscarProva() {
         	setIdProva(resposta.idProva);
         	setQuestoesProva(resposta.questoes);
             setTempo(resposta.dataprova, null);
+            if(testeData(new Date(resposta.dataprova), new Date())){
+                alert("Já existe um simulado em andamento, você deve conclui para fazer um novo. Você será redirecionado para o simulado criado em " + resposta.dataprova);
+            }
         	setIndexAtual(0);
         	criarIndices(questoesProva.length); //Cria os indices das questoes de acordo com a quantidade.
             apresentarQuestao(0);
@@ -199,9 +198,8 @@ function denuncia(){
       url: "../_controller/receber-denuncia.php",
   type: 'post',
   data: {idQuestao:idQuest}
-  }).done(function () {
-      alert("Sua denúncia foi realizada com sucesso.");
-      //irParaPagina("../paineldeusuario.php");
+  }).done(function (result) {
+      alert(result);
   });
 }
 
@@ -222,4 +220,9 @@ function mensagemErro(){
 
 function irParaPagina(url){
     window.location.href = url;
+}
+
+function testeData(menor, maior){
+    maior -= 5000;
+    return menor < maior;
 }

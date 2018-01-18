@@ -163,7 +163,7 @@ class Controllerdados {
 	}
 
 	//OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
-	public function gerarProva($tipo_prova, $ano_or_area) {
+	public function gerarProva($tipo_prova, $ano_or_area, $quant_quest) {
 		$questaodao = new QuestaoDAO();
 		$simuladodao = new SimuladoDAO();
 		$respostasimuladodao = new RespostaSimuladoDAO();
@@ -171,17 +171,8 @@ class Controllerdados {
 		$prova = $this->verificarSimuladoAndamento($_SESSION['id']); // Verifica se existe um simulado em andamento. Caso haja o usuario é redirecionado para terminar o simulado.
 		if($prova == null) {
             $questoes = [];
-            switch ($tipo_prova) {
-                case 3: //Questões oficiais
-                    break;
-                case 4: //Questões não oficiais
-                    break;
-                case 5: //Questões mistas
-                    break;
-                default : //Edições anteriores ou Area do conhecimento
-                    $questoes = $questaodao->ler($tipo_prova, $ano_or_area, 3);
-                    break;
-            }
+            $questoes = $questaodao->ler($tipo_prova, $ano_or_area, $quant_quest);
+
             if (sizeof($questoes) > 0) {
                 $NTP = new DataHora();
                 $time = $NTP->getDataHora();
@@ -216,7 +207,7 @@ class Controllerdados {
 
         $simulados = $simuladodao->lerIdUsuario($id_usuario); //Procura todos os simulados do usuario logado.
         foreach ($simulados as $s){
-            if ($s->getTempo() == "0:0:0"){ //Verifica se o simulado foi concluído.
+            if ($s->getTempo() == "0" || $s->getTempo() == "0:0:0"){ //Verifica se o simulado foi concluído.
                 //echo "<script>alert(\"Existe um simulado em andamento. Ele será aberto.<br>OBS: As questões respondidas ainda não ficam salvas, logo, você deve responder tudo novamente.\")</script>";
                 $id_questoes = $resp_simdao->obterIdQuestoesSimulado($s->getIdSimulado());
                 $questoes = $questaodao->lerPorVetorIndex($id_questoes);

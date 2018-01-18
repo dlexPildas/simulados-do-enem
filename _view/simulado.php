@@ -27,7 +27,7 @@ require_once( "../_model/Prova.php" );
 
 	<script type="text/javascript">
 		function selectIndex(str) {
-			document.getElementById(str).className += " active";
+			document.getElementById(str).className = "item active";
 			for (var i = 1; i <= 90; i++) {
 				strin = str.substring(0, 5) + i;
 				if (strin !== str) {
