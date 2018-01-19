@@ -67,5 +67,16 @@ class LogDao {
 		return null;
 	}
 
+	function buscarLogs(){
+	    $SQL = "SELECT logsistema.idhistorico, logsistema.idusuario, tipodelog.nome, logsistema.descricao, logsistema.datalog 
+                FROM logsistema,tipodelog 
+                WHERE tipodelog.idacao = logsistema.idacao";
+	    
+    }
+
+    function buscarLogsPeriodo($dataini,$datafim){
+
+    }
+
 }
 ?>

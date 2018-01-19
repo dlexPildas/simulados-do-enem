@@ -322,9 +322,6 @@ class Controllerdados {
         return $linha['privilegio'];
     }
 
-    public function addProva() {
-        //Não sei o que fazer aqui por enquanto zZzZz... (Allan)
-    }
 	/**
 	1 - cadastro de usuário
 	2 - promoção de usuário
@@ -384,5 +381,8 @@ class Controllerdados {
         return $denuncia;
     }
 
+    public function buscarLog(){
+
+	}
 }
 ?>
