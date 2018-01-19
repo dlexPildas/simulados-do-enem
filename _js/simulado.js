@@ -12,6 +12,7 @@ var questoesProva;
 var indexAtual;
 var respostas = new Map();
 
+
 buscarProva();
 function buscarProva() {
     var xhttp = new XMLHttpRequest();
@@ -20,13 +21,18 @@ function buscarProva() {
         	var resposta = JSON.parse(this.response);
             if (resposta == null) {
                 mensagemErro();
-                irParaPagina("http://localhost/simulados-do-enem/_view/escolher-tipo-simulado.php");
+                irParaPagina("escolher-tipo-simulado.php");
             }
         	setIdProva(resposta.idProva);
         	setQuestoesProva(resposta.questoes);
+            setTempo(resposta.dataprova, null);
+            if(testeData(new Date(resposta.dataprova), new Date())){
+                alert("Já existe um simulado em andamento, você deve conclui para fazer um novo. Você será redirecionado para o simulado criado em " + resposta.dataprova);
+            }
         	setIndexAtual(0);
-            apresentarQuestao(0);
         	criarIndices(questoesProva.length); //Cria os indices das questoes de acordo com a quantidade.
+            apresentarQuestao(0);
+            carregarRespostas();
        }
     };
     xhttp.open("GET", url, true);
@@ -108,9 +114,11 @@ function anteriorQuestao(){
     }
 }
 
+//Salva no map as resposta de cada questão.
 function selecionarResposta(letra_resp) {
 	console.log(questoesProva[indexAtual].idQuestao + ":" + letra_resp);
 	respostas.set(questoesProva[indexAtual].idQuestao, letra_resp);
+    atualizarResposta();
 }
 
 //Carrega marcação anteriores das questoes.
@@ -149,9 +157,50 @@ function enviarSimulado(){
 		type: 'post',
 		data: {idSimulado:idProva,respostas:respostasString,tempo:tempo}
     }).done(function () {
-        alert("Seu simulado foi finalizado com sucesso.");
-        //irParaPagina("../paineldeusuario.php");
+        alert("Seu simulado foi salvo, você será redirecionado para ver seu acertos e erros.");
+        irParaPagina("paineldeusuario.php");
     });
+}
+
+//Envia ao servidor a resposta selecionada para ser salva no banco de dados.
+function atualizarResposta(){
+  var idQuest = questoesProva[indexAtual].idQuestao;
+  var resposta = respostas.get(idQuest);
+  $.ajax({
+      url: "../_controller/atualizarResposta.php",
+  type: 'post',
+  data: {idQuest:idQuest,resposta:resposta,idSimul:idProva}
+  });
+}
+
+//Buscar no servidor as questoes já respondidas
+function carregarRespostas() {
+    $.ajax({
+        url: "../_controller/carregarRespostas.php",
+        type: 'post',
+        data: {idSimulado:idProva},
+        success: function (result) {
+            vetor = result.split(",");
+            for (var v in vetor){
+                var temp = vetor[v].split(":");
+                var idQuestao =  temp[0];
+                var resp = temp[1];
+                respostas.set(idQuestao,resp);
+            }
+            carregarMarcacao();
+        }
+    });
+}
+
+function denuncia(){
+  var idQuest = questoesProva[indexAtual].idQuestao;
+  $.ajax({
+      url: "../_controller/receber-denuncia.php",
+  type: 'post',
+  data: {idQuestao:idQuest}
+  }).done(function (result) {
+      alert(result);
+  });
 }
 
 function mapForString(){
@@ -171,4 +220,9 @@ function mensagemErro(){
 
 function irParaPagina(url){
     window.location.href = url;
+}
+
+function testeData(menor, maior){
+    maior -= 5000;
+    return menor < maior;
 }

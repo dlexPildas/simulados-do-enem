@@ -1,3 +1,6 @@
+<?php
+	include_once( "../_model/seguranca.php" );
+?>
 <!DOCTYPE html>
 <html lang="PT-BR">
 
@@ -12,9 +15,19 @@
 </head>
 
 <body>
-    <div>  <?php 
-        include('navbar-adm.php');
-    ?></div>
+<div>
+     <?php 
+     /*Então, aqui deve aparecer um if para saber qual usuário está uzando a página
+     dependendo de quem seja deve ser alterada a navbar de usuário, adm e moderador. */
+		if($_SESSION['privilegio'] == 'A'){
+       		include('navbar-adm.php');
+		}else if($_SESSION['privilegio'] == 'M'){
+			include('navbar-adm.php');
+		}else if($_SESSION['privilegio'] == 'N'){
+			include('navbar-usuario.php');
+		}
+    ?>
+    </div>
     
     <div class="container-fluid">
         <div class="row">

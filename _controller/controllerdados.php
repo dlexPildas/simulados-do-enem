@@ -13,6 +13,8 @@ require_once( "../_model/DataHora.php" );
 require_once( "../_util/questaodao.php" );
 require_once( "../_util/simuladodao.php" );
 require_once( "../_util/respostasimuladodao.php" );
+require_once ("../_util/denunciadao.php");
+require_once ("../_model/Denuncia.php");
 
 class Controllerdados {
 	public static $instance = null;
@@ -57,7 +59,7 @@ class Controllerdados {
 
 		}
 	}
-	
+
 	public function cadastraFeedback($iduser, $descricao, $titulo){
 		if ( $descricao == null || $titulo == null || $descricao == "" ) {
 			echo "Saia daqui do cadastra feedback";
@@ -130,13 +132,19 @@ class Controllerdados {
 			$this->user = $usuario;
 			if ( $linha[ 'privilegio' ] == 'N' ) {
 				echo "usuario comum";
-				header( 'location:../paineldeusuario.php' );
+				header( 'location:../_view/paineldeusuario.php' );
 			} else if ( $linha[ 'privilegio' ] == 'M' ) {
 				echo "usuario moderador";
 				//header( 'location:nossos-planos.html' );
 			} else if ( $linha[ 'privilegio' ] == 'A' ) {
 				echo "usuario adm";
 				header( 'location:../_view/tela-inicial-adm.php' );
+			}else if ( $linha[ 'privilegio' ] == 'B' ){
+				echo "usuario banido";
+				unset( $_SESSION[ 'id' ] );
+				unset( $_SESSION[ 'nome' ] );
+				unset( $_SESSION[ 'privilegio' ] );
+				header( 'location:../_view/erros/userbanido.html' );
 			}
 		} else {
 			echo "erro de senha ou email";
@@ -161,36 +169,35 @@ class Controllerdados {
 	}
 
 	//OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
-	public function gerarProva($tipo_prova, $ano_or_area) {
+	public function gerarProva($tipo_prova, $ano_or_area, $quant_quest) {
 		$questaodao = new QuestaoDAO();
 		$simuladodao = new SimuladoDAO();
-		$questoes = [];
-		switch ($tipo_prova){
-            case 3: //Questões oficiais
-                break;
-            case 4: //Questões não oficiais
-                break;
-            case 5: //Questões mistas
-                break;
-            default : //Edições anteriores ou Area do conhecimento
-                $questoes = $questaodao->ler($tipo_prova, $ano_or_area,2);
-                break;
+		$respostasimuladodao = new RespostaSimuladoDAO();
+
+		$prova = $this->verificarSimuladoAndamento($_SESSION['id']); // Verifica se existe um simulado em andamento. Caso haja o usuario é redirecionado para terminar o simulado.
+		if($prova == null) {
+            $questoes = [];
+            $questoes = $questaodao->ler($tipo_prova, $ano_or_area, $quant_quest);
+
+            if (sizeof($questoes) > 0) {
+                $NTP = new DataHora();
+                $time = $NTP->getDataHora();
+                $simulado = new Simulado(-1, $_SESSION['id'], $time, 0, 0, "N");
+                $simulado = $simuladodao->inserir($simulado);
+                $prova = new Prova($simulado->getIdSimulado(), 2018, $simulado->getTipo(), sizeof($questoes, 0), $questoes);
+                $prova->setDatahora($simulado->getDataSimulado());
+                $respostasimuladodao->inserirVectorObjeto($simulado->getIdSimulado(), $questoes);
+                return $prova;
+            }
+        } else {
+		    return $prova;
         }
-        if(sizeof($questoes) > 0) {
-            $NTP = new DataHora();
-            $time = $NTP->getDataHora();
-            $simulado = new Simulado(-1, $_SESSION['id'], $time, 0, 0, "N");
-            $simulado = $simuladodao->inserir($simulado);
-            $prova = new Prova($simulado->getIdSimulado(), 2018, $simulado->getTipo(), sizeof($questoes, 0), $questoes);
-            return $prova;
-        }
-        return null;
 	}
 
 	public function finalizarSimulado($id_simulado,$resposta_questoes, $tempo){
         $vectorResp = explode(',',$resposta_questoes);
         $resp_simdao = new RespostaSimuladoDAO();
-        $resp_simdao->inserir($id_simulado, $vectorResp);
+        $resp_simdao->atualizarVetor($id_simulado, $vectorResp);
         $simuladodao = new SimuladoDAO();
         $simulado = $simuladodao->ler($id_simulado);
         $simulado->setTempo($tempo);
@@ -199,15 +206,33 @@ class Controllerdados {
     }
 
     public function verificarSimuladoAndamento($id_usuario){
-        $simuladodao = new SimuladoDAO();
-        $simulados = $simuladodao->lerIdUsuario($id_usuario);
+        //return null;
+	    $simuladodao = new SimuladoDAO();
+        $resp_simdao = new RespostaSimuladoDAO();
+        $questaodao  = new QuestaoDAO();
+
+        $simulados = $simuladodao->lerIdUsuario($id_usuario); //Procura todos os simulados do usuario logado.
         foreach ($simulados as $s){
-            if ($s->getTempo() == 0){
-                echo "alert(\"Existe um simulado em andamento iniciado em $s->getDataSimulado(). Ele será aberto.<br>OBS: As questões respondidas ainda não ficam salvas, logo, você deve responder tudo novamente.\")";
-                return $s;
+            if ($s->getTempo() == "0" || $s->getTempo() == "0:0:0"){ //Verifica se o simulado foi concluído.
+                //echo "<script>alert(\"Existe um simulado em andamento. Ele será aberto.<br>OBS: As questões respondidas ainda não ficam salvas, logo, você deve responder tudo novamente.\")</script>";
+                $id_questoes = $resp_simdao->obterIdQuestoesSimulado($s->getIdSimulado());
+                $questoes = $questaodao->lerPorVetorIndex($id_questoes);
+                $prova_realizar = new Prova($s->getidSimulado(), $s->getDataSimulado(), $s->getTipo(), sizeof($questoes, 0), $questoes);
+                $prova_realizar->setDatahora($s->getDataSimulado());
+                return $prova_realizar;
             }
         }
         return null;
+    }
+
+    public function atualizaResposta($idQuetao, $resposta, $idSimulado){
+        $resp_simdao = new RespostaSimuladoDAO();
+        $resp_simdao->atualizar($idQuetao,$resposta,$idSimulado);
+    }
+
+    public function obterRespostasQuestoes($idSimulado){
+        $resp_simdao = new RespostaSimuladoDAO();
+        return $resp_simdao->obterRepostaQuestoes($idSimulado);
     }
 
     private function gerarPontuacao($resp){
@@ -267,9 +292,20 @@ class Controllerdados {
 	    if($result==false){
 	        return false;
         }
-	    $linha = pg_fetch_array($result);
-        echo "Os dados'" . $linha[ 'idusuario' ] . " | " . $linha[ 'nome' ] . " | " . $linha[ 'email' ] . " | " . $linha[ 'privilegio' ] . "\n ";
-	    return $linha;
+        $matriz = array();
+	    $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $usuario = $this->getUsuario($escrever);
+            $matriz[$i] = $usuario;
+            $i++;
+        }
+	    return $matriz;
+    }
+
+    private function getUsuario($escrever){
+        $usuario = new Usuario( $escrever[1], null, null, $escrever[2],null, $escrever[3], null );
+        $usuario->setId($escrever[0]);
+        return $usuario;
     }
 
     public function verificarPrivilegio($id){
@@ -292,9 +328,6 @@ class Controllerdados {
         return $linha['privilegio'];
     }
 
-    public function addProva() {
-        //Não sei o que fazer aqui por enquanto zZzZz... (Allan)
-    }
 	/**
 	1 - cadastro de usuário
 	2 - promoção de usuário
@@ -302,7 +335,7 @@ class Controllerdados {
 	4 - banimento de usuário
 	5 - submissão de questão
 	6 - realização de simulado
-	7 - 
+	7 - inserção de prova oficial
 	*/
 	public function insereLog( $tipo, $idusuario, $descricao ) {
 		echo "---nova inserção de log os dados são: " . $tipo . " | " . $idusuario . " | " . $descricao;
@@ -316,6 +349,54 @@ class Controllerdados {
 
 	}
 
+    /**
+     * @param $idquestao
+     * @param $idusuario
+     * @param $data
+     */
+    public function inserirDenuncia($idquestao,$idusuario,$data){
+	    $denuncia = new Denuncia($idquestao,$data,$idusuario);
+    	$denunciadao = new denunciadao();
+	    $result = $denunciadao->inserir($denuncia);
+	    if ($result==true){
+	        return true;
+        }else{
+	        return false;
+        }
+    }
+    public function buscarDenuncia(){
+        $denunciadao = new denunciadao();
+        $result = $denunciadao->buscar();
+        if($result==false){
+            return false;
+        }
+        $matriz = array();
+        $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $denuncia = $this->getDenuncia($escrever);
+            $matriz[$i] = $denuncia;
+            $i++;
+        }
+        return $matriz;
 
+    }
+
+    public function getDenuncia($escrever){
+        $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1]);
+        $denuncia->setId($escrever[0]);
+        return $denuncia;
+    }
+	
+	public function cadastraProvaOficial($qtdQuestoes, $idUser, $ano){
+		
+			$dao = new ProvaDao();
+			$dao->inserir( $qtdQuestoes, $ano );
+			echo "\n inserir log aqui \n";
+			$this->insereLog( 7, $idUser, "Inserção de prova oficial" );
+	}
+
+    public function buscarLog(){
+
+	}
 }
 ?>

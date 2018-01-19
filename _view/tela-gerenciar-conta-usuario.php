@@ -1,5 +1,5 @@
 <?php
-	include_once( "_model/segurancaA.php" );
+	include_once("../_model/segurancaA.php");
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -9,15 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gerenciar conta usuario</title>
-    <link rel="stylesheet" type="text/css" href="_css/gerencia-conta.css">
+    <link rel="stylesheet" type="text/css" href="../_css/gerencia-conta.css">
     
 			
 	<!-- Milligram CSS minified -->
-	<link rel="stylesheet" href="_css/milligram.min.css">
+	<link rel="stylesheet" href="../_css/milligram.min.css">
 	
 	<!-- Main Styles -->
-    <link rel="stylesheet" href="_css/tela-inicial-adm.css">		
-	<link rel="stylesheet" type="text/css" href="_css/bootstrap3.css">	
+    <link rel="stylesheet" href="../_css/tela-inicial-adm.css">
+	<link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
 
 </head>
 
@@ -46,7 +46,7 @@
             </div>
 
             <div class="col-sm-5 col-md-5 col-lg-5">
-                <form method="POST" action="_controller/buscar_usuarios.php">
+                <form method="POST" action="../_controller/buscar_usuarios.php">
                     <div class="form-group">
                         
                         

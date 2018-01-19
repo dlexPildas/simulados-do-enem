@@ -42,6 +42,8 @@ class SimuladoDAO{
     }
 
     public function lerIdUsuario($id_usuario){
+        $banc = Bd::getInstance();
+        $banc->abrirconexao();
         $SQL = "SELECT * FROM simulado WHERE idusuario=$id_usuario";
         $resultado = pg_query($SQL);
         $linha = pg_fetch_array($resultado);
@@ -49,6 +51,7 @@ class SimuladoDAO{
         while ($linha = pg_fetch_array($resultado)) {
             $simulados[] = new Simulado($linha['idsimulado'], $linha['idusuario'], $linha['data_simulado'], $linha['tempo'], $linha['pontuacao'], $linha['tipo']);
         }
+        $banc->fecharconexao();
         return $simulados;
     }
 

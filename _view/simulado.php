@@ -22,14 +22,12 @@ require_once( "../_model/Prova.php" );
 	<script src="../_css/bootstrap/js/bootstrap.js"></script>
 	<link href="../_css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="../_js/cronometro.js"></script>
-	<script type="text/javascript" src="../_js/simulado.js"></script>
-	<script>
-		window.onload = inicio;
-	</script>
+
+
 
 	<script type="text/javascript">
 		function selectIndex(str) {
-			document.getElementById(str).className += " active";
+			document.getElementById(str).className = "item active";
 			for (var i = 1; i <= 90; i++) {
 				strin = str.substring(0, 5) + i;
 				if (strin !== str) {
@@ -44,7 +42,9 @@ require_once( "../_model/Prova.php" );
 
 </head>
 <body>
-    <?php include('../navbar-usuario.php'); ?>
+    <?php
+        include('navbar-usuario.php');
+    ?>
 
 	<div role="main" class="col-md-9" style="margin-left: 35px">
 
@@ -71,11 +71,11 @@ require_once( "../_model/Prova.php" );
 			</div>
 			<div class="radio">
 				<label><input type="radio" name="optradio" id="respe" onclick="selecionarResposta('E')"><span class="alternativa"></span></label>
-			</div> 
+			</div>
 
 		</div>
 
-		<!-- Botões proximo e anterior 
+		<!-- Botões proximo e anterior
 		<div class="pull-right">
 			<a role="button" class="btn btn-info"><- Anterior</a>
 			<a role="button" class="btn btn-info">Pr�xima -></a>
@@ -112,7 +112,7 @@ require_once( "../_model/Prova.php" );
 		<div class="panel panel-warning">
 			<div class="panel-heading" style="font-size: 16px">Achou algo errado?</div>
 			<div class="panel-body">
-				<a href="#" style="margin-bottom: 15px" class="btn btn-danger botao" role="button">Denunciar</a>
+				<a href="#" style="margin-bottom: 15px" class="btn btn-danger botao" role="button" onclick="denuncia()">Denunciar</a>
 			</div>
 		</div>
 
@@ -129,6 +129,9 @@ require_once( "../_model/Prova.php" );
 	<footer>
 
 	</footer>
-
 </body>
+<script type="text/javascript" src="../_js/simulado.js"></script>
+<script>
+    window.onload = inicio;
+</script>
 </html>

@@ -1,3 +1,6 @@
+var data_hora;
+
+
 var centesimas = 0;
 var segundos = 0;
 var minutos = 0;
@@ -9,9 +12,9 @@ function inicio() {
 
 function cronometro() {
     segundos++;
-    document.getElementById("segundos").innerHTML = ":" + segundos;
-    document.getElementById("minutos").innerHTML = ":" + minutos;
-    document.getElementById("horas").innerHTML = horas;
+    document.getElementById("segundos").innerHTML = ":" + ("0" + segundos).slice(-2);
+    document.getElementById("minutos").innerHTML = ":" + ("0" + minutos).slice(-2);
+    document.getElementById("horas").innerHTML = ("0" + horas).slice(-2);
 
     
     
@@ -39,4 +42,35 @@ function ajustarInput(str) {
 
 function getTempoTotal() {
     return horas+":"+minutos+":"+segundos;
+}
+
+function setTempo(time){
+    data_hora = new Date(time);
+    data_atual = new Date();
+    resto = data_atual.getTime() - data_hora.getTime();
+    tempo_exibir = new Date().getTime() + resto;
+    setTempoMs(resto, null);
+}
+
+function setTempoMs(ms) {
+    segundos = ms / 1000;
+    // 2- Extract hours:
+    horas = parseInt( segundos / 3600 ); // 3,600 seconds in 1 hour
+    segundos = segundos % 3600; // seconds remaining after extracting hours
+    // 3- Extract minutes:
+    minutos = parseInt( segundos / 60 ); // 60 seconds in 1 minute
+    // 4- Keep only seconds not extracted to minutes:
+    segundos = parseInt(segundos % 60);
+}
+
+function obterHoraNTP() {
+    var dt;
+    $.ajax({
+        url: "http://enderecoDoSeuServico/",
+        success: function (horario) {
+            dt = new Date(horario);
+            return dt;
+        }
+    });
+    return null;
 }
