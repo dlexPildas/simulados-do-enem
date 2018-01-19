@@ -66,16 +66,13 @@
                         <a href="tela-cadastrar-questao-oficial.php">Submeter Questões</a>
                     </li>
                     <li>
-                        <a href="tela-de-feedback.php">Feedbacks</a>
+                        <a href="tela-de-feedback.php">Ver Feedbacks</a>
                     </li>
                     <li>
                         <a href="tela-de-logs.php">Logs do Sistema</a>
                     </li>
                     <li>
                         <a href="tela-de-ajuda.php">Ajuda</a>
-                    </li>
-                    <li>
-                        <a href="tela-de-denuncias.php">Denúncias</a>
                     </li>
                 </ul>
 
@@ -91,9 +88,7 @@
                             </li>
                             <li>
                                 <a href="gerencia-de-conta.php">Minha Conta</a>
-                            </li>
-                           
-                          
+                            </li>                                                     
                             
                             <li>
                                 <a href="../_controller/logout.php">Sair</a>

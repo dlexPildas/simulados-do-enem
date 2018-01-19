@@ -43,19 +43,39 @@
 				<form>
                     <div class="form-group">
 						<label for="exampleFormControlFile1">Escolha uma prova para submeter</label>
-						<br><br><br><br>
+						<br>
 						<input type="file" class="form-control-file" id="exampleFormControlFile1">
 						<br><br><br><br><br>
 						<h4>Escolha o ano da prova que deseja cadastrar</h4>
-						<div class="col-sm-3 col-md-3 col-lg-3">
-					
-						</div>
-						<div class="col-sm-3 col-md-5 col-lg-5">
-							<input type="number" name="points" min="1995" max="2017" step="1" value="2017">
-						</div>
-						<div class="col-sm-3 col-md-4 col-lg-4">
-					
-						</div>
+						<input type="number" name="points" min="1995" max="2017" step="1" value="2017">	
+						<h4>Escolha a área de conhecimento</h4>
+						<ul class="nav navbar-nav navbar-left">
+
+<li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Área de conhecimento
+		<span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu">
+		 <li>
+			<a href="#">Ciências Humanas</a>
+		</li>
+		<li>
+			<a href="#">Ciências da Natureza</a>
+		</li>                                                     
+		
+		<li>
+			<a href="#">Matemática</a>
+			
+		</li>
+		<li>
+			<a href="#">Linguagens</a>
+		</li>
+	</ul>
+</li>
+</ul>
+							
+
+						
 					<br><br><br><br><br>			
 				<button class="button">Submeter Questão</button>
 				<button class="button">Cancelar</button>	
