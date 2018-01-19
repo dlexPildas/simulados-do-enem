@@ -14,6 +14,7 @@ insert into tipodelog (idacao, nome) values ('3', 'exclusão de usuário');
 insert into tipodelog (idacao, nome) values ('4', 'banimento de usuário');
 insert into tipodelog (idacao, nome) values ('5', 'submissão de questão');
 insert into tipodelog (idacao, nome) values ('6', 'realização de simulado');
+insert into tipodelog (idacao, nome) values ('7', 'cadastro de prova');
 
 --Cadastro de usuários
 insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Marcos Vinicius', 'Cruz Lima', 'null', 'marcosviniciuscl@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'N', '11/12/2017');
