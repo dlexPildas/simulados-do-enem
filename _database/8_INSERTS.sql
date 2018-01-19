@@ -21,6 +21,7 @@ insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano
 insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Giovana', 'Forninho da Silva', 'null', 'giovana@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'N', '10/12/2017');
 insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Lucas', 'Fada Cardoso', 'null', 'lucas@yahoo.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'N', '11/07/2017');
 insert into usuarios (idusuario, nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('13','Ze', 'de Ferro', 'null', 'zedeferro@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'A', '11/12/2017');
+insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Maria', 'de Ferro', 'null', 'mariaferro@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'M', '11/12/2017');
 
 --Cadastro de simulado
 insert into simulado (idusuario, data_simulado, tempo, pontuacao, tipo) values ('1', '12/11/2017', '03:14:38', '734', '');
