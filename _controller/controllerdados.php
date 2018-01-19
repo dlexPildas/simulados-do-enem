@@ -139,6 +139,12 @@ class Controllerdados {
 			} else if ( $linha[ 'privilegio' ] == 'A' ) {
 				echo "usuario adm";
 				header( 'location:../_view/tela-inicial-adm.php' );
+			}else if ( $linha[ 'privilegio' ] == 'B' ){
+				echo "usuario banido";
+				unset( $_SESSION[ 'id' ] );
+				unset( $_SESSION[ 'nome' ] );
+				unset( $_SESSION[ 'privilegio' ] );
+				header( 'location:../_view/erros/userbanido.html' );
 			}
 		} else {
 			echo "erro de senha ou email";
