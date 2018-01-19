@@ -386,6 +386,10 @@ class Controllerdados {
         $denuncia->setId($escrever[0]);
         return $denuncia;
     }
+	
+	public function cadastraProvaOficial($qtdQuestoes, $ano){
+		
+	}
 
     public function buscarLog(){
 
