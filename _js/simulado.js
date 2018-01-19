@@ -12,10 +12,6 @@ var questoesProva;
 var indexAtual;
 var respostas = new Map();
 
-/*window.onload = initPage;
-function initPage(){
-    buscarProva();
-}*/
 
 buscarProva();
 function buscarProva() {
@@ -25,11 +21,14 @@ function buscarProva() {
         	var resposta = JSON.parse(this.response);
             if (resposta == null) {
                 mensagemErro();
-                irParaPagina("http://localhost/simulados-do-enem/_view/escolher-tipo-simulado.php");
+                irParaPagina("escolher-tipo-simulado.php");
             }
         	setIdProva(resposta.idProva);
         	setQuestoesProva(resposta.questoes);
             setTempo(resposta.dataprova, null);
+            if(testeData(new Date(resposta.dataprova), new Date())){
+                alert("Já existe um simulado em andamento, você deve conclui para fazer um novo. Você será redirecionado para o simulado criado em " + resposta.dataprova);
+            }
         	setIndexAtual(0);
         	criarIndices(questoesProva.length); //Cria os indices das questoes de acordo com a quantidade.
             apresentarQuestao(0);
@@ -159,7 +158,7 @@ function enviarSimulado(){
 		data: {idSimulado:idProva,respostas:respostasString,tempo:tempo}
     }).done(function () {
         alert("Seu simulado foi salvo, você será redirecionado para ver seu acertos e erros.");
-        irParaPagina("../paineldeusuario.php");
+        irParaPagina("paineldeusuario.php");
     });
 }
 
@@ -199,9 +198,8 @@ function denuncia(){
       url: "../_controller/receber-denuncia.php",
   type: 'post',
   data: {idQuestao:idQuest}
-  }).done(function () {
-      alert("Sua denúncia foi realizada com sucesso.");
-      //irParaPagina("../paineldeusuario.php");
+  }).done(function (result) {
+      alert(result);
   });
 }
 
@@ -222,4 +220,9 @@ function mensagemErro(){
 
 function irParaPagina(url){
     window.location.href = url;
+}
+
+function testeData(menor, maior){
+    maior -= 5000;
+    return menor < maior;
 }

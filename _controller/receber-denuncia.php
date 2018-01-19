@@ -7,7 +7,7 @@
  */
 //Em desenvolvimento...
 $idquestao = $_POST['idquestao'];
-$idusuario = $_POST['idusuario'];
+$idusuario = $_SESSION['id'];
 $data = new DataHora();
 
 $controller = $controller->inserirDenuncia($idquestao,$idusuario,$data);

@@ -13,6 +13,8 @@ require_once( "../_model/DataHora.php" );
 require_once( "../_util/questaodao.php" );
 require_once( "../_util/simuladodao.php" );
 require_once( "../_util/respostasimuladodao.php" );
+require_once ("../_util/denunciadao.php");
+require_once ("../_model/Denuncia.php");
 
 class Controllerdados {
 	public static $instance = null;
@@ -161,7 +163,7 @@ class Controllerdados {
 	}
 
 	//OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
-	public function gerarProva($tipo_prova, $ano_or_area) {
+	public function gerarProva($tipo_prova, $ano_or_area, $quant_quest) {
 		$questaodao = new QuestaoDAO();
 		$simuladodao = new SimuladoDAO();
 		$respostasimuladodao = new RespostaSimuladoDAO();
@@ -169,17 +171,8 @@ class Controllerdados {
 		$prova = $this->verificarSimuladoAndamento($_SESSION['id']); // Verifica se existe um simulado em andamento. Caso haja o usuario é redirecionado para terminar o simulado.
 		if($prova == null) {
             $questoes = [];
-            switch ($tipo_prova) {
-                case 3: //Questões oficiais
-                    break;
-                case 4: //Questões não oficiais
-                    break;
-                case 5: //Questões mistas
-                    break;
-                default : //Edições anteriores ou Area do conhecimento
-                    $questoes = $questaodao->ler($tipo_prova, $ano_or_area, 3);
-                    break;
-            }
+            $questoes = $questaodao->ler($tipo_prova, $ano_or_area, $quant_quest);
+
             if (sizeof($questoes) > 0) {
                 $NTP = new DataHora();
                 $time = $NTP->getDataHora();
@@ -214,7 +207,7 @@ class Controllerdados {
 
         $simulados = $simuladodao->lerIdUsuario($id_usuario); //Procura todos os simulados do usuario logado.
         foreach ($simulados as $s){
-            if ($s->getTempo() == "0:0:0"){ //Verifica se o simulado foi concluído.
+            if ($s->getTempo() == "0" || $s->getTempo() == "0:0:0"){ //Verifica se o simulado foi concluído.
                 //echo "<script>alert(\"Existe um simulado em andamento. Ele será aberto.<br>OBS: As questões respondidas ainda não ficam salvas, logo, você deve responder tudo novamente.\")</script>";
                 $id_questoes = $resp_simdao->obterIdQuestoesSimulado($s->getIdSimulado());
                 $questoes = $questaodao->lerPorVetorIndex($id_questoes);
@@ -359,8 +352,36 @@ class Controllerdados {
      * @param $data
      */
     public function inserirDenuncia($idquestao,$idusuario,$data){
-	    //pensando na implementação (Allan)
-        //return true or false;
+	    $denuncia = new Denuncia($idquestao,$data,$idusuario);
+    	$denunciadao = new denunciadao();
+	    $result = $denunciadao->inserir($denuncia);
+	    if ($result==true){
+	        return true;
+        }else{
+	        return false;
+        }
+    }
+    public function buscarDenuncia(){
+        $denunciadao = new denunciadao();
+        $result = $denunciadao->buscar();
+        if($result==false){
+            return false;
+        }
+        $matriz = array();
+        $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $denuncia = $this->getDenuncia($escrever);
+            $matriz[$i] = $denuncia;
+            $i++;
+        }
+        return $matriz;
+
+    }
+
+    public function getDenuncia($escrever){
+        $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1]);
+        $denuncia->setId($escrever[0]);
+        return $denuncia;
     }
 
 }
