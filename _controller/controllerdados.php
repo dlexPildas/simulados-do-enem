@@ -335,7 +335,7 @@ class Controllerdados {
 	4 - banimento de usuário
 	5 - submissão de questão
 	6 - realização de simulado
-	7 -
+	7 - inserção de prova oficial
 	*/
 	public function insereLog( $tipo, $idusuario, $descricao ) {
 		echo "---nova inserção de log os dados são: " . $tipo . " | " . $idusuario . " | " . $descricao;
@@ -387,8 +387,12 @@ class Controllerdados {
         return $denuncia;
     }
 	
-	public function cadastraProvaOficial($qtdQuestoes, $ano){
+	public function cadastraProvaOficial($qtdQuestoes, $idUser, $ano){
 		
+			$dao = new ProvaDao();
+			$dao->inserir( $qtdQuestoes, $ano );
+			echo "\n inserir log aqui \n";
+			$this->insereLog( 7, $idUser, "Inserção de prova oficial" );
 	}
 
     public function buscarLog(){
