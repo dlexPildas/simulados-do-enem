@@ -85,7 +85,7 @@ class LogDao {
     }
 
     function buscarLogsPeriodo($dataini,$datafim){
-        $SQL = "select * FROM logsistema JOIN tipodelog WHERE (datalog BETWEEN '$dataini' AND '$datafim') AND logsistema.idacao = tipodelog.idacao";
+        $SQL = "SELECT * FROM logsistema JOIN tipodelog ON (datalog BETWEEN '$dataini' AND '$datafim') AND logsistema.idacao = tipodelog.idacao";
     }
 
 }
